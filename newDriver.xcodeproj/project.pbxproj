@@ -7,6 +7,16 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		30036F8E1FC25CEA00E59504 /* GetReturnPartyListBiz.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30036F8D1FC25CEA00E59504 /* GetReturnPartyListBiz.swift */; };
+		30036F911FC26F8700E59504 /* SupplierViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30036F8F1FC26F8700E59504 /* SupplierViewController.swift */; };
+		30036F921FC26F8700E59504 /* SupplierViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 30036F901FC26F8700E59504 /* SupplierViewController.xib */; };
+		30036F941FC2775100E59504 /* BottleAddressList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30036F931FC2775100E59504 /* BottleAddressList.swift */; };
+		30036F981FC287EB00E59504 /* SupplierTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30036F961FC287EB00E59504 /* SupplierTableViewCell.swift */; };
+		30036F991FC287EB00E59504 /* SupplierTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 30036F971FC287EB00E59504 /* SupplierTableViewCell.xib */; };
+		30036F9C1FC2BA1700E59504 /* ConsigneeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30036F9A1FC2BA1700E59504 /* ConsigneeViewController.swift */; };
+		30036F9D1FC2BA1700E59504 /* ConsigneeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 30036F9B1FC2BA1700E59504 /* ConsigneeViewController.xib */; };
+		30036FA01FC2BD0D00E59504 /* ConsigneeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30036F9E1FC2BD0D00E59504 /* ConsigneeTableViewCell.swift */; };
+		30036FA11FC2BD0D00E59504 /* ConsigneeTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 30036F9F1FC2BD0D00E59504 /* ConsigneeTableViewCell.xib */; };
 		3004723A1DF7B8C3005A9ED5 /* BaiduMapAPI_Base.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 300472331DF7B8C3005A9ED5 /* BaiduMapAPI_Base.framework */; };
 		3004723B1DF7B8C3005A9ED5 /* BaiduMapAPI_Cloud.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 300472341DF7B8C3005A9ED5 /* BaiduMapAPI_Cloud.framework */; };
 		3004723C1DF7B8C3005A9ED5 /* BaiduMapAPI_Location.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 300472351DF7B8C3005A9ED5 /* BaiduMapAPI_Location.framework */; };
@@ -126,7 +136,6 @@
 		3074A19C1DF7B7FC008DC76F /* ESRefreshProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3074A18B1DF7B7FC008DC76F /* ESRefreshProtocol.swift */; };
 		3074A19D1DF7B7FC008DC76F /* MBProgressHUD.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3074A18D1DF7B7FC008DC76F /* MBProgressHUD.swift */; };
 		3074A19E1DF7B7FC008DC76F /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = 3074A1901DF7B7FC008DC76F /* Reachability.m */; };
-		308DE4D81FBFC30800F840E9 /* GetReturnPartyListBiz.swift in Sources */ = {isa = PBXBuildFile; fileRef = 308DE4D71FBFC30800F840E9 /* GetReturnPartyListBiz.swift */; };
 		309240391DF697BC00672E4E /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 309240381DF697BC00672E4E /* CoreGraphics.framework */; };
 		3092403B1DF697D700672E4E /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3092403A1DF697D700672E4E /* Foundation.framework */; };
 		3092403D1DF697DF00672E4E /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3092403C1DF697DF00672E4E /* UIKit.framework */; };
@@ -175,6 +184,16 @@
 
 /* Begin PBXFileReference section */
 		15949C49D8A8996CA0850F8B /* Pods-newDriver.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-newDriver.release.xcconfig"; path = "Pods/Target Support Files/Pods-newDriver/Pods-newDriver.release.xcconfig"; sourceTree = "<group>"; };
+		30036F8D1FC25CEA00E59504 /* GetReturnPartyListBiz.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GetReturnPartyListBiz.swift; sourceTree = "<group>"; };
+		30036F8F1FC26F8700E59504 /* SupplierViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SupplierViewController.swift; sourceTree = "<group>"; };
+		30036F901FC26F8700E59504 /* SupplierViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SupplierViewController.xib; sourceTree = "<group>"; };
+		30036F931FC2775100E59504 /* BottleAddressList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottleAddressList.swift; sourceTree = "<group>"; };
+		30036F961FC287EB00E59504 /* SupplierTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SupplierTableViewCell.swift; sourceTree = "<group>"; };
+		30036F971FC287EB00E59504 /* SupplierTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SupplierTableViewCell.xib; sourceTree = "<group>"; };
+		30036F9A1FC2BA1700E59504 /* ConsigneeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConsigneeViewController.swift; sourceTree = "<group>"; };
+		30036F9B1FC2BA1700E59504 /* ConsigneeViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ConsigneeViewController.xib; sourceTree = "<group>"; };
+		30036F9E1FC2BD0D00E59504 /* ConsigneeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConsigneeTableViewCell.swift; sourceTree = "<group>"; };
+		30036F9F1FC2BD0D00E59504 /* ConsigneeTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ConsigneeTableViewCell.xib; sourceTree = "<group>"; };
 		300472331DF7B8C3005A9ED5 /* BaiduMapAPI_Base.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = BaiduMapAPI_Base.framework; path = newDriver/libs/BaiduMap_IOSSDK_v3.0.0_Lib/BaiduMapAPI_Base.framework; sourceTree = "<group>"; };
 		300472341DF7B8C3005A9ED5 /* BaiduMapAPI_Cloud.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = BaiduMapAPI_Cloud.framework; path = newDriver/libs/BaiduMap_IOSSDK_v3.0.0_Lib/BaiduMapAPI_Cloud.framework; sourceTree = "<group>"; };
 		300472351DF7B8C3005A9ED5 /* BaiduMapAPI_Location.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = BaiduMapAPI_Location.framework; path = newDriver/libs/BaiduMap_IOSSDK_v3.0.0_Lib/BaiduMapAPI_Location.framework; sourceTree = "<group>"; };
@@ -301,7 +320,6 @@
 		3074A18D1DF7B7FC008DC76F /* MBProgressHUD.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MBProgressHUD.swift; sourceTree = "<group>"; };
 		3074A18F1DF7B7FC008DC76F /* Reachability.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Reachability.h; sourceTree = "<group>"; };
 		3074A1901DF7B7FC008DC76F /* Reachability.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Reachability.m; sourceTree = "<group>"; };
-		308DE4D71FBFC30800F840E9 /* GetReturnPartyListBiz.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetReturnPartyListBiz.swift; sourceTree = "<group>"; };
 		309240381DF697BC00672E4E /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		3092403A1DF697D700672E4E /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		3092403C1DF697DF00672E4E /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
@@ -374,6 +392,17 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		30036F951FC287C900E59504 /* 回瓶管理 */ = {
+			isa = PBXGroup;
+			children = (
+				30036F961FC287EB00E59504 /* SupplierTableViewCell.swift */,
+				30036F971FC287EB00E59504 /* SupplierTableViewCell.xib */,
+				30036F9E1FC2BD0D00E59504 /* ConsigneeTableViewCell.swift */,
+				30036F9F1FC2BD0D00E59504 /* ConsigneeTableViewCell.xib */,
+			);
+			path = "回瓶管理";
+			sourceTree = "<group>";
+		};
 		300472411DF7B921005A9ED5 /* Custom */ = {
 			isa = PBXGroup;
 			children = (
@@ -411,6 +440,10 @@
 			children = (
 				3045EF261FBED87700EAA295 /* BottleViewController.swift */,
 				3045EF251FBED87700EAA295 /* BottleViewController.xib */,
+				30036F8F1FC26F8700E59504 /* SupplierViewController.swift */,
+				30036F901FC26F8700E59504 /* SupplierViewController.xib */,
+				30036F9A1FC2BA1700E59504 /* ConsigneeViewController.swift */,
+				30036F9B1FC2BA1700E59504 /* ConsigneeViewController.xib */,
 			);
 			path = "回瓶管理";
 			sourceTree = "<group>";
@@ -530,6 +563,7 @@
 		3074A0DC1DF7B3B6008DC76F /* TableViewCell */ = {
 			isa = PBXGroup;
 			children = (
+				30036F951FC287C900E59504 /* 回瓶管理 */,
 				3074A0DF1DF7B3B6008DC76F /* NotificationDetailTableViewCell.swift */,
 				3074A0E01DF7B3B6008DC76F /* NotificationDetailTableViewCell.xib */,
 				3074A0E11DF7B3B6008DC76F /* NotificationSimpleMsgTableViewCell.swift */,
@@ -574,7 +608,6 @@
 				300FB2991E836C56009E13F5 /* ShipmentAuditBiz.swift */,
 				30C489591F3BE53800EDB7CB /* GetShipmentUnPayOrderListBiz.swift */,
 				30C489651F3C64D200EDB7CB /* DriverListPayBiz.swift */,
-				308DE4D71FBFC30800F840E9 /* GetReturnPartyListBiz.swift */,
 				308DE4D61FBFBD2E00F840E9 /* 回瓶管理 */,
 			);
 			path = Model;
@@ -696,6 +729,7 @@
 		308DE4D51FBFBD0500F840E9 /* 回瓶管理 */ = {
 			isa = PBXGroup;
 			children = (
+				30036F931FC2775100E59504 /* BottleAddressList.swift */,
 			);
 			path = "回瓶管理";
 			sourceTree = "<group>";
@@ -703,6 +737,7 @@
 		308DE4D61FBFBD2E00F840E9 /* 回瓶管理 */ = {
 			isa = PBXGroup;
 			children = (
+				30036F8D1FC25CEA00E59504 /* GetReturnPartyListBiz.swift */,
 			);
 			path = "回瓶管理";
 			sourceTree = "<group>";
@@ -820,6 +855,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				3062E8EF1DF7BA0A00AFB660 /* mapapi.bundle in Resources */,
+				30036F991FC287EB00E59504 /* SupplierTableViewCell.xib in Resources */,
+				30036F921FC26F8700E59504 /* SupplierViewController.xib in Resources */,
+				30036FA11FC2BD0D00E59504 /* ConsigneeTableViewCell.xib in Resources */,
 				3074A1151DF7B3B6008DC76F /* PayedOrderTableViewCell.xib in Resources */,
 				3045EF271FBED87800EAA295 /* BottleViewController.xib in Resources */,
 				3074A1181DF7B3B6008DC76F /* ZoomImageViewViewController.xib in Resources */,
@@ -837,6 +875,7 @@
 				304DD51F1D1E0D930073879C /* Assets.xcassets in Resources */,
 				3074A1131DF7B3B6008DC76F /* OrderDetailsTableViewCell.xib in Resources */,
 				3074A1971DF7B7FC008DC76F /* icon_pull_to_refresh_arrow@2x.png in Resources */,
+				30036F9D1FC2BA1700E59504 /* ConsigneeViewController.xib in Resources */,
 				3074A0F11DF7B3B6008DC76F /* AllTableViewController.xib in Resources */,
 				304DD51D1D1E0D930073879C /* Main.storyboard in Resources */,
 				300FB28E1E825FF3009E13F5 /* OrderBillingTableViewCell.xib in Resources */,
@@ -921,6 +960,7 @@
 				3074A1291DF7B3EA008DC76F /* CheckVersionBiz.swift in Sources */,
 				3074A1951DF7B7FC008DC76F /* ESRefreshFooterAnimator.swift in Sources */,
 				3015F30D1E0243070061DD76 /* SHIPMENT_List.swift in Sources */,
+				30036F9C1FC2BA1700E59504 /* ConsigneeViewController.swift in Sources */,
 				302B0F071E02380E00AC2FEC /* PushOrderViewController.swift in Sources */,
 				30C6E7001DE6E508008C3AF2 /* pch.swift in Sources */,
 				3074A1271DF7B3EA008DC76F /* CheckAutographAndPictureBiz.swift in Sources */,
@@ -973,20 +1013,24 @@
 				3074A1991DF7B7FC008DC76F /* ESPullToRefresh.swift in Sources */,
 				30BB62B41E07D41C001CE471 /* UITableView+NoDataPrompt.swift in Sources */,
 				3074A1261DF7B3EA008DC76F /* ChangePasswordBiz.swift in Sources */,
+				30036FA01FC2BD0D00E59504 /* ConsigneeTableViewCell.swift in Sources */,
 				3074A1931DF7B7FC008DC76F /* CyclePictureCell.swift in Sources */,
 				300472511DF7B955005A9ED5 /* StringUtils.swift in Sources */,
 				3074A1251DF7B3EA008DC76F /* AllOrderBiz.swift in Sources */,
 				3074A1281DF7B3EA008DC76F /* CheckPthBiz.swift in Sources */,
 				3074A19C1DF7B7FC008DC76F /* ESRefreshProtocol.swift in Sources */,
-				308DE4D81FBFC30800F840E9 /* GetReturnPartyListBiz.swift in Sources */,
+				30036F8E1FC25CEA00E59504 /* GetReturnPartyListBiz.swift in Sources */,
 				3004724F1DF7B955005A9ED5 /* DateUtils.swift in Sources */,
 				3074A10E1DF7B3B6008DC76F /* NotificationSimpleTableViewCell.swift in Sources */,
+				30036F941FC2775100E59504 /* BottleAddressList.swift in Sources */,
+				30036F981FC287EB00E59504 /* SupplierTableViewCell.swift in Sources */,
 				3004724E1DF7B955005A9ED5 /* appUtils.swift in Sources */,
 				302B0F0A1E02386500AC2FEC /* PushOrderTableViewCell.swift in Sources */,
 				30C4895A1F3BE53800EDB7CB /* GetShipmentUnPayOrderListBiz.swift in Sources */,
 				304DD5181D1E0D930073879C /* AppDelegate.swift in Sources */,
 				3074A0FF1DF7B3B6008DC76F /* NotPayTableViewController.swift in Sources */,
 				300FB2A41E83CC39009E13F5 /* ShipmentPart.swift in Sources */,
+				30036F911FC26F8700E59504 /* SupplierViewController.swift in Sources */,
 				30BAFA9C1D2B634E00E769E8 /* Test.m in Sources */,
 				3045EF281FBED87800EAA295 /* BottleViewController.swift in Sources */,
 				3074A1011DF7B3B6008DC76F /* OrderDetailViewController.swift in Sources */,

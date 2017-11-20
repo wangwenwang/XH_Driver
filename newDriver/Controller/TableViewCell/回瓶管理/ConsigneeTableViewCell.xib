@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13527"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="131" id="KGk-i7-Jjw" customClass="ConsigneeTableViewCell" customModule="newDriver" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="131"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="130.5"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="名称：" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TA6-4T-BtQ">
+                        <rect key="frame" x="15" y="15" width="46" height="18"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="46" id="Ff7-tg-EKM"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="地址：" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Gbe-3L-JiS">
+                        <rect key="frame" x="15" y="39" width="46" height="18"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="46" id="sFl-uo-E5e"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="东莞市大岭山恒成百货经营部" textAlignment="natural" lineBreakMode="characterWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sBV-37-VKG">
+                        <rect key="frame" x="61" y="15" width="199" height="18"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="广东省东莞市" textAlignment="natural" lineBreakMode="characterWrap" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gUX-o6-Adt">
+                        <rect key="frame" x="61" y="39" width="92" height="18"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="Gbe-3L-JiS" firstAttribute="leading" secondItem="TA6-4T-BtQ" secondAttribute="leading" id="4LB-09-9l7"/>
+                    <constraint firstItem="TA6-4T-BtQ" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="15" id="9Qu-MK-7rm"/>
+                    <constraint firstItem="sBV-37-VKG" firstAttribute="top" secondItem="TA6-4T-BtQ" secondAttribute="top" id="JuI-CO-iMz"/>
+                    <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="sBV-37-VKG" secondAttribute="trailing" constant="3" id="K0Y-t4-FRk"/>
+                    <constraint firstItem="Gbe-3L-JiS" firstAttribute="top" secondItem="TA6-4T-BtQ" secondAttribute="bottom" constant="6" id="Rhm-Oe-vTV"/>
+                    <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="gUX-o6-Adt" secondAttribute="trailing" constant="3" id="Uhf-cI-T5Q"/>
+                    <constraint firstItem="gUX-o6-Adt" firstAttribute="top" secondItem="Gbe-3L-JiS" secondAttribute="top" id="Y8Y-Jg-OiB"/>
+                    <constraint firstItem="gUX-o6-Adt" firstAttribute="leading" secondItem="Gbe-3L-JiS" secondAttribute="trailing" id="cDf-LH-SdL"/>
+                    <constraint firstItem="sBV-37-VKG" firstAttribute="leading" secondItem="TA6-4T-BtQ" secondAttribute="trailing" id="fOY-eW-zeF"/>
+                    <constraint firstItem="TA6-4T-BtQ" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="15" id="uqa-zy-Cbz"/>
+                </constraints>
+            </tableViewCellContentView>
+            <point key="canvasLocation" x="200" y="41"/>
+        </tableViewCell>
+    </objects>
+</document>

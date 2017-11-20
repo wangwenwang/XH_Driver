@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13527"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="59" id="KGk-i7-Jjw" customClass="SupplierTableViewCell" customModule="newDriver" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="59"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="58.5"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="名称：" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ghA-Yq-0wb">
+                        <rect key="frame" x="15" y="15" width="46" height="18"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="46" id="Ohi-Ki-DD4"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="名称：" textAlignment="natural" lineBreakMode="characterWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FSj-hm-pTv">
+                        <rect key="frame" x="61" y="15" width="46" height="18"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="地址：" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kMr-yU-wUI">
+                        <rect key="frame" x="15" y="39" width="46" height="18"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="46" id="Dgm-lI-OSC"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="地址：" textAlignment="natural" lineBreakMode="characterWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BN5-4N-wcc">
+                        <rect key="frame" x="61" y="39" width="46" height="18"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="kMr-yU-wUI" firstAttribute="leading" secondItem="ghA-Yq-0wb" secondAttribute="leading" id="18c-Kb-whR"/>
+                    <constraint firstItem="BN5-4N-wcc" firstAttribute="leading" secondItem="kMr-yU-wUI" secondAttribute="trailing" id="8T9-Bp-IAA"/>
+                    <constraint firstItem="FSj-hm-pTv" firstAttribute="top" secondItem="ghA-Yq-0wb" secondAttribute="top" id="KbA-C9-SJN"/>
+                    <constraint firstItem="ghA-Yq-0wb" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="15" id="Ljp-rt-ylS"/>
+                    <constraint firstItem="kMr-yU-wUI" firstAttribute="top" secondItem="ghA-Yq-0wb" secondAttribute="bottom" constant="6" id="Net-7r-Him"/>
+                    <constraint firstItem="FSj-hm-pTv" firstAttribute="leading" secondItem="ghA-Yq-0wb" secondAttribute="trailing" id="Pyq-JM-kZg"/>
+                    <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="FSj-hm-pTv" secondAttribute="trailing" constant="3" id="VkY-A6-Nwj"/>
+                    <constraint firstItem="ghA-Yq-0wb" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="15" id="W1q-eC-FJS"/>
+                    <constraint firstItem="BN5-4N-wcc" firstAttribute="top" secondItem="kMr-yU-wUI" secondAttribute="top" id="XgB-2D-oB2"/>
+                    <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="BN5-4N-wcc" secondAttribute="trailing" constant="3" id="lnQ-1H-xyb"/>
+                </constraints>
+            </tableViewCellContentView>
+            <connections>
+                <outlet property="PARTY_ADDRESS" destination="BN5-4N-wcc" id="IX7-bq-BSE"/>
+                <outlet property="PARTY_NAME" destination="FSj-hm-pTv" id="DRV-Oz-qA6"/>
+            </connections>
+            <point key="canvasLocation" x="34" y="80.5"/>
+        </tableViewCell>
+    </objects>
+</document>

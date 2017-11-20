@@ -10,6 +10,9 @@ import Foundation
 
 struct URLConstants {
     
+    /// 通知
+    static let kBottleViewController_Notification: String = "BottleViewController_Notification"
+    
     /// 服务器地址
     static let baseUrl: String = "http://oms.kaidongyuan.com:12300/api/"
     
@@ -80,5 +83,11 @@ struct URLConstants {
     
     /// 订单批量交付
     static let kAPI_DriverListPay = URLConstants.baseUrl + "DriverListPay"
+    
+    /// 回瓶管理
+    
+    /// 获取地址信息
+    static let kAPI_GetReturnPartyList = URLConstants.baseUrl + "GetReturnPartyList"
+    
     
 }
