@@ -84,10 +84,17 @@ struct URLConstants {
     /// 订单批量交付
     static let kAPI_DriverListPay = URLConstants.baseUrl + "DriverListPay"
     
+    
+    
+    
     /// 回瓶管理
     
     /// 获取地址信息
     static let kAPI_GetReturnPartyList = URLConstants.baseUrl + "GetReturnPartyList"
     
+    /// 获取司机信息
+    static let kAPI_GetShipmentList = URLConstants.baseUrl + "GetShipmentList"
     
+    /// 获取大瓶中瓶小瓶的信息
+    static let kAPI_GetReturnProductList = URLConstants.baseUrl + "GetReturnProductList"
 }

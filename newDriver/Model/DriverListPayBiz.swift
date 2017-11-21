@@ -61,7 +61,6 @@ class DriverListPayBiz: NSObject {
             .responseJSON { response in
                 switch response.result {
                 case .success(let xxx):
-                    print(xxx)
                     if let value = response.result.value {
                         let json = JSON(value)
                         print("JSON: \(json)")

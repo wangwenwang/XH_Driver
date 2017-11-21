@@ -41,35 +41,29 @@ class SupplierViewController: UIViewController, HttpResponseProtocol, UITableVie
     }
     
     
-    //MARK: - UITableViewDelegate
-    /// 设置 tableview 数据数量
-    func numberOfSections(in tableView: UITableView) -> Int {
+    // MARK: - UITableViewDelegate
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return biz.addressList.count
     }
     
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 1
-    }
-    
-    /// 设置 cell 高度
+    // 设置 cell 高度
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        
-        let address: BottleAddressList = biz.addressList[(indexPath as NSIndexPath).section]
+        let address: BottleAddressList = biz.addressList[(indexPath as NSIndexPath).row]
         return address.cellHeight
     }
     
-    /// 设置自定义的 cell
+    // 设置自定义的 cell
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "SupplierTableViewCell", for: indexPath) as! SupplierTableViewCell
-        cell.address = biz.addressList[(indexPath as NSIndexPath).section]
+        cell.address = biz.addressList[(indexPath as NSIndexPath).row]
         return cell
     }
     
-    /// 点击 tableview 的 cell
+    // 点击 tableview 的 cell
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
-        let address: BottleAddressList = biz.addressList[(indexPath as NSIndexPath).section]
-        NotificationCenter.default.post(name: NSNotification.Name(rawValue: URLConstants.kBottleViewController_Notification), object: nil, userInfo: ["Supplier_Name":address.PARTY_NAME,"Supplier_Address":address.PARTY_PROVINCE + address.PARTY_CITY,"Supplier_BUSINESS_IDX":address.BUSINESS_IDX])
+        let address: BottleAddressList = biz.addressList[(indexPath as NSIndexPath).row]
+        NotificationCenter.default.post(name: NSNotification.Name(rawValue: URLConstants.kBottleViewController_Notification), object: nil, userInfo: ["Factory":address])
         self.navigationController?.popViewController(animated: true)
     }
 }

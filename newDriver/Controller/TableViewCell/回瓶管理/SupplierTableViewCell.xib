@@ -27,8 +27,8 @@
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="名称：" textAlignment="natural" lineBreakMode="characterWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FSj-hm-pTv">
-                        <rect key="frame" x="61" y="15" width="46" height="18"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="熊猫说书有限公司" textAlignment="natural" lineBreakMode="characterWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FSj-hm-pTv">
+                        <rect key="frame" x="61" y="15" width="122.5" height="18"/>
                         <fontDescription key="fontDescription" type="system" pointSize="15"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
@@ -42,8 +42,8 @@
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="地址：" textAlignment="natural" lineBreakMode="characterWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BN5-4N-wcc">
-                        <rect key="frame" x="61" y="39" width="46" height="18"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="深圳市南山区建设路7号" textAlignment="natural" lineBreakMode="characterWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BN5-4N-wcc">
+                        <rect key="frame" x="61" y="39" width="161.5" height="18"/>
                         <fontDescription key="fontDescription" type="system" pointSize="15"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
@@ -51,10 +51,10 @@
                 </subviews>
                 <constraints>
                     <constraint firstItem="kMr-yU-wUI" firstAttribute="leading" secondItem="ghA-Yq-0wb" secondAttribute="leading" id="18c-Kb-whR"/>
+                    <constraint firstItem="kMr-yU-wUI" firstAttribute="top" secondItem="FSj-hm-pTv" secondAttribute="bottom" constant="6" id="644-38-bob"/>
                     <constraint firstItem="BN5-4N-wcc" firstAttribute="leading" secondItem="kMr-yU-wUI" secondAttribute="trailing" id="8T9-Bp-IAA"/>
                     <constraint firstItem="FSj-hm-pTv" firstAttribute="top" secondItem="ghA-Yq-0wb" secondAttribute="top" id="KbA-C9-SJN"/>
                     <constraint firstItem="ghA-Yq-0wb" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="15" id="Ljp-rt-ylS"/>
-                    <constraint firstItem="kMr-yU-wUI" firstAttribute="top" secondItem="ghA-Yq-0wb" secondAttribute="bottom" constant="6" id="Net-7r-Him"/>
                     <constraint firstItem="FSj-hm-pTv" firstAttribute="leading" secondItem="ghA-Yq-0wb" secondAttribute="trailing" id="Pyq-JM-kZg"/>
                     <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="FSj-hm-pTv" secondAttribute="trailing" constant="3" id="VkY-A6-Nwj"/>
                     <constraint firstItem="ghA-Yq-0wb" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="15" id="W1q-eC-FJS"/>

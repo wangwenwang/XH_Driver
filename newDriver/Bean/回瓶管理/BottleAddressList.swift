@@ -44,6 +44,12 @@ class BottleAddressList: BaseBean {
     /// 业务代码
     var BUSINESS_IDX: String = ""
     
+    /// 联系人
+    var CONTACT_PERSON: String = ""
+    
+    /// 电话号码
+    var CONTACT_TEL: String = ""
+    
     /// Cell 行高
     var cellHeight: CGFloat = 0
     
@@ -59,5 +65,7 @@ class BottleAddressList: BaseBean {
         PARTY_CITY <- map["PARTY_CITY"]
         PARTY_REMARK <- map["PARTY_REMARK"]
         BUSINESS_IDX <- map["BUSINESS_IDX"]
+        CONTACT_PERSON <- map["CONTACT_PERSON"]
+        CONTACT_TEL <- map["CONTACT_TEL"]
     }
 }
