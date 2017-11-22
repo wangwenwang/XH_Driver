@@ -17,6 +17,7 @@ class BottleViewController: UIViewController, HttpResponseProtocol {
     
     func responseError(_ error: String) {
         print("nono")
+        //
     }
     
     
