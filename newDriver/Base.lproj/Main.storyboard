@@ -173,7 +173,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hch-F3-6LF">
-                                <rect key="frame" x="66.5" y="372" width="187" height="30"/>
+                                <rect key="frame" x="66.5" y="391" width="187" height="30"/>
                                 <color key="backgroundColor" red="0.95294117649999999" green="0.63921568630000003" blue="0.1764705882" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="OFz-Il-REi"/>
@@ -283,7 +283,7 @@
                             <constraint firstItem="ZpJ-ue-2tz" firstAttribute="leading" secondItem="tSv-UC-BrR" secondAttribute="leadingMargin" id="kEy-Ry-Mvz"/>
                             <constraint firstItem="X9w-QU-CbS" firstAttribute="leading" secondItem="ErI-6h-sLc" secondAttribute="leading" id="kvQ-TR-52x"/>
                             <constraint firstItem="ErI-6h-sLc" firstAttribute="height" secondItem="NHj-gE-mRn" secondAttribute="height" id="l4u-uV-At9"/>
-                            <constraint firstItem="hch-F3-6LF" firstAttribute="top" secondItem="QAu-Kd-ax9" secondAttribute="bottom" constant="50" id="nF3-3I-C4M">
+                            <constraint firstItem="hch-F3-6LF" firstAttribute="top" secondItem="QAu-Kd-ax9" secondAttribute="bottom" constant="69" id="nF3-3I-C4M">
                                 <variation key="heightClass=compact" constant="10"/>
                             </constraint>
                             <constraint firstItem="X9w-QU-CbS" firstAttribute="top" secondItem="ErI-6h-sLc" secondAttribute="bottom" id="nKB-K6-GgG"/>

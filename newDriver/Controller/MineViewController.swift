@@ -43,7 +43,7 @@ class MineViewController: UIViewController {
     
     // 跳转到回瓶管理
     @IBAction func bottle(_ sender: UIButton) {
-        self.navigationController?.pushViewController(BottleViewController(nibName: "BottleViewController", bundle: nil), animated: true)
+        self.navigationController?.pushViewController(BottleListViewController(nibName: "BottleListViewController", bundle: nil), animated: true)
     }
     
     // 跳转到关于界面

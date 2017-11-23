@@ -97,4 +97,16 @@ struct URLConstants {
     
     /// 获取大瓶中瓶小瓶的信息
     static let kAPI_GetReturnProductList = URLConstants.baseUrl + "GetReturnProductList"
+    
+    /// 司机获取回瓶列表
+    static let kAPI_GetReturnBottleList = URLConstants.baseUrl + "GetReturnBottleList"
+    
+    /// 获取回瓶详情列表
+    static let kAPI_GetReturnBottleInfo = URLConstants.baseUrl + "GetReturnBottleInfo"
+    
+    /// 修改司机发货的瓶的数量
+    static let kAPI_SetBottleQTY = URLConstants.baseUrl + "SetBottleQTY"
+    
+    /// 正向流程
+    static let kAPI_OrderWorkflow = URLConstants.baseUrl + "OrderWorkflow"
 }

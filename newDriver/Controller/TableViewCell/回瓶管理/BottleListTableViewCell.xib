@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13527"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="82" id="KGk-i7-Jjw" customClass="BottleListTableViewCell" customModule="newDriver" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="82"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="81.5"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="订单编号: " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="g4n-6x-j7X">
+                        <rect key="frame" x="8" y="12" width="69.5" height="18"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="000007" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OZG-nK-7Vp">
+                        <rect key="frame" x="77.5" y="12" width="54.5" height="18"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                        <color key="textColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="创建时间: " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="D29-59-lxd">
+                        <rect key="frame" x="8" y="35" width="69.5" height="18"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2017/11/23 09:20:10" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="htq-cc-n2z">
+                        <rect key="frame" x="77" y="35" width="139" height="18"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                        <color key="textColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="收货地址: " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="g7w-bb-pOR">
+                        <rect key="frame" x="8" y="58" width="69.5" height="18"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="广西柳州" textAlignment="natural" lineBreakMode="characterWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9eg-4y-B9Q">
+                        <rect key="frame" x="77" y="58" width="61.5" height="18"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                        <color key="textColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="htq-cc-n2z" firstAttribute="leading" secondItem="D29-59-lxd" secondAttribute="trailing" id="3hH-E6-P3G"/>
+                    <constraint firstItem="D29-59-lxd" firstAttribute="leading" secondItem="g4n-6x-j7X" secondAttribute="leading" id="7h5-FN-xFi"/>
+                    <constraint firstItem="g4n-6x-j7X" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="12" id="9cP-Id-1O5"/>
+                    <constraint firstItem="D29-59-lxd" firstAttribute="top" secondItem="g4n-6x-j7X" secondAttribute="bottom" constant="5" id="I4a-6u-fCq"/>
+                    <constraint firstItem="g7w-bb-pOR" firstAttribute="leading" secondItem="g4n-6x-j7X" secondAttribute="leading" id="K2c-1U-MoR"/>
+                    <constraint firstItem="OZG-nK-7Vp" firstAttribute="centerY" secondItem="g4n-6x-j7X" secondAttribute="centerY" id="Nyo-H8-rpR"/>
+                    <constraint firstItem="9eg-4y-B9Q" firstAttribute="top" secondItem="g7w-bb-pOR" secondAttribute="top" id="a5U-6W-5fN"/>
+                    <constraint firstItem="htq-cc-n2z" firstAttribute="centerY" secondItem="D29-59-lxd" secondAttribute="centerY" id="agZ-Uh-gUU"/>
+                    <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="9eg-4y-B9Q" secondAttribute="trailing" constant="3" id="cqo-Al-S2q"/>
+                    <constraint firstItem="g7w-bb-pOR" firstAttribute="top" secondItem="D29-59-lxd" secondAttribute="bottom" constant="5" id="dOi-oW-ePl"/>
+                    <constraint firstItem="g4n-6x-j7X" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="8" id="eKL-uz-168"/>
+                    <constraint firstItem="9eg-4y-B9Q" firstAttribute="leading" secondItem="g7w-bb-pOR" secondAttribute="trailing" id="f1h-FK-ybs"/>
+                    <constraint firstItem="OZG-nK-7Vp" firstAttribute="leading" secondItem="g4n-6x-j7X" secondAttribute="trailing" id="mqG-VU-uTi"/>
+                </constraints>
+            </tableViewCellContentView>
+            <connections>
+                <outlet property="ORD_NO" destination="OZG-nK-7Vp" id="VSh-xO-U6T"/>
+                <outlet property="ORD_TO_ADDRESS" destination="9eg-4y-B9Q" id="9cL-7p-ibg"/>
+            </connections>
+            <point key="canvasLocation" x="52" y="165"/>
+        </tableViewCell>
+    </objects>
+</document>

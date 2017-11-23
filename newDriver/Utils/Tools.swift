@@ -78,4 +78,28 @@ class Tools: NSObject {
         let sizeToFit = label.sizeThatFits(CGSize.init(width: width, height: CGFloat(MAXFLOAT)))
         return sizeToFit.height;
     }
+    
+    static func formatFloat (f: Float) -> String {
+        if(fmodf(f, 1) == 0) {
+            return String(format: "%.0f", f)
+        } else if(fmodf(f * 10, 1) == 0) {
+            return String(format: "%.1f", f)
+        } else if(fmodf(f * 100, 1) == 0) {
+            return String(format: "%.2f", f)
+        } else if(fmodf(f * 1000, 1) == 0) {
+            return String(format: "%.3f", f)
+        } else if(fmodf(f * 10000, 1) == 0) {
+            return String(format: "%.4f", f)
+        } else{
+            return String(format: "%.5f", f)
+        }
+    }
+    
+    
+    static func oneDecimal (text : String) -> String {
+        
+        let textFloat = String(format: "%.1f", (text as NSString).floatValue)
+        let str = "\(textFloat)"
+        return str
+    }
 }

@@ -62,6 +62,24 @@ class AppDelegate: UIResponder, UIApplicationDelegate, BMKGeneralDelegate, GeTui
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         
+//        let array: NSMutableArray = NSMutableArray()
+//        for i in 0...10000000{
+//            array.add(i);
+//        }
+        
+//        let start = CFAbsoluteTimeGetCurrent()
+//        var sum:Int64=0
+//        for let: Int64 = i in array {
+//            sum+=(int)i
+//        }
+//        print(sum)
+//        print(String(CFAbsoluteTimeGetCurrent()-start)+" seconds")
+        
+        
+        
+        
+        
+        
 //        let p = PayOrderViewController()
 //        p.payAddress = "fsdafsfdsaf11";
 //        
