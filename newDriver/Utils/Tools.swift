@@ -102,4 +102,11 @@ class Tools: NSObject {
         let str = "\(textFloat)"
         return str
     }
+    
+    
+    static func textTrim (text : String) -> String {
+        
+        let set: NSCharacterSet = NSCharacterSet.newlines as NSCharacterSet
+        return text.trimmingCharacters(in: set as CharacterSet)
+    }
 }

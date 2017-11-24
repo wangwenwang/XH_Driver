@@ -12,6 +12,7 @@ class BottleListTableViewCell: UITableViewCell {
 
     @IBOutlet weak var ORD_NO: UILabel!
     @IBOutlet weak var ORD_TO_ADDRESS: UILabel!
+    @IBOutlet weak var ORD_WORKFLOW: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -28,6 +29,7 @@ class BottleListTableViewCell: UITableViewCell {
         didSet {
             ORD_NO.text = order.ORD_NO
             ORD_TO_ADDRESS.text = order.ORD_TO_ADDRESS
+            ORD_WORKFLOW.text = order.ORD_WORKFLOW
         }
     }
 }

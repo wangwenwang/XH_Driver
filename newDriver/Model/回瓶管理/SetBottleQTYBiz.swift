@@ -22,7 +22,6 @@ class SetBottleQTYBiz: NSObject {
         ]
         print(parameters)
         
-        weak var weakSelf = self
         Alamofire.request(URLConstants.kAPI_SetBottleQTY, method: .post, parameters: parameters, encoding: URLEncoding.default)
             .responseJSON { response in
                 switch response.result {
@@ -30,15 +29,12 @@ class SetBottleQTYBiz: NSObject {
                     if let value = response.result.value {
                         let json = JSON(value)
                         print("JSON: \(json)")
-                        
-                        if let wkSelf = weakSelf {
-                            let type = json["type"].description
-                            if type == "1" {
-                                responseProtocol.responseSuccess()
-                            } else {
-                                let msg = json["msg"].description
-                                responseProtocol.responseError(msg)
-                            }
+                        let type = json["type"].description
+                        if type == "1" {
+                            responseProtocol.responseSuccess()
+                        } else {
+                            let msg = json["msg"].description
+                            responseProtocol.responseError(msg)
                         }
                     }
                 case .failure(let error):

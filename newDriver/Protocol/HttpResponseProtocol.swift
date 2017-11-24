@@ -34,6 +34,16 @@ import Foundation
     
     
     
+    /// 网络请求成功回调
+    @objc optional func responseSuccess_audit()
+    
+    /// 网络请求失败回调
+    @objc optional func responseError_audit(_ error: String)
+    
+    
+    
+    
+    
 //    /// 请求推送的新订单或公告
 //    @objc optional func responseSuccess_requestPushNews()
 //    

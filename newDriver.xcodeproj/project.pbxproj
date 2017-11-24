@@ -52,10 +52,9 @@
 		300FB29E1E837011009E13F5 /* Shipment_OrderList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 300FB29D1E837011009E13F5 /* Shipment_OrderList.swift */; };
 		300FB2A21E837293009E13F5 /* Shipment_OtherCostList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 300FB2A11E837293009E13F5 /* Shipment_OtherCostList.swift */; };
 		300FB2A41E83CC39009E13F5 /* ShipmentPart.swift in Sources */ = {isa = PBXBuildFile; fileRef = 300FB2A31E83CC39009E13F5 /* ShipmentPart.swift */; };
-		3013F33F1FC6BDCD00CF69CA /* ModifyBottleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3013F33D1FC6BDCD00CF69CA /* ModifyBottleViewController.swift */; };
-		3013F3401FC6BDCD00CF69CA /* ModifyBottleViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3013F33E1FC6BDCD00CF69CA /* ModifyBottleViewController.xib */; };
 		3013F3421FC6C70400CF69CA /* SetBottleQTYBiz.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3013F3411FC6C70400CF69CA /* SetBottleQTYBiz.swift */; };
 		3013F3441FC6CC3C00CF69CA /* OrderWorkflowBiz.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3013F3431FC6CC3C00CF69CA /* OrderWorkflowBiz.swift */; };
+		3013F3461FC79C8A00CF69CA /* TPKeyboardAvoidingSwift.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3013F3451FC79C8A00CF69CA /* TPKeyboardAvoidingSwift.swift */; };
 		3015F30D1E0243070061DD76 /* SHIPMENT_List.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3015F30C1E0243070061DD76 /* SHIPMENT_List.swift */; };
 		3022B8BB1DFBA8570035128D /* HttpResponseProtocol_uploadToken.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3022B8BA1DFBA8570035128D /* HttpResponseProtocol_uploadToken.swift */; };
 		302B0F071E02380E00AC2FEC /* PushOrderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 302B0F061E02380E00AC2FEC /* PushOrderViewController.swift */; };
@@ -257,10 +256,9 @@
 		3012AA751DDEA2FA0081161F /* newDriver.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = newDriver.entitlements; sourceTree = "<group>"; };
 		3012AA761DDED2860081161F /* libGtExtensionSdk-1.0.0.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = "libGtExtensionSdk-1.0.0.a"; path = "Pods/GTSDK/libGtExtensionSdk-1.0.0.a"; sourceTree = "<group>"; };
 		3012AA781DDED28A0081161F /* libGeTuiSdk-1.5.3-noidfa.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = "libGeTuiSdk-1.5.3-noidfa.a"; path = "Pods/GTSDK/libGeTuiSdk-1.5.3-noidfa.a"; sourceTree = "<group>"; };
-		3013F33D1FC6BDCD00CF69CA /* ModifyBottleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModifyBottleViewController.swift; sourceTree = "<group>"; };
-		3013F33E1FC6BDCD00CF69CA /* ModifyBottleViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ModifyBottleViewController.xib; sourceTree = "<group>"; };
 		3013F3411FC6C70400CF69CA /* SetBottleQTYBiz.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetBottleQTYBiz.swift; sourceTree = "<group>"; };
 		3013F3431FC6CC3C00CF69CA /* OrderWorkflowBiz.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderWorkflowBiz.swift; sourceTree = "<group>"; };
+		3013F3451FC79C8A00CF69CA /* TPKeyboardAvoidingSwift.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TPKeyboardAvoidingSwift.swift; sourceTree = "<group>"; };
 		3015F30C1E0243070061DD76 /* SHIPMENT_List.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SHIPMENT_List.swift; sourceTree = "<group>"; };
 		3022B8BA1DFBA8570035128D /* HttpResponseProtocol_uploadToken.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HttpResponseProtocol_uploadToken.swift; sourceTree = "<group>"; };
 		302B0F061E02380E00AC2FEC /* PushOrderViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PushOrderViewController.swift; sourceTree = "<group>"; };
@@ -476,6 +474,7 @@
 				3004724C1DF7B955005A9ED5 /* StringUtils.swift */,
 				3004724D1DF7B955005A9ED5 /* Tools.swift */,
 				303548771F41B85F004AE98B /* UIViewController+BackButtonHandler.swift */,
+				3013F3451FC79C8A00CF69CA /* TPKeyboardAvoidingSwift.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -496,8 +495,6 @@
 				306206231FC652B30056650A /* BottleListViewController.xib */,
 				306206321FC6A4D60056650A /* BottleInfoViewController.swift */,
 				306206331FC6A4D60056650A /* BottleInfoViewController.xib */,
-				3013F33D1FC6BDCD00CF69CA /* ModifyBottleViewController.swift */,
-				3013F33E1FC6BDCD00CF69CA /* ModifyBottleViewController.xib */,
 				3045EF261FBED87700EAA295 /* BottleViewController.swift */,
 				3045EF251FBED87700EAA295 /* BottleViewController.xib */,
 				30036F8F1FC26F8700E59504 /* SupplierViewController.swift */,
@@ -961,7 +958,6 @@
 				3074A0F71DF7B3B6008DC76F /* CheckAutographAndPictureViewController.xib in Resources */,
 				30C489641F3BFC3200EDB7CB /* DriverListPayTableViewCell.xib in Resources */,
 				30036FA51FC3BBA800E59504 /* CarrierViewController.xib in Resources */,
-				3013F3401FC6BDCD00CF69CA /* ModifyBottleViewController.xib in Resources */,
 				3074A1051DF7B3B6008DC76F /* PayedTableViewController.xib in Resources */,
 				306206251FC652B30056650A /* BottleListViewController.xib in Resources */,
 				3062062B1FC65B640056650A /* BottleListTableViewCell.xib in Resources */,
@@ -1045,6 +1041,7 @@
 				3074A1951DF7B7FC008DC76F /* ESRefreshFooterAnimator.swift in Sources */,
 				3015F30D1E0243070061DD76 /* SHIPMENT_List.swift in Sources */,
 				30036F9C1FC2BA1700E59504 /* ConsigneeViewController.swift in Sources */,
+				3013F3461FC79C8A00CF69CA /* TPKeyboardAvoidingSwift.swift in Sources */,
 				302B0F071E02380E00AC2FEC /* PushOrderViewController.swift in Sources */,
 				3062062A1FC65B640056650A /* BottleListTableViewCell.swift in Sources */,
 				30C6E7001DE6E508008C3AF2 /* pch.swift in Sources */,
@@ -1107,7 +1104,6 @@
 				30036FA01FC2BD0D00E59504 /* ConsigneeTableViewCell.swift in Sources */,
 				3074A1931DF7B7FC008DC76F /* CyclePictureCell.swift in Sources */,
 				300472511DF7B955005A9ED5 /* StringUtils.swift in Sources */,
-				3013F33F1FC6BDCD00CF69CA /* ModifyBottleViewController.swift in Sources */,
 				3074A1251DF7B3EA008DC76F /* AllOrderBiz.swift in Sources */,
 				3074A1281DF7B3EA008DC76F /* CheckPthBiz.swift in Sources */,
 				3074A19C1DF7B7FC008DC76F /* ESRefreshProtocol.swift in Sources */,

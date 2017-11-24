@@ -54,6 +54,12 @@
                         <color key="textColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="流程" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BLT-V8-nYQ">
+                        <rect key="frame" x="281" y="12" width="31" height="18"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                        <color key="textColor" red="0.2362765718" green="0.45503691979999999" blue="0.2252560059" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
                 </subviews>
                 <constraints>
                     <constraint firstItem="htq-cc-n2z" firstAttribute="leading" secondItem="D29-59-lxd" secondAttribute="trailing" id="3hH-E6-P3G"/>
@@ -67,13 +73,16 @@
                     <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="9eg-4y-B9Q" secondAttribute="trailing" constant="3" id="cqo-Al-S2q"/>
                     <constraint firstItem="g7w-bb-pOR" firstAttribute="top" secondItem="D29-59-lxd" secondAttribute="bottom" constant="5" id="dOi-oW-ePl"/>
                     <constraint firstItem="g4n-6x-j7X" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="8" id="eKL-uz-168"/>
+                    <constraint firstItem="BLT-V8-nYQ" firstAttribute="centerY" secondItem="g4n-6x-j7X" secondAttribute="centerY" id="ejQ-m5-oMJ"/>
                     <constraint firstItem="9eg-4y-B9Q" firstAttribute="leading" secondItem="g7w-bb-pOR" secondAttribute="trailing" id="f1h-FK-ybs"/>
                     <constraint firstItem="OZG-nK-7Vp" firstAttribute="leading" secondItem="g4n-6x-j7X" secondAttribute="trailing" id="mqG-VU-uTi"/>
+                    <constraint firstAttribute="trailing" secondItem="BLT-V8-nYQ" secondAttribute="trailing" constant="8" id="n8V-Au-zUV"/>
                 </constraints>
             </tableViewCellContentView>
             <connections>
                 <outlet property="ORD_NO" destination="OZG-nK-7Vp" id="VSh-xO-U6T"/>
                 <outlet property="ORD_TO_ADDRESS" destination="9eg-4y-B9Q" id="9cL-7p-ibg"/>
+                <outlet property="ORD_WORKFLOW" destination="BLT-V8-nYQ" id="qax-9W-tFs"/>
             </connections>
             <point key="canvasLocation" x="52" y="165"/>
         </tableViewCell>
