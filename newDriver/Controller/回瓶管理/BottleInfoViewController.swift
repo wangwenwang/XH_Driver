@@ -44,13 +44,13 @@ class BottleInfoViewController: UIViewController, HttpResponseProtocol {
             PARTY_ADDRESS.text = biz.bottleDetail.Info?.ORD_TO_ADDRESS
             
             for b in biz.bottleDetail.List {
-                if(b.PRODUCT_NO == "SMALL01") {
+                if(b.PRODUCT_NAME ==` "小瓶") {
                     littleLabel.text = Tools.oneDecimal(text: b.ISSUE_QTY)
-                } else if(b.PRODUCT_NAME == "MEDIUM01") {
+                } else if(b.PRODUCT_NAME == "中瓶") {
                     midLabel.text = Tools.oneDecimal(text: b.ISSUE_QTY)
                 } else if(b.PRODUCT_NAME == "大瓶") {
                     maxLabel.text = Tools.oneDecimal(text: b.ISSUE_QTY)
-                } else if(b.PRODUCT_NAME == "TRAY01") {
+                } else if(b.PRODUCT_NAME == "托盘") {
                     trayLabel.text = Tools.oneDecimal(text: b.ISSUE_QTY)
                 }
             }
