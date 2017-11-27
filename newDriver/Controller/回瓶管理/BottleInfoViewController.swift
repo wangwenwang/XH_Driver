@@ -19,7 +19,7 @@ class BottleInfoViewController: UIViewController, HttpResponseProtocol {
         Tools.showAlertDialog("确认成功", self)
     }
     
-    func responseError_audit(_ error:@ String) {
+    func responseError_audit(_ error: String) {
         
         Tools.showAlertDialog("确认失败", self)
     }
