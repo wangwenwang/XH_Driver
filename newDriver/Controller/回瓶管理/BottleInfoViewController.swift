@@ -44,7 +44,7 @@ class BottleInfoViewController: UIViewController, HttpResponseProtocol {
             PARTY_ADDRESS.text = biz.bottleDetail.Info?.ORD_TO_ADDRESS
             
             for b in biz.bottleDetail.List {
-                if(b.PRODUCT_NAME ==` "小瓶") {
+                if(b.PRODUCT_NAME == "小瓶") {
                     littleLabel.text = Tools.oneDecimal(text: b.ISSUE_QTY)
                 } else if(b.PRODUCT_NAME == "中瓶") {
                     midLabel.text = Tools.oneDecimal(text: b.ISSUE_QTY)
@@ -70,6 +70,7 @@ class BottleInfoViewController: UIViewController, HttpResponseProtocol {
         }
         
         ORD_WORKFLOW.text = biz.bottleDetail.Info?.ORD_WORKFLOW
+        ORD_DATE_ADD.text = biz.bottleDetail.Info?.ORD_DATE_ADD
     }
     
     func responseError(_ error: String) {
@@ -111,6 +112,7 @@ class BottleInfoViewController: UIViewController, HttpResponseProtocol {
     
     // 工作流程
     @IBOutlet weak var ORD_WORKFLOW: UILabel!
+    @IBOutlet weak var ORD_DATE_ADD: UILabel!
     
     // 车牌号
     @IBOutlet weak var TMS_PLATE_NUMBER: UILabel!
@@ -155,6 +157,7 @@ class BottleInfoViewController: UIViewController, HttpResponseProtocol {
         totalLabel.text = " "
         
         ORD_WORKFLOW.text = " "
+        ORD_DATE_ADD.text = " "
         
         TMS_PLATE_NUMBER.text = " "
         TMS_VEHICLE_TYPE.text = " "

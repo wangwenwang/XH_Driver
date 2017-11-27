@@ -139,6 +139,9 @@ class BottleOrder: BaseBean {
     /// 司机联系电话
     var TMS_DRIVER_TEL: String = ""
     
+    /// 创建时间
+    var ORD_DATE_ADD: String = ""
+    
     /// Cell 行高
     var cellHeight: CGFloat = 0
     
@@ -186,5 +189,6 @@ class BottleOrder: BaseBean {
         TMS_DRIVER_IDX <- map["TMS_DRIVER_IDX"]
         TMS_DRIVER_NAME <- map["TMS_DRIVER_NAME"]
         TMS_DRIVER_TEL <- map["TMS_DRIVER_TEL"]
+        ORD_DATE_ADD <- map["ORD_DATE_ADD"]
     }
 }

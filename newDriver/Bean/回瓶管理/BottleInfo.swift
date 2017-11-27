@@ -113,6 +113,9 @@ class BottleInfo: BaseBean {
     /// 发货数量
     var ORD_ISSUE_QTY: String = ""
     
+    /// 创建时间
+    var ORD_DATE_ADD: String = ""
+    
     override func mapping(map: Map) {
         IDX <- map["IDX"]
         ORD_GROUP_NO <- map["ORD_GROUP_NO"]
@@ -148,5 +151,6 @@ class BottleInfo: BaseBean {
         ORD_TO_SITE <- map["ORD_TO_SITE"]
         ORD_QTY <- map["ORD_QTY"]
         ORD_ISSUE_QTY <- map["ORD_ISSUE_QTY"]
+        ORD_DATE_ADD <- map["ORD_DATE_ADD"]
     }
 }

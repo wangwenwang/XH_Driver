@@ -11,6 +11,7 @@ import UIKit
 class BottleListTableViewCell: UITableViewCell {
 
     @IBOutlet weak var ORD_NO: UILabel!
+    @IBOutlet weak var ORD_DATE_ADD: UILabel!
     @IBOutlet weak var ORD_TO_ADDRESS: UILabel!
     @IBOutlet weak var ORD_WORKFLOW: UILabel!
     
@@ -28,6 +29,7 @@ class BottleListTableViewCell: UITableViewCell {
     var order: BottleOrder! {
         didSet {
             ORD_NO.text = order.ORD_NO
+            ORD_DATE_ADD.text = order.ORD_DATE_ADD
             ORD_TO_ADDRESS.text = order.ORD_TO_ADDRESS
             ORD_WORKFLOW.text = order.ORD_WORKFLOW
         }

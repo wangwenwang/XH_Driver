@@ -11,6 +11,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="BottleInfoViewController" customModule="newDriver" customModuleProvider="target">
             <connections>
+                <outlet property="ORD_DATE_ADD" destination="Io2-kz-EhH" id="t17-0b-7DL"/>
                 <outlet property="ORD_WORKFLOW" destination="1qu-pv-75C" id="lMK-z8-JFX"/>
                 <outlet property="PARTY_ADDRESS" destination="Ce6-b4-7tW" id="dbK-cr-LxE"/>
                 <outlet property="PARTY_NAME" destination="sUu-k2-jmB" id="43C-Hc-6YP"/>
@@ -257,14 +258,14 @@
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VEn-cj-7t9" userLabel="厂商信息">
                                             <rect key="frame" x="0.0" y="30" width="374" height="65"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="状态：" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yfa-bi-0Rm">
-                                                    <rect key="frame" x="8" y="17" width="46" height="18"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="订单状态：" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yfa-bi-0Rm">
+                                                    <rect key="frame" x="8" y="17" width="76.5" height="18"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="广东省" textAlignment="natural" lineBreakMode="characterWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1qu-pv-75C">
-                                                    <rect key="frame" x="52" y="17" width="46" height="18"/>
+                                                    <rect key="frame" x="82.5" y="17" width="46" height="18"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                                     <color key="textColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
@@ -699,20 +700,6 @@
                                         <constraint firstAttribute="height" constant="155" id="yrQ-QD-yrT"/>
                                     </constraints>
                                 </view>
-                                <button opaque="NO" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="imv-mi-hZH">
-                                    <rect key="frame" x="72" y="770" width="230" height="37"/>
-                                    <color key="backgroundColor" red="0.27013062170000002" green="0.65527860449999997" blue="1" alpha="1" colorSpace="deviceRGB"/>
-                                    <constraints>
-                                        <constraint firstAttribute="width" constant="230" id="6Tu-mg-t8n"/>
-                                        <constraint firstAttribute="height" constant="37" id="qrP-1m-ZhE"/>
-                                    </constraints>
-                                    <state key="normal" title="数量已确认">
-                                        <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                    </state>
-                                    <connections>
-                                        <action selector="confirmOnclick" destination="-1" eventType="touchUpInside" id="3Ux-3m-29W"/>
-                                    </connections>
-                                </button>
                             </subviews>
                             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             <constraints>
@@ -723,9 +710,7 @@
                                 <constraint firstItem="nct-bI-wpe" firstAttribute="top" secondItem="I29-FW-kIM" secondAttribute="bottom" id="7fC-fN-G9A"/>
                                 <constraint firstItem="beM-FG-06y" firstAttribute="leading" secondItem="iQC-0o-pVS" secondAttribute="leading" id="ABe-TT-ToV"/>
                                 <constraint firstAttribute="height" constant="820" id="RXu-eo-kLd"/>
-                                <constraint firstItem="imv-mi-hZH" firstAttribute="top" secondItem="Gct-4d-JOi" secondAttribute="bottom" constant="40" id="UJ0-mC-bfL"/>
                                 <constraint firstItem="I29-FW-kIM" firstAttribute="top" secondItem="beM-FG-06y" secondAttribute="bottom" id="YGO-lN-Ddx"/>
-                                <constraint firstItem="imv-mi-hZH" firstAttribute="centerX" secondItem="iQC-0o-pVS" secondAttribute="centerX" id="YQF-Xt-po8"/>
                                 <constraint firstAttribute="trailing" secondItem="beM-FG-06y" secondAttribute="trailing" id="Z9T-mL-8Hs"/>
                                 <constraint firstAttribute="trailing" secondItem="I29-FW-kIM" secondAttribute="trailing" id="fxe-UZ-gMO"/>
                                 <constraint firstItem="nct-bI-wpe" firstAttribute="leading" secondItem="iQC-0o-pVS" secondAttribute="leading" id="gN1-29-6ex"/>
@@ -736,8 +721,24 @@
                                 <constraint firstAttribute="trailing" secondItem="Zw7-2g-9Rg" secondAttribute="trailing" id="yJC-2H-P3f"/>
                             </constraints>
                         </view>
+                        <button opaque="NO" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="imv-mi-hZH">
+                            <rect key="frame" x="72" y="763" width="230" height="37"/>
+                            <color key="backgroundColor" red="0.27013062170000002" green="0.65527860449999997" blue="1" alpha="1" colorSpace="deviceRGB"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="230" id="6Tu-mg-t8n"/>
+                                <constraint firstAttribute="height" constant="37" id="qrP-1m-ZhE"/>
+                            </constraints>
+                            <state key="normal" title="数量已确认">
+                                <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </state>
+                            <connections>
+                                <action selector="confirmOnclick" destination="-1" eventType="touchUpInside" id="3Ux-3m-29W"/>
+                            </connections>
+                        </button>
                     </subviews>
                     <constraints>
+                        <constraint firstItem="imv-mi-hZH" firstAttribute="centerX" secondItem="8n1-Nr-nfe" secondAttribute="centerX" id="760-wS-VpV"/>
+                        <constraint firstAttribute="bottom" secondItem="imv-mi-hZH" secondAttribute="bottom" constant="20" id="KUN-cE-g22"/>
                         <constraint firstItem="iQC-0o-pVS" firstAttribute="top" secondItem="8n1-Nr-nfe" secondAttribute="top" id="R8f-BO-Fz3"/>
                         <constraint firstItem="iQC-0o-pVS" firstAttribute="centerX" secondItem="8n1-Nr-nfe" secondAttribute="centerX" id="a1X-Ue-W21"/>
                         <constraint firstAttribute="trailing" secondItem="iQC-0o-pVS" secondAttribute="trailing" id="bYo-OC-cJp"/>
