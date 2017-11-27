@@ -190,6 +190,8 @@
 		30E348431DFF9CE8002FF374 /* PushOrder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30E348421DFF9CE8002FF374 /* PushOrder.swift */; };
 		30FA7D1F1E820E6A00BB002D /* BillingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30FA7D1D1E820E6A00BB002D /* BillingViewController.swift */; };
 		30FA7D201E820E6A00BB002D /* BillingViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 30FA7D1E1E820E6A00BB002D /* BillingViewController.xib */; };
+		3BDD11301FCC5432006B711E /* BottleInfoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BDD112E1FCC5432006B711E /* BottleInfoTableViewCell.swift */; };
+		3BDD11311FCC5432006B711E /* BottleInfoTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3BDD112F1FCC5432006B711E /* BottleInfoTableViewCell.xib */; };
 		6B76F2D80CF5A4C8CFEAF4FD /* Pods_newDriver.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 37AC7EB65CEC4D408F971534 /* Pods_newDriver.framework */; };
 /* End PBXBuildFile section */
 
@@ -401,6 +403,8 @@
 		30FA7D1D1E820E6A00BB002D /* BillingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BillingViewController.swift; sourceTree = "<group>"; };
 		30FA7D1E1E820E6A00BB002D /* BillingViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BillingViewController.xib; sourceTree = "<group>"; };
 		37AC7EB65CEC4D408F971534 /* Pods_newDriver.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_newDriver.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		3BDD112E1FCC5432006B711E /* BottleInfoTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottleInfoTableViewCell.swift; sourceTree = "<group>"; };
+		3BDD112F1FCC5432006B711E /* BottleInfoTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BottleInfoTableViewCell.xib; sourceTree = "<group>"; };
 		E61724504B8B710C1189412E /* Pods-newDriver.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-newDriver.debug.xcconfig"; path = "Pods/Target Support Files/Pods-newDriver/Pods-newDriver.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -445,6 +449,8 @@
 			children = (
 				306206281FC65B640056650A /* BottleListTableViewCell.swift */,
 				306206291FC65B640056650A /* BottleListTableViewCell.xib */,
+				3BDD112E1FCC5432006B711E /* BottleInfoTableViewCell.swift */,
+				3BDD112F1FCC5432006B711E /* BottleInfoTableViewCell.xib */,
 				30036F961FC287EB00E59504 /* SupplierTableViewCell.swift */,
 				30036F971FC287EB00E59504 /* SupplierTableViewCell.xib */,
 				30036F9E1FC2BD0D00E59504 /* ConsigneeTableViewCell.swift */,
@@ -963,6 +969,7 @@
 				3062062B1FC65B640056650A /* BottleListTableViewCell.xib in Resources */,
 				30FA7D201E820E6A00BB002D /* BillingViewController.xib in Resources */,
 				3074A1021DF7B3B6008DC76F /* OrderDetailViewController.xib in Resources */,
+				3BDD11311FCC5432006B711E /* BottleInfoTableViewCell.xib in Resources */,
 				3074A10D1DF7B3B6008DC76F /* NotificationSimpleMsgTableViewCell.xib in Resources */,
 				3074A1071DF7B3B6008DC76F /* PayOrderViewController.xib in Resources */,
 			);
@@ -1051,6 +1058,7 @@
 				3062063C1FC6AB990056650A /* BottleItem.swift in Sources */,
 				3013F3421FC6C70400CF69CA /* SetBottleQTYBiz.swift in Sources */,
 				3074A1441DF7B62D008DC76F /* BusinessConstants.swift in Sources */,
+				3BDD11301FCC5432006B711E /* BottleInfoTableViewCell.swift in Sources */,
 				30FA7D1F1E820E6A00BB002D /* BillingViewController.swift in Sources */,
 				3074A19A1DF7B7FC008DC76F /* ESRefreshAnimator.swift in Sources */,
 				300472521DF7B955005A9ED5 /* Tools.swift in Sources */,

@@ -14,7 +14,7 @@ import ObjectMapper
 class GetReturnBottleInfoBiz: NSObject {
     
     /// 获取瓶子详情
-    var bottleDetail: BottleDetail!
+    var bottleDetail: BottleDetail?
     
     func GetReturnBottleInfo (ORDER_IDX idx: String, httpresponseProtocol responseProtocol: HttpResponseProtocol) {
         

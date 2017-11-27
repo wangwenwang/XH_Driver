@@ -32,45 +32,45 @@ class BottleInfoViewController: UIViewController, HttpResponseProtocol {
             _ = MBProgressHUD.hideHUDForView(self.view, animated: true)
             
             customer_NAME.text = " "
-            customer_ADDRESS.text = biz.bottleDetail.Info?.ORD_FROM_ADDRESS
-            customer_PERSON.text = biz.bottleDetail.Info?.ORD_FROM_CNAME
-            customer_TEL.text = biz.bottleDetail.Info?.ORD_FROM_CTEL
+            customer_ADDRESS.text = biz.bottleDetail?.Info?.ORD_FROM_ADDRESS
+            customer_PERSON.text = biz.bottleDetail?.Info?.ORD_FROM_CNAME
+            customer_TEL.text = biz.bottleDetail?.Info?.ORD_FROM_CTEL
             let oneLine: CGFloat = Tools.getHeightOfString(text: "fds", fontSize: 15, width: CGFloat(MAXFLOAT))
-            let mulLine: CGFloat = Tools.getHeightOfString(text: (biz.bottleDetail.Info?.ORD_FROM_ADDRESS)!, fontSize: 15, width: SCREEN_WIDTH - 8 - 46 + 2 - 3)
+            let mulLine: CGFloat = Tools.getHeightOfString(text: (biz.bottleDetail!.Info?.ORD_FROM_ADDRESS)!, fontSize: 15, width: SCREEN_WIDTH - 8 - 46 + 2 - 3)
             customerViewHeight.constant += (mulLine - oneLine)
             
             
             PARTY_NAME.text = " "
-            PARTY_ADDRESS.text = biz.bottleDetail.Info?.ORD_TO_ADDRESS
+            PARTY_ADDRESS.text = biz.bottleDetail?.Info?.ORD_TO_ADDRESS
             
-            for b in biz.bottleDetail.List {
+            for b in (biz.bottleDetail?.List)! {
                 if(b.PRODUCT_NAME == "小瓶") {
                     littleLabel.text = Tools.oneDecimal(text: b.ISSUE_QTY)
                 } else if(b.PRODUCT_NAME == "中瓶") {
-                    midLabel.text = Tools.oneDecimal(text: b.ISSUE_QTY)
+                    midLabel.text = Tools.oneDecimal(text: b.ISSU   E_QTY)
                 } else if(b.PRODUCT_NAME == "大瓶") {
                     maxLabel.text = Tools.oneDecimal(text: b.ISSUE_QTY)
                 } else if(b.PRODUCT_NAME == "托盘") {
                     trayLabel.text = Tools.oneDecimal(text: b.ISSUE_QTY)
                 }
             }
-            totalLabel.text = Tools.oneDecimal(text: biz.bottleDetail.Info!.ORD_ISSUE_QTY)
+            totalLabel.text = Tools.oneDecimal(text: (biz.bottleDetail?.Info!.ORD_ISSUE_QTY)!)
             requestBottleInfoOK = true
         } else {
             
             requestSuccessCount = requestSuccessCount + 1
-            if(requestSuccessCount == biz.bottleDetail.List.count) {
+            if(requestSuccessCount == biz.bottleDetail?.List.count) {
                 
                 _ = MBProgressHUD.hideHUDForView(self.view, animated: true)
-//                Tools.showAlertDialog("数量修改完毕，执行正向流程", self)
+                //                Tools.showAlertDialog("数量修改完毕，执行正向流程", self)
                 
                 let biz_audit: OrderWorkflowBiz = OrderWorkflowBiz()
-                biz_audit.OrderWorkflow(stridx: (biz.bottleDetail.Info?.IDX)!, ADUT_USER: (AppDelegate.user?.USER_NAME)!, httpresponseProtocol: self)
+                biz_audit.OrderWorkflow(stridx: (biz.bottleDetail?.Info?.IDX)!, ADUT_USER: (AppDelegate.user?.USER_NAME)!, httpresponseProtocol: self)
             }
         }
         
-        ORD_WORKFLOW.text = biz.bottleDetail.Info?.ORD_WORKFLOW
-        ORD_DATE_ADD.text = biz.bottleDetail.Info?.ORD_DATE_ADD
+        ORD_WORKFLOW.text = biz.bottleDetail?.Info?.ORD_WORKFLOW
+        ORD_DATE_ADD.text = biz.bottleDetail?.Info?.ORD_DATE_ADD
     }
     
     func responseError(_ error: String) {
@@ -109,6 +109,7 @@ class BottleInfoViewController: UIViewController, HttpResponseProtocol {
     @IBOutlet weak var midF: UITextField!
     @IBOutlet weak var maxF: UITextField!
     @IBOutlet weak var trayF: UITextField!
+    @IBOutlet weak var tableView: UITableView!
     
     // 工作流程
     @IBOutlet weak var ORD_WORKFLOW: UILabel!
@@ -130,6 +131,8 @@ class BottleInfoViewController: UIViewController, HttpResponseProtocol {
         
         self.title = "订单详情"
         
+        self.tableView.register(UINib.init(nibName: "BottleInfoTableViewCell", bundle: nil), forCellReuseIdentifier: "BottleInfoTableViewCell")
+        
         initUI()
         
         _ = MBProgressHUD.showHUDAddedTo(self.view, animated: true)
@@ -150,11 +153,11 @@ class BottleInfoViewController: UIViewController, HttpResponseProtocol {
         PARTY_NAME.text = " "
         PARTY_ADDRESS.text = " "
         
-        littleLabel.text = " "
-        midLabel.text = " "
-        maxLabel.text = " "
-        trayLabel.text = " "
-        totalLabel.text = " "
+//        littleLabel.text = " "
+//        midLabel.text = " "
+//        maxLabel.text = " "
+//        trayLabel.text = " "
+//        totalLabel.text = " "
         
         ORD_WORKFLOW.text = " "
         ORD_DATE_ADD.text = " "
@@ -174,7 +177,7 @@ class BottleInfoViewController: UIViewController, HttpResponseProtocol {
         var mid_s: Float?
         var max_s: Float?
         var tray_s: Float?
-        for b in biz.bottleDetail.List {
+        for b in (biz.bottleDetail?.List)! {
             if(b.PRODUCT_NAME == "小瓶") {
                 little_s = Float(b.ISSUE_QTY)!
             } else if(b.PRODUCT_NAME == "中瓶") {
@@ -202,7 +205,7 @@ class BottleInfoViewController: UIViewController, HttpResponseProtocol {
         } else {
             _ = MBProgressHUD.showHUDAddedTo(self.view, animated: true)
             requestSuccessCount = 0;
-            for b in biz.bottleDetail.List {
+            for b in (biz.bottleDetail?.List)! {
                 var qty: String!
                 if(b.PRODUCT_NAME == "小瓶") {
                     qty = littleF.text!
@@ -217,5 +220,22 @@ class BottleInfoViewController: UIViewController, HttpResponseProtocol {
                 biz.SetBottleQTY(strIdx: b.IDX, StrQty: qty, httpresponseProtocol: self)
             }
         }
+    }
+    
+    // MARK: - UITableViewDelegate
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return (biz.bottleDetail != nil) ? biz.bottleDetail!.List.count : 0
+    }
+    
+    // 设置 cell 高度
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 44
+    }
+    
+    // 设置自定义的 cell
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "BottleListTableViewCell", for: indexPath) as! BottleInfoTableViewCell
+        cell.bottle = biz.bottleDetail?.List[(indexPath as NSIndexPath).row]
+        return cell
     }
 }
