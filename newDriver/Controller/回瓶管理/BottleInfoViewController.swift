@@ -17,9 +17,24 @@ class BottleInfoViewController: UIViewController, HttpResponseProtocol, UITableV
     func responseSuccess_audit() {
         
         _ = MBProgressHUD.hideAllHUDsForView(self.view, animated: true)
-        Tools.showAlertDialog("确认成功", self)
+        
+        let hud: MBProgressHUD = MBProgressHUD.showHUDAddedTo(self.navigationController!.view, animated: true)
+        
+        // Configure for text only and offset down
+        hud.mode = .text
+        hud.labelText = "订单已确认，即将返回..."
+        hud.margin = 10.0
+        hud.removeFromSuperViewOnHide = true
+        hud.hide(true, afterDelay: 2)
+        //提交订单成功后上传一个位置点
+        
         NotificationCenter.default.post(name: NSNotification.Name(rawValue: URLConstants.kNotification_BottleListViewController), object: nil)
-        self.navigationController?.popViewController(animated: true)
+        DispatchQueue.global().async {
+            sleep(2)
+            DispatchQueue.main.async {
+                self.navigationController?.popViewController(animated: true)
+            }
+        }
     }
     
     func responseError_audit(_ error: String) {
