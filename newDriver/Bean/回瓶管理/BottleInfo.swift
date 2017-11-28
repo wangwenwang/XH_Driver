@@ -116,6 +116,21 @@ class BottleInfo: BaseBean {
     /// 创建时间
     var ORD_DATE_ADD: String = ""
     
+    /// 车牌号
+    var TMS_PLATE_NUMBER: String = ""
+    
+    /// 车辆类型
+    var TMS_VEHICLE_TYPE: String = ""
+    
+    /// 司机姓名
+    var TMS_DRIVER_NAME: String = ""
+    
+    /// 司机联系电话
+    var TMS_DRIVER_TEL: String = ""
+    
+    /// 承运商
+    var TMS_FLEET_NAME: String = ""
+    
     override func mapping(map: Map) {
         IDX <- map["IDX"]
         ORD_GROUP_NO <- map["ORD_GROUP_NO"]
@@ -152,5 +167,10 @@ class BottleInfo: BaseBean {
         ORD_QTY <- map["ORD_QTY"]
         ORD_ISSUE_QTY <- map["ORD_ISSUE_QTY"]
         ORD_DATE_ADD <- map["ORD_DATE_ADD"]
+        TMS_PLATE_NUMBER <- map["TMS_PLATE_NUMBER"]
+        TMS_VEHICLE_TYPE <- map["TMS_VEHICLE_TYPE"]
+        TMS_DRIVER_NAME <- map["TMS_DRIVER_NAME"]
+        TMS_DRIVER_TEL <- map["TMS_DRIVER_TEL"]
+        TMS_FLEET_NAME <- map["TMS_FLEET_NAME"]
     }
 }

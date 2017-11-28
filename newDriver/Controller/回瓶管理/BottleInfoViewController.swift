@@ -26,7 +26,6 @@ class BottleInfoViewController: UIViewController, HttpResponseProtocol, UITableV
         hud.margin = 10.0
         hud.removeFromSuperViewOnHide = true
         hud.hide(true, afterDelay: 2)
-        //提交订单成功后上传一个位置点
         
         NotificationCenter.default.post(name: NSNotification.Name(rawValue: URLConstants.kNotification_BottleListViewController), object: nil)
         DispatchQueue.global().async {
@@ -65,6 +64,16 @@ class BottleInfoViewController: UIViewController, HttpResponseProtocol, UITableV
             PARTY_NAME.text = " "
             PARTY_ADDRESS.text = biz.bottleDetail?.Info?.ORD_TO_ADDRESS
             
+            TMS_PLATE_NUMBER.text = biz.bottleDetail?.Info?.TMS_PLATE_NUMBER
+            TMS_VEHICLE_TYPE.text = biz.bottleDetail?.Info?.TMS_VEHICLE_TYPE
+            TMS_DRIVER_NAME.text = biz.bottleDetail?.Info?.TMS_DRIVER_NAME
+            TMS_DRIVER_TEL.text = biz.bottleDetail?.Info?.TMS_DRIVER_TEL
+            TMS_FLEET_NAME.text = biz.bottleDetail?.Info?.TMS_FLEET_NAME
+            
+            
+            if(biz.bottleDetail?.Info?.ORD_WORKFLOW == "新建" || biz.bottleDetail?.Info?.ORD_WORKFLOW == "已审核" || biz.bottleDetail?.Info?.ORD_WORKFLOW == "已释放" || biz.bottleDetail?.Info?.ORD_WORKFLOW == "已装运" || biz.bottleDetail?.Info?.ORD_WORKFLOW == "已确认") {
+                confirmBtn.isHidden = false
+            }
             requestBottleInfoOK = true
         } else {
             
@@ -127,6 +136,8 @@ class BottleInfoViewController: UIViewController, HttpResponseProtocol, UITableV
     // 承运商
     @IBOutlet weak var TMS_FLEET_NAME: UILabel!
     
+    
+    @IBOutlet weak var confirmBtn: UIButton!
     @IBOutlet weak var scrollContentViewHeight: NSLayoutConstraint!
     
     // MARK: - 生命周期
@@ -171,11 +182,33 @@ class BottleInfoViewController: UIViewController, HttpResponseProtocol, UITableV
     
     // MARK: - 事件
     @IBAction func confirmOnclick() {
-        _ = MBProgressHUD.showHUDAddedTo(self.view, animated: true)
-        requestSuccessCount = 0;
-        let service: SetBottleQTYBiz = SetBottleQTYBiz()
-        for b in (biz.bottleDetail?.List)! {
-            service.SetBottleQTY(strIdx: b.IDX, StrQty: b.ISSUE_QTY, httpresponseProtocol: self)
+        
+        if(biz.bottleDetail?.Info?.ORD_WORKFLOW == "新建" || biz.bottleDetail?.Info?.ORD_WORKFLOW == "已审核" || biz.bottleDetail?.Info?.ORD_WORKFLOW == "已释放" || biz.bottleDetail?.Info?.ORD_WORKFLOW == "已装运") {
+            Tools.showAlertDialog("系统流程出错，请系统客服", self)
+        } else if(biz.bottleDetail?.Info?.ORD_WORKFLOW == "已确认") {
+            
+            var i: Int = 0
+            var isReturn = false
+            for _ in (biz.bottleDetail?.List)! {
+                let indexPath: NSIndexPath = NSIndexPath.init(item: i, section: 0)
+                let cell: BottleInfoTableViewCell = self.tableView.cellForRow(at: indexPath as IndexPath) as! BottleInfoTableViewCell
+                i = i + 1
+                if(cell.qtyF.text?.isEmpty)! {
+                    isReturn = true
+                    break
+                }
+            }
+            
+            if(isReturn) {
+                Tools.showAlertDialog("请确认数量", self)
+            } else {
+                _ = MBProgressHUD.showHUDAddedTo(self.view, animated: true)
+                requestSuccessCount = 0;
+                let service: SetBottleQTYBiz = SetBottleQTYBiz()
+                for b in (biz.bottleDetail?.List)! {
+                    service.SetBottleQTY(strIdx: b.IDX, StrQty: b.ISSUE_QTY, httpresponseProtocol: self)
+                }
+            }
         }
     }
     
@@ -192,6 +225,7 @@ class BottleInfoViewController: UIViewController, HttpResponseProtocol, UITableV
     // 设置自定义的 cell
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "BottleInfoTableViewCell", for: indexPath) as! BottleInfoTableViewCell
+        cell.ORD_WORKFLOW = (biz.bottleDetail?.Info?.ORD_WORKFLOW)!
         cell.bottle = biz.bottleDetail?.List[(indexPath as NSIndexPath).row]
         return cell
     }

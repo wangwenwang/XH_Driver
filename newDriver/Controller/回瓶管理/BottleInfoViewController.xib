@@ -21,6 +21,7 @@
                 <outlet property="TMS_PLATE_NUMBER" destination="vwz-bd-toT" id="J75-xP-78L"/>
                 <outlet property="TMS_VEHICLE_TYPE" destination="Fs6-so-fJU" id="ubo-iE-hyg"/>
                 <outlet property="bottleInfoViewHeight" destination="RYN-dS-3yg" id="AfA-rR-Lzp"/>
+                <outlet property="confirmBtn" destination="imv-mi-hZH" id="3li-hF-d0b"/>
                 <outlet property="customerViewHeight" destination="6Ue-pS-QIx" id="x85-zT-PUV"/>
                 <outlet property="customer_ADDRESS" destination="eVT-Vh-lHn" id="9pm-NR-Ae9"/>
                 <outlet property="customer_NAME" destination="eMT-Xe-DB3" id="exc-fw-ejB"/>
@@ -324,7 +325,7 @@
                                                 <constraint firstItem="Lll-ff-4nQ" firstAttribute="leading" secondItem="D1W-yi-la1" secondAttribute="leading" constant="8" id="try-Ey-hD8"/>
                                             </constraints>
                                         </view>
-                                        <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="R4W-To-Wyi">
+                                        <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="R4W-To-Wyi">
                                             <rect key="frame" x="0.0" y="30" width="374" height="70"/>
                                             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                             <connections>
@@ -496,7 +497,7 @@
                         <constraint firstItem="iQC-0o-pVS" firstAttribute="leading" secondItem="8n1-Nr-nfe" secondAttribute="leading" id="r7A-Oi-R4A"/>
                     </constraints>
                 </scrollView>
-                <button opaque="NO" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="imv-mi-hZH">
+                <button hidden="YES" opaque="NO" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="imv-mi-hZH">
                     <rect key="frame" x="72" y="614" width="230" height="37"/>
                     <color key="backgroundColor" red="0.27013062170000002" green="0.65527860449999997" blue="1" alpha="1" colorSpace="deviceRGB"/>
                     <constraints>

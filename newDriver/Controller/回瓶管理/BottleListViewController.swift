@@ -82,7 +82,7 @@ class BottleListViewController: UIViewController, UITableViewDataSource, UITable
         super.viewDidLoad()
         
         self.title = "回瓶单列表"
-        self.navigationController?.navigationBar.isTranslucent = false
+        self.automaticallyAdjustsScrollViewInsets = false
         
         addNotification()
         
@@ -98,13 +98,14 @@ class BottleListViewController: UIViewController, UITableViewDataSource, UITable
         }
     }
     
+    override func viewDidDisappear(_ animated: Bool) {
+        super.viewDidDisappear(animated)
+        removeNotification()
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
-    }
-    
-    deinit {
-        removeNotification()
     }
     
     // MARK: - 通知
