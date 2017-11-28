@@ -192,6 +192,8 @@
 		30FA7D201E820E6A00BB002D /* BillingViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 30FA7D1E1E820E6A00BB002D /* BillingViewController.xib */; };
 		3BDD11301FCC5432006B711E /* BottleInfoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BDD112E1FCC5432006B711E /* BottleInfoTableViewCell.swift */; };
 		3BDD11311FCC5432006B711E /* BottleInfoTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3BDD112F1FCC5432006B711E /* BottleInfoTableViewCell.xib */; };
+		3BDD11381FCDC8B2006B711E /* LMTitleView.h in Sources */ = {isa = PBXBuildFile; fileRef = 3BDD11361FCDC300006B711E /* LMTitleView.h */; };
+		3BDD11391FCDC8B2006B711E /* LMTitleView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BDD11371FCDC300006B711E /* LMTitleView.m */; };
 		6B76F2D80CF5A4C8CFEAF4FD /* Pods_newDriver.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 37AC7EB65CEC4D408F971534 /* Pods_newDriver.framework */; };
 /* End PBXBuildFile section */
 
@@ -405,6 +407,11 @@
 		37AC7EB65CEC4D408F971534 /* Pods_newDriver.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_newDriver.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		3BDD112E1FCC5432006B711E /* BottleInfoTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottleInfoTableViewCell.swift; sourceTree = "<group>"; };
 		3BDD112F1FCC5432006B711E /* BottleInfoTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BottleInfoTableViewCell.xib; sourceTree = "<group>"; };
+		3BDD11331FCDC300006B711E /* ico_make.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ico_make.png; sourceTree = "<group>"; };
+		3BDD11341FCDC300006B711E /* LMDropDownMenu.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LMDropDownMenu.h; sourceTree = "<group>"; };
+		3BDD11351FCDC300006B711E /* LMDropDownMenu.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LMDropDownMenu.m; sourceTree = "<group>"; };
+		3BDD11361FCDC300006B711E /* LMTitleView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LMTitleView.h; sourceTree = "<group>"; };
+		3BDD11371FCDC300006B711E /* LMTitleView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LMTitleView.m; sourceTree = "<group>"; };
 		E61724504B8B710C1189412E /* Pods-newDriver.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-newDriver.debug.xcconfig"; path = "Pods/Target Support Files/Pods-newDriver/Pods-newDriver.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -464,6 +471,7 @@
 		300472411DF7B921005A9ED5 /* Custom */ = {
 			isa = PBXGroup;
 			children = (
+				3BDD11321FCDC300006B711E /* LMDropDownMenu_TitleView */,
 				300472421DF7B921005A9ED5 /* AutographUIView.swift */,
 				300472431DF7B921005A9ED5 /* MyBMKMapView.swift */,
 				300472441DF7B921005A9ED5 /* RouteAnnotation.swift */,
@@ -820,6 +828,18 @@
 			path = "回瓶管理";
 			sourceTree = "<group>";
 		};
+		3BDD11321FCDC300006B711E /* LMDropDownMenu_TitleView */ = {
+			isa = PBXGroup;
+			children = (
+				3BDD11331FCDC300006B711E /* ico_make.png */,
+				3BDD11341FCDC300006B711E /* LMDropDownMenu.h */,
+				3BDD11351FCDC300006B711E /* LMDropDownMenu.m */,
+				3BDD11361FCDC300006B711E /* LMTitleView.h */,
+				3BDD11371FCDC300006B711E /* LMTitleView.m */,
+			);
+			path = LMDropDownMenu_TitleView;
+			sourceTree = "<group>";
+		};
 		522F15A3D94B4F2957B6E6B0 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -1030,6 +1050,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3BDD11381FCDC8B2006B711E /* LMTitleView.h in Sources */,
+				3BDD11391FCDC8B2006B711E /* LMTitleView.m in Sources */,
 				306206311FC6A2A90056650A /* GetReturnBottleInfoBiz.swift in Sources */,
 				300FB29C1E836E40009E13F5 /* ShipmentInfo.swift in Sources */,
 				3074A0FA1DF7B3B6008DC76F /* LoginViewController.swift in Sources */,

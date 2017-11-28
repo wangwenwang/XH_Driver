@@ -8,7 +8,19 @@
 
 import UIKit
 
-class BottleListViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, HttpResponseProtocol {
+class BottleListViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, HttpResponseProtocol, LMTitleViewDelegate, LMTitleViewDataSource {
+    
+    var lmTitleView: LMTitleView?
+    var menuTexts: [String] = []
+    
+    func menu(_ menu: LMTitleView!, titleForRowAtIndexPath indexPath_row: UInt) -> String! {
+        return "fs"
+    }
+    
+    func LMTitleViewOnclick() {
+        
+    }
+    
     
     let pageCount: String! = "20"
     var viewWillAppear_refresh: Bool = true
@@ -89,10 +101,16 @@ class BottleListViewController: UIViewController, UITableViewDataSource, UITable
         self.tableView.register(UINib.init(nibName: "BottleListTableViewCell", bundle: nil), forCellReuseIdentifier: "BottleListTableViewCell")
         
         initRefreshView()
+        
+        self.lmTitleView = LMTitleView.init(lmTitleView: self, andUINavigationItem: self.navigationItem)
+        self.lmTitleView?.dalegate = self as LMTitleViewDelegate
+        self.lmTitleView?.dataSource = self as LMTitleViewDataSource
+        self.automaticallyAdjustsScrollViewInsets = false
+        
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
+//        super.viewWillAppear(animated)
         if(viewWillAppear_refresh) {
             self.tableView.es_startPullToRefresh()
         }

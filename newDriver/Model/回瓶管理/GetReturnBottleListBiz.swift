@@ -54,7 +54,7 @@ class GetReturnBottleListBiz: NSObject {
                                     wkSelf.orders.removeAll()
                                 }
                                 
-                                let list: Array<JSON> = json["result"]["List"].arrayValue
+                                let list: Array<JSON> = json["result"].arrayValue
                                 if(list.count == 0) {
                                     responseProtocol.responseSuccess_noData!()
                                 } else {
