@@ -8,7 +8,7 @@
 
 import UIKit
 
-class BottleInfoViewController: UIViewController, HttpResponseProtocol {
+class BottleInfoViewController: UIViewController, HttpResponseProtocol, UITableViewDataSource, UITableViewDelegate {
     
     // 修改数量成功次数
     var requestSuccessCount: Int = 0
@@ -16,11 +16,15 @@ class BottleInfoViewController: UIViewController, HttpResponseProtocol {
     
     func responseSuccess_audit() {
         
+        _ = MBProgressHUD.hideAllHUDsForView(self.view, animated: true)
         Tools.showAlertDialog("确认成功", self)
+        NotificationCenter.default.post(name: NSNotification.Name(rawValue: URLConstants.kNotification_BottleListViewController), object: nil)
+        self.navigationController?.popViewController(animated: true)
     }
     
     func responseError_audit(_ error: String) {
         
+        _ = MBProgressHUD.hideAllHUDsForView(self.view, animated: true)
         Tools.showAlertDialog("确认失败", self)
     }
     
@@ -30,6 +34,10 @@ class BottleInfoViewController: UIViewController, HttpResponseProtocol {
         if(requestBottleInfoOK == false) {
             
             _ = MBProgressHUD.hideHUDForView(self.view, animated: true)
+            tableView.reloadData()
+            let overHeiht: CGFloat = 100 - CGFloat((biz.bottleDetail?.List.count)!) * kCellHeight - 30
+            bottleInfoViewHeight.constant = bottleInfoViewHeight.constant - overHeiht
+            scrollContentViewHeight.constant = scrollContentViewHeight.constant - overHeiht
             
             customer_NAME.text = " "
             customer_ADDRESS.text = biz.bottleDetail?.Info?.ORD_FROM_ADDRESS
@@ -39,29 +47,15 @@ class BottleInfoViewController: UIViewController, HttpResponseProtocol {
             let mulLine: CGFloat = Tools.getHeightOfString(text: (biz.bottleDetail!.Info?.ORD_FROM_ADDRESS)!, fontSize: 15, width: SCREEN_WIDTH - 8 - 46 + 2 - 3)
             customerViewHeight.constant += (mulLine - oneLine)
             
-            
             PARTY_NAME.text = " "
             PARTY_ADDRESS.text = biz.bottleDetail?.Info?.ORD_TO_ADDRESS
             
-            for b in (biz.bottleDetail?.List)! {
-                if(b.PRODUCT_NAME == "小瓶") {
-                    littleLabel.text = Tools.oneDecimal(text: b.ISSUE_QTY)
-                } else if(b.PRODUCT_NAME == "中瓶") {
-                    midLabel.text = Tools.oneDecimal(text: b.ISSU   E_QTY)
-                } else if(b.PRODUCT_NAME == "大瓶") {
-                    maxLabel.text = Tools.oneDecimal(text: b.ISSUE_QTY)
-                } else if(b.PRODUCT_NAME == "托盘") {
-                    trayLabel.text = Tools.oneDecimal(text: b.ISSUE_QTY)
-                }
-            }
-            totalLabel.text = Tools.oneDecimal(text: (biz.bottleDetail?.Info!.ORD_ISSUE_QTY)!)
             requestBottleInfoOK = true
         } else {
             
             requestSuccessCount = requestSuccessCount + 1
             if(requestSuccessCount == biz.bottleDetail?.List.count) {
                 
-                _ = MBProgressHUD.hideHUDForView(self.view, animated: true)
                 //                Tools.showAlertDialog("数量修改完毕，执行正向流程", self)
                 
                 let biz_audit: OrderWorkflowBiz = OrderWorkflowBiz()
@@ -99,17 +93,9 @@ class BottleInfoViewController: UIViewController, HttpResponseProtocol {
     // 供应商地址
     @IBOutlet weak var PARTY_ADDRESS: UILabel!
     
-    
-    @IBOutlet weak var littleLabel: UILabel!
-    @IBOutlet weak var midLabel: UILabel!
-    @IBOutlet weak var maxLabel: UILabel!
-    @IBOutlet weak var trayLabel: UILabel!
-    @IBOutlet weak var totalLabel: UILabel!
-    @IBOutlet weak var littleF: UITextField!
-    @IBOutlet weak var midF: UITextField!
-    @IBOutlet weak var maxF: UITextField!
-    @IBOutlet weak var trayF: UITextField!
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var bottleInfoViewHeight: NSLayoutConstraint!
+    var kCellHeight: CGFloat = 44
     
     // 工作流程
     @IBOutlet weak var ORD_WORKFLOW: UILabel!
@@ -126,11 +112,16 @@ class BottleInfoViewController: UIViewController, HttpResponseProtocol {
     // 承运商
     @IBOutlet weak var TMS_FLEET_NAME: UILabel!
     
+    @IBOutlet weak var scrollContentViewHeight: NSLayoutConstraint!
+    
+    // MARK: - 生命周期
     override func viewDidLoad() {
         super.viewDidLoad()
         
         self.title = "订单详情"
         
+        self.tableView.delegate = self
+        self.tableView.dataSource = self
         self.tableView.register(UINib.init(nibName: "BottleInfoTableViewCell", bundle: nil), forCellReuseIdentifier: "BottleInfoTableViewCell")
         
         initUI()
@@ -153,12 +144,6 @@ class BottleInfoViewController: UIViewController, HttpResponseProtocol {
         PARTY_NAME.text = " "
         PARTY_ADDRESS.text = " "
         
-//        littleLabel.text = " "
-//        midLabel.text = " "
-//        maxLabel.text = " "
-//        trayLabel.text = " "
-//        totalLabel.text = " "
-        
         ORD_WORKFLOW.text = " "
         ORD_DATE_ADD.text = " "
         
@@ -171,54 +156,11 @@ class BottleInfoViewController: UIViewController, HttpResponseProtocol {
     
     // MARK: - 事件
     @IBAction func confirmOnclick() {
-        
-        // 服务器数据
-        var little_s: Float?
-        var mid_s: Float?
-        var max_s: Float?
-        var tray_s: Float?
+        _ = MBProgressHUD.showHUDAddedTo(self.view, animated: true)
+        requestSuccessCount = 0;
+        let service: SetBottleQTYBiz = SetBottleQTYBiz()
         for b in (biz.bottleDetail?.List)! {
-            if(b.PRODUCT_NAME == "小瓶") {
-                little_s = Float(b.ISSUE_QTY)!
-            } else if(b.PRODUCT_NAME == "中瓶") {
-                mid_s = Float(b.ISSUE_QTY)!
-            } else if(b.PRODUCT_NAME == "大瓶") {
-                max_s = Float(b.ISSUE_QTY)!
-            } else if(b.PRODUCT_NAME == "托盘") {
-                tray_s = Float(b.ISSUE_QTY)!
-            }
-        }
-        
-        // 本地数据
-        let little_l: Float = Float(littleF.text! == "" ? "0" : littleF.text!)!
-        let mid_l: Float = Float(midF.text! == "" ? "0" : midF.text!)!
-        let max_l: Float = Float(maxF.text! == "" ? "0" : maxF.text!)!
-        let tray_l: Float = Float(trayF.text! == "" ? "0" : trayF.text!)!
-        if(little_s != nil && little_l == 0) {
-            Tools.showAlertDialog("请确认小瓶数量", self)
-        } else if(mid_s != nil && mid_l == 0) {
-            Tools.showAlertDialog("请确认中瓶数量", self)
-        } else if(max_s != nil && max_l == 0) {
-            Tools.showAlertDialog("请确认大瓶数量", self)
-        } else if(tray_s != nil && tray_l == 0) {
-            Tools.showAlertDialog("请确认托盘数量", self)
-        } else {
-            _ = MBProgressHUD.showHUDAddedTo(self.view, animated: true)
-            requestSuccessCount = 0;
-            for b in (biz.bottleDetail?.List)! {
-                var qty: String!
-                if(b.PRODUCT_NAME == "小瓶") {
-                    qty = littleF.text!
-                } else if(b.PRODUCT_NAME == "中瓶") {
-                    qty = midF.text!
-                } else if(b.PRODUCT_NAME == "大瓶") {
-                    qty = maxF.text!
-                } else if(b.PRODUCT_NAME == "托盘") {
-                    qty = trayF.text!
-                }
-                let biz: SetBottleQTYBiz = SetBottleQTYBiz()
-                biz.SetBottleQTY(strIdx: b.IDX, StrQty: qty, httpresponseProtocol: self)
-            }
+            service.SetBottleQTY(strIdx: b.IDX, StrQty: b.ISSUE_QTY, httpresponseProtocol: self)
         }
     }
     
@@ -229,12 +171,12 @@ class BottleInfoViewController: UIViewController, HttpResponseProtocol {
     
     // 设置 cell 高度
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 44
+        return kCellHeight
     }
     
     // 设置自定义的 cell
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "BottleListTableViewCell", for: indexPath) as! BottleInfoTableViewCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: "BottleInfoTableViewCell", for: indexPath) as! BottleInfoTableViewCell
         cell.bottle = biz.bottleDetail?.List[(indexPath as NSIndexPath).row]
         return cell
     }

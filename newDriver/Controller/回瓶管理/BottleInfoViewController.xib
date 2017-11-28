@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13173"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13527"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -20,25 +20,27 @@
                 <outlet property="TMS_FLEET_NAME" destination="GBg-LY-Cyc" id="mV6-ha-Mxe"/>
                 <outlet property="TMS_PLATE_NUMBER" destination="vwz-bd-toT" id="J75-xP-78L"/>
                 <outlet property="TMS_VEHICLE_TYPE" destination="Fs6-so-fJU" id="ubo-iE-hyg"/>
+                <outlet property="bottleInfoViewHeight" destination="RYN-dS-3yg" id="AfA-rR-Lzp"/>
                 <outlet property="customerViewHeight" destination="6Ue-pS-QIx" id="x85-zT-PUV"/>
                 <outlet property="customer_ADDRESS" destination="eVT-Vh-lHn" id="9pm-NR-Ae9"/>
                 <outlet property="customer_NAME" destination="eMT-Xe-DB3" id="exc-fw-ejB"/>
                 <outlet property="customer_PERSON" destination="yCh-pc-Fn8" id="nZs-I0-pn8"/>
                 <outlet property="customer_TEL" destination="V6m-a0-2Ij" id="XRq-Fi-42H"/>
+                <outlet property="scrollContentViewHeight" destination="RXu-eo-kLd" id="614-ah-XRZ"/>
                 <outlet property="tableView" destination="R4W-To-Wyi" id="dz5-bL-nS7"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
-            <rect key="frame" x="0.0" y="0.0" width="375" height="865"/>
+            <rect key="frame" x="0.0" y="0.0" width="375" height="671"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8n1-Nr-nfe" customClass="TPKeyboardAvoidingScrollView" customModule="newDriver" customModuleProvider="target">
-                    <rect key="frame" x="0.0" y="0.0" width="375" height="865"/>
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="671"/>
                     <subviews>
                         <view contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iQC-0o-pVS">
-                            <rect key="frame" x="0.0" y="0.0" width="374" height="820"/>
+                            <rect key="frame" x="0.0" y="0.0" width="374" height="670"/>
                             <subviews>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Zw7-2g-9Rg" userLabel="客户信息">
                                     <rect key="frame" x="0.0" y="0.0" width="374" height="135"/>
@@ -303,7 +305,7 @@
                                     </constraints>
                                 </view>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nct-bI-wpe" userLabel="瓶子信息">
-                                    <rect key="frame" x="0.0" y="325" width="374" height="250"/>
+                                    <rect key="frame" x="0.0" y="325" width="374" height="100"/>
                                     <subviews>
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="D1W-yi-la1" userLabel="提示 View">
                                             <rect key="frame" x="0.0" y="0.0" width="374" height="30"/>
@@ -323,7 +325,7 @@
                                             </constraints>
                                         </view>
                                         <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="R4W-To-Wyi">
-                                            <rect key="frame" x="0.0" y="30" width="374" height="220"/>
+                                            <rect key="frame" x="0.0" y="30" width="374" height="70"/>
                                             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                             <connections>
                                                 <outlet property="dataSource" destination="-1" id="cj9-qO-Fhs"/>
@@ -335,7 +337,7 @@
                                     <constraints>
                                         <constraint firstAttribute="trailing" secondItem="D1W-yi-la1" secondAttribute="trailing" id="8Rc-re-Jhm"/>
                                         <constraint firstItem="D1W-yi-la1" firstAttribute="top" secondItem="nct-bI-wpe" secondAttribute="top" id="Pc8-fv-FlR"/>
-                                        <constraint firstAttribute="height" constant="250" id="RYN-dS-3yg"/>
+                                        <constraint firstAttribute="height" constant="100" id="RYN-dS-3yg"/>
                                         <constraint firstItem="R4W-To-Wyi" firstAttribute="top" secondItem="D1W-yi-la1" secondAttribute="bottom" id="UmK-M1-Lnx"/>
                                         <constraint firstAttribute="trailing" secondItem="R4W-To-Wyi" secondAttribute="trailing" id="Uof-P3-p3O"/>
                                         <constraint firstItem="D1W-yi-la1" firstAttribute="leading" secondItem="nct-bI-wpe" secondAttribute="leading" id="bgq-a0-FQR"/>
@@ -344,7 +346,7 @@
                                     </constraints>
                                 </view>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Gct-4d-JOi" userLabel="承运信息">
-                                    <rect key="frame" x="0.0" y="575" width="374" height="155"/>
+                                    <rect key="frame" x="0.0" y="425" width="374" height="155"/>
                                     <subviews>
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="q1e-YA-fZM" userLabel="提示 View">
                                             <rect key="frame" x="0.0" y="0.0" width="374" height="30"/>
@@ -473,7 +475,7 @@
                                 <constraint firstItem="Zw7-2g-9Rg" firstAttribute="leading" secondItem="iQC-0o-pVS" secondAttribute="leading" id="6NE-xR-MTt"/>
                                 <constraint firstItem="nct-bI-wpe" firstAttribute="top" secondItem="I29-FW-kIM" secondAttribute="bottom" id="7fC-fN-G9A"/>
                                 <constraint firstItem="beM-FG-06y" firstAttribute="leading" secondItem="iQC-0o-pVS" secondAttribute="leading" id="ABe-TT-ToV"/>
-                                <constraint firstAttribute="height" constant="820" id="RXu-eo-kLd"/>
+                                <constraint firstAttribute="height" constant="670" id="RXu-eo-kLd"/>
                                 <constraint firstItem="I29-FW-kIM" firstAttribute="top" secondItem="beM-FG-06y" secondAttribute="bottom" id="YGO-lN-Ddx"/>
                                 <constraint firstAttribute="trailing" secondItem="beM-FG-06y" secondAttribute="trailing" id="Z9T-mL-8Hs"/>
                                 <constraint firstAttribute="trailing" secondItem="I29-FW-kIM" secondAttribute="trailing" id="fxe-UZ-gMO"/>
@@ -485,24 +487,8 @@
                                 <constraint firstAttribute="trailing" secondItem="Zw7-2g-9Rg" secondAttribute="trailing" id="yJC-2H-P3f"/>
                             </constraints>
                         </view>
-                        <button opaque="NO" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="imv-mi-hZH">
-                            <rect key="frame" x="72" y="763" width="230" height="37"/>
-                            <color key="backgroundColor" red="0.27013062170000002" green="0.65527860449999997" blue="1" alpha="1" colorSpace="deviceRGB"/>
-                            <constraints>
-                                <constraint firstAttribute="width" constant="230" id="6Tu-mg-t8n"/>
-                                <constraint firstAttribute="height" constant="37" id="qrP-1m-ZhE"/>
-                            </constraints>
-                            <state key="normal" title="数量已确认">
-                                <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                            </state>
-                            <connections>
-                                <action selector="confirmOnclick" destination="-1" eventType="touchUpInside" id="3Ux-3m-29W"/>
-                            </connections>
-                        </button>
                     </subviews>
                     <constraints>
-                        <constraint firstItem="imv-mi-hZH" firstAttribute="centerX" secondItem="8n1-Nr-nfe" secondAttribute="centerX" id="760-wS-VpV"/>
-                        <constraint firstAttribute="bottom" secondItem="imv-mi-hZH" secondAttribute="bottom" constant="20" id="KUN-cE-g22"/>
                         <constraint firstItem="iQC-0o-pVS" firstAttribute="top" secondItem="8n1-Nr-nfe" secondAttribute="top" id="R8f-BO-Fz3"/>
                         <constraint firstItem="iQC-0o-pVS" firstAttribute="centerX" secondItem="8n1-Nr-nfe" secondAttribute="centerX" id="a1X-Ue-W21"/>
                         <constraint firstAttribute="trailing" secondItem="iQC-0o-pVS" secondAttribute="trailing" id="bYo-OC-cJp"/>
@@ -510,6 +496,20 @@
                         <constraint firstItem="iQC-0o-pVS" firstAttribute="leading" secondItem="8n1-Nr-nfe" secondAttribute="leading" id="r7A-Oi-R4A"/>
                     </constraints>
                 </scrollView>
+                <button opaque="NO" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="imv-mi-hZH">
+                    <rect key="frame" x="72" y="614" width="230" height="37"/>
+                    <color key="backgroundColor" red="0.27013062170000002" green="0.65527860449999997" blue="1" alpha="1" colorSpace="deviceRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="230" id="6Tu-mg-t8n"/>
+                        <constraint firstAttribute="height" constant="37" id="qrP-1m-ZhE"/>
+                    </constraints>
+                    <state key="normal" title="数量已确认">
+                        <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </state>
+                    <connections>
+                        <action selector="confirmOnclick" destination="-1" eventType="touchUpInside" id="3Ux-3m-29W"/>
+                    </connections>
+                </button>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
@@ -517,9 +517,11 @@
                 <constraint firstAttribute="trailing" secondItem="8n1-Nr-nfe" secondAttribute="trailing" id="H1v-us-SfF"/>
                 <constraint firstItem="8n1-Nr-nfe" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="Q2o-gi-5cg"/>
                 <constraint firstAttribute="bottom" secondItem="8n1-Nr-nfe" secondAttribute="bottom" id="Tmh-km-AJ8"/>
+                <constraint firstAttribute="bottom" secondItem="imv-mi-hZH" secondAttribute="bottom" constant="20" id="uYZ-HL-VtX"/>
+                <constraint firstItem="imv-mi-hZH" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="x4D-f5-wmb"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
-            <point key="canvasLocation" x="104.5" y="221.5"/>
+            <point key="canvasLocation" x="104.5" y="124.5"/>
         </view>
     </objects>
 </document>

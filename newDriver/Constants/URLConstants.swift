@@ -109,4 +109,7 @@ struct URLConstants {
     
     /// 正向流程
     static let kAPI_OrderWorkflow = URLConstants.baseUrl + "OrderWorkflow"
+    
+    /// 通知刷新回瓶列表
+    static let kNotification_BottleListViewController = "Notification_BottleListViewController"
 }

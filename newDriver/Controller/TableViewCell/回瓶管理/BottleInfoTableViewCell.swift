@@ -9,7 +9,10 @@
 import UIKit
 
 class BottleInfoTableViewCell: UITableViewCell {
-
+    
+    @IBOutlet weak var PRODUCT_NAME: UILabel!
+    @IBOutlet weak var ORDER_QTY: UILabel!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
@@ -21,13 +24,14 @@ class BottleInfoTableViewCell: UITableViewCell {
         // Configure the view for the selected state
     }
     
-    
     var bottle: BottleItem! {
         didSet {
-//            ORD_NO.text = bottle.ORD_NO
-//            ORD_DATE_ADD.text = bottle.ORD_DATE_ADD
-//            ORD_TO_ADDRESS.text = bottle.ORD_TO_ADDRESS
-//            ORD_WORKFLOW.text = bottle.ORD_WORKFLOW
+            PRODUCT_NAME.text = bottle.PRODUCT_NAME
+            ORDER_QTY.text = bottle.ORDER_QTY
         }
+    }
+    
+    @IBAction func changeOnclick(_ sender: UITextField) {
+        bottle.ISSUE_QTY = sender.text!
     }
 }

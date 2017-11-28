@@ -16,14 +16,20 @@ class GetReturnBottleListBiz: NSObject {
     /// 获取大瓶中瓶小瓶的信息
     var orders: [BottleOrder] = []
     
-    func GetReturnBottleList (TMS_DRIVER_IDX tmsIdx: String, strType type: String, strPage page: String, strPageCount pageCount: String, httpresponseProtocol responseProtocol: HttpResponseProtocol) {
+    /// 分页加载，正在加载的页数
+    var tempPage: Int = 1
+    
+    /// 分页加载，已加载完的页数
+    var page: Int = 1
+    
+    func GetReturnBottleList (TMS_DRIVER_IDX tmsIdx: String, strType type: String, strPageCount pageCount: String, httpresponseProtocol responseProtocol: HttpResponseProtocol) {
         
         let parameters = [
             "BUSINESS_IDX": "",
             "ORD_ORG_IDX": "",
             "TMS_DRIVER_IDX": tmsIdx,
             "strType": type,
-            "strPage": page,
+            "strPage": "\(tempPage)",
             "strPageCount": pageCount,
             "strEndDate": "",
             "strStartDate": "",
@@ -44,15 +50,24 @@ class GetReturnBottleListBiz: NSObject {
                             let type = json["type"].description
                             if type == "1" {
                                 
-                                let list: Array<JSON> = json["result"]["List"].arrayValue
-                                for json in list {
-                                    let order: BottleOrder = Mapper<BottleOrder>().map(JSONString: json.description)!
-                                    let oneLine = Tools.getHeightOfString(text: "fds", fontSize: 15, width: CGFloat(MAXFLOAT))
-//                                    let mulLine = Tools.getHeightOfString(text: order.PARTY_NAME, fontSize: 15, width: (SCREEN_WIDTH - (15 + 46 + 3)))
-                                    order.cellHeight = 82
-                                    wkSelf.orders.append(order)
+                                if wkSelf.tempPage == 1 {
+                                    wkSelf.orders.removeAll()
                                 }
-                                responseProtocol.responseSuccess()
+                                
+                                let list: Array<JSON> = json["result"]["List"].arrayValue
+                                if(list.count == 0) {
+                                    responseProtocol.responseSuccess_noData!()
+                                } else {
+                                    for json in list {
+                                        let order: BottleOrder = Mapper<BottleOrder>().map(JSONString: json.description)!
+                                        let oneLine = Tools.getHeightOfString(text: "fds", fontSize: 15, width: CGFloat(MAXFLOAT))
+                                        //                                    let mulLine = Tools.getHeightOfString(text: order.PARTY_NAME, fontSize: 15, width: (SCREEN_WIDTH - (15 + 46 + 3)))
+                                        order.cellHeight = 82
+                                        wkSelf.orders.append(order)
+                                    }
+                                    wkSelf.page = self.tempPage
+                                    responseProtocol.responseSuccess()
+                                }
                             } else {
                                 let msg = json["msg"].description
                                 responseProtocol.responseError(msg)
