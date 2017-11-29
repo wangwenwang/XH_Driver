@@ -39,7 +39,7 @@ class OrderWorkflowBiz: NSObject {
                         }
                     }
                 case .failure(let error):
-                    responseProtocol.responseError_audit!("提交订单失败！")
+                    responseProtocol.responseError_audit!("请求确认失败！")
                     print(error)
                 }
         }

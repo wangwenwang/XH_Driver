@@ -89,7 +89,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, BMKGeneralDelegate, GeTui
         
         //百度地图设置
         baiduMapManager = BMKMapManager()
-        let ret = baiduMapManager?.start("PaUI5RGE6a0T4G3mWvY1Upo162mcXHXd", generalDelegate: self)
+        let ret = baiduMapManager?.start("Qx0aCKDY6I44M8wmpiwzHv5Rq8GwNIAf", generalDelegate: self)
         if ret == false {
             NSLog("百度地图加载失败！")
         }

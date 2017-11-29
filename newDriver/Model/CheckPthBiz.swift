@@ -58,7 +58,7 @@ class CheckPathBiz {
             }
         }) { (error) in
             DispatchQueue.main.async {
-                responseProtocol.responseError("提交订单失败！")
+                responseProtocol.responseError("请求轨迹失败！")
                 print(error)
             }
         }

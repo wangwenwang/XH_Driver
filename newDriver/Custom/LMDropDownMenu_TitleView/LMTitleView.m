@@ -76,7 +76,7 @@
         [_coverView addGestureRecognizer:tap_cover];
         
         // TableView
-        _tableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 0, 320, 0)];
+        _tableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 64, 320, 0)];
         _tableView.dataSource = self;
         _tableView.delegate = self;
         [vc.view addSubview:_tableView];
@@ -243,7 +243,7 @@
     
     if([_dataSource respondsToSelector:@selector(menu:didSelectRowAtIndexPath:)]) {
         
-        [_dalegate menu:self didSelectRowAtIndexPath:indexPath];
+        [_delegate menu:self didSelectRowAtIndexPath:indexPath];
     }
 }
 

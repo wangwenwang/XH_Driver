@@ -184,7 +184,7 @@ class BottleInfoViewController: UIViewController, HttpResponseProtocol, UITableV
     @IBAction func confirmOnclick() {
         
         if(biz.bottleDetail?.Info?.ORD_WORKFLOW == "新建" || biz.bottleDetail?.Info?.ORD_WORKFLOW == "已审核" || biz.bottleDetail?.Info?.ORD_WORKFLOW == "已释放" || biz.bottleDetail?.Info?.ORD_WORKFLOW == "已装运") {
-            Tools.showAlertDialog("系统流程出错，请系统客服", self)
+            Tools.showAlertDialog("系统流程出错，请联系客服", self)
         } else if(biz.bottleDetail?.Info?.ORD_WORKFLOW == "已确认") {
             
             var i: Int = 0

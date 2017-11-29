@@ -13,7 +13,7 @@ import ObjectMapper
 
 class GetReturnProductListBiz: NSObject {
     
-    /// 获取大瓶中瓶小瓶的信息
+    /// 获取地址信息
     var addressList: [BottleAddressList] = []
     
     func GetReturnProductList (strBusinessId idx: String, httpresponseProtocol responseProtocol: HttpResponseProtocol) {
@@ -53,7 +53,7 @@ class GetReturnProductListBiz: NSObject {
                         }
                     }
                 case .failure(let error):
-                    responseProtocol.responseError("提交订单失败！")
+                    responseProtocol.responseError("请求地址信息失败！")
                     print(error)
                 }
         }

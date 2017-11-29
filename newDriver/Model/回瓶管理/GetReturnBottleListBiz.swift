@@ -13,7 +13,7 @@ import ObjectMapper
 
 class GetReturnBottleListBiz: NSObject {
     
-    /// 获取大瓶中瓶小瓶的信息
+    /// 获取回瓶订单列表
     var orders: [BottleOrder] = []
     
     /// 分页加载，正在加载的页数
@@ -60,7 +60,7 @@ class GetReturnBottleListBiz: NSObject {
                                 } else {
                                     for json in list {
                                         let order: BottleOrder = Mapper<BottleOrder>().map(JSONString: json.description)!
-                                        let oneLine = Tools.getHeightOfString(text: "fds", fontSize: 15, width: CGFloat(MAXFLOAT))
+//                                        let oneLine = Tools.getHeightOfString(text: "fds", fontSize: 15, width: CGFloat(MAXFLOAT))
                                         //                                    let mulLine = Tools.getHeightOfString(text: order.PARTY_NAME, fontSize: 15, width: (SCREEN_WIDTH - (15 + 46 + 3)))
                                         order.cellHeight = 82
                                         wkSelf.orders.append(order)
@@ -68,6 +68,8 @@ class GetReturnBottleListBiz: NSObject {
                                     wkSelf.page = self.tempPage
                                     responseProtocol.responseSuccess()
                                 }
+                            } else if(type == "-2") {
+                                responseProtocol.responseSuccess_noData!()
                             } else {
                                 let msg = json["msg"].description
                                 responseProtocol.responseError(msg)
@@ -75,7 +77,7 @@ class GetReturnBottleListBiz: NSObject {
                         }
                     }
                 case .failure(let error):
-                    responseProtocol.responseError("提交订单失败！")
+                    responseProtocol.responseError("请求列表失败！")
                     print(error)
                 }
         }

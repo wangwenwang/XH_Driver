@@ -41,6 +41,6 @@
 
 @property (nonatomic, weak) id <LMTitleViewDataSource> dataSource;
 
-@property (nonatomic, weak) id <LMTitleViewDelegate> dalegate;
+@property (nonatomic, weak) id <LMTitleViewDelegate> delegate;
 
 @end

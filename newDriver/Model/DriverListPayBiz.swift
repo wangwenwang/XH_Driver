@@ -74,7 +74,7 @@ class DriverListPayBiz: NSObject {
                         }
                     }
                 case .failure(let error):
-                    responseProtocol.responseError("提交订单失败！")
+                    responseProtocol.responseError("请求交付失败！")
                     print(error)
                 }
         }

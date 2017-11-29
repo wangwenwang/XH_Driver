@@ -55,7 +55,7 @@ class GetReturnPartyListBiz: NSObject {
                         }
                     }
                 case .failure(let error):
-                    responseProtocol.responseError("提交订单失败！")
+                    responseProtocol.responseError("请求厂商信息失败！")
                     print(error)
                 }
         }

@@ -38,7 +38,7 @@ class SetBottleQTYBiz: NSObject {
                         }
                     }
                 case .failure(let error):
-                    responseProtocol.responseError("提交订单失败！")
+                    responseProtocol.responseError("请求确认数量失败！")
                     print(error)
                 }
         }

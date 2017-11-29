@@ -11,18 +11,11 @@ import UIKit
 class BottleListViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, HttpResponseProtocol, LMTitleViewDelegate, LMTitleViewDataSource {
     
     var lmTitleView: LMTitleView?
-    var menuTexts: [String] = []
-    
-    func menu(_ menu: LMTitleView!, titleForRowAtIndexPath indexPath_row: UInt) -> String! {
-        return "fs"
-    }
-    
-    func LMTitleViewOnclick() {
-        
-    }
+    var menuTexts = ["未交付", "已交付", "已取消"]
     
     
     let pageCount: String! = "20"
+    var strType: String! = "NPLY"
     var viewWillAppear_refresh: Bool = true
     
     func responseSuccess() {
@@ -39,7 +32,7 @@ class BottleListViewController: UIViewController, UITableViewDataSource, UITable
                     let reachability = Reachability.forInternetConnection()
                     if reachability!.isReachable(){
                         self.biz.tempPage = self.biz.page + 1
-                        self.biz.GetReturnBottleList(TMS_DRIVER_IDX: (AppDelegate.user?.USER_CODE)!, strType: "NPLY", strPageCount: self.pageCount, httpresponseProtocol: self)
+                        self.biz.GetReturnBottleList(TMS_DRIVER_IDX: (AppDelegate.user?.USER_CODE)!, strType: self.strType, strPageCount: self.pageCount, httpresponseProtocol: self)
                     }else{
                         self.responseError("网络连接不可用!")
                     }
@@ -80,13 +73,39 @@ class BottleListViewController: UIViewController, UITableViewDataSource, UITable
             //判断连接状态
             let reachability = Reachability.forInternetConnection()
             if reachability!.isReachable(){
-                self.biz.GetReturnBottleList(TMS_DRIVER_IDX: (AppDelegate.user?.USER_CODE)!, strType: "NPLY", strPageCount: self.pageCount, httpresponseProtocol: self)
+                self.biz.GetReturnBottleList(TMS_DRIVER_IDX: (AppDelegate.user?.USER_CODE)!, strType: self.strType, strPageCount: self.pageCount, httpresponseProtocol: self)
             }else{
                 self.responseError("网络连接不可用!")
             }
         }
         self.tableView.refreshIdentifier = NSStringFromClass(BottleListViewController.self) // Set refresh identifier
         self.tableView.expriedTimeInterval = 20.0 // 20 second alive.
+    }
+    
+    
+    // MARK: - LMTitleView
+    func menu(_ menu: LMTitleView!, titleForRowAtIndexPath indexPath_row: UInt) -> String! {
+        return self.menuTexts[Int(indexPath_row)]
+    }
+    
+    func menu(_ menu: LMTitleView!, didSelectRowAt indexPath: IndexPath!) {
+        self.lmTitleView?.titleText = self.menuTexts[indexPath.row]
+        if(self.lmTitleView?.titleText == "未交付") {
+            self.strType = "NPLY"
+        } else if(self.lmTitleView?.titleText == "已交付") {
+            self.strType = "YPLY"
+        } else if(self.lmTitleView?.titleText == "已取消") {
+            self.strType = "CANCEL"
+        }
+        self.tableView.es_startPullToRefresh()
+    }
+    
+    func LMTitleViewOnclick() {
+        self.lmTitleView?.lmTitleViewOnclick()
+    }
+    
+    func LMTitleViewCoverOnclick() {
+        self.lmTitleView?.lmTitleViewCoverOnclick()
     }
     
     // MARK: - 生命周期
@@ -103,10 +122,10 @@ class BottleListViewController: UIViewController, UITableViewDataSource, UITable
         initRefreshView()
         
         self.lmTitleView = LMTitleView.init(lmTitleView: self, andUINavigationItem: self.navigationItem)
-        self.lmTitleView?.dalegate = self as LMTitleViewDelegate
+        self.lmTitleView?.delegate = self as LMTitleViewDelegate
         self.lmTitleView?.dataSource = self as LMTitleViewDataSource
-        self.automaticallyAdjustsScrollViewInsets = false
-        
+        self.lmTitleView?.titleText = self.menuTexts[0]
+        self.lmTitleView?.menuCount = self.menuTexts.count
     }
     
     override func viewWillAppear(_ animated: Bool) {
