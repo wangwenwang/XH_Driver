@@ -28,10 +28,20 @@ class BottleListTableViewCell: UITableViewCell {
     
     var order: BottleOrder! {
         didSet {
+            let work: String = order.ORD_WORKFLOW
             ORD_NO.text = order.ORD_NO
             ORD_DATE_ADD.text = order.ORD_DATE_ADD
             ORD_TO_ADDRESS.text = order.ORD_TO_ADDRESS
-            ORD_WORKFLOW.text = order.ORD_WORKFLOW
+            ORD_WORKFLOW.text = work
+            if(work == "已确认") {
+                ORD_WORKFLOW.text = "待出库"
+            } else if(
+                work == "新建" ||
+                work == "已释放" ||
+                work == "已装运" ||
+                work == "已审核") {
+                ORD_WORKFLOW.text = "\(work)(异常)"
+            }
         }
     }
 }

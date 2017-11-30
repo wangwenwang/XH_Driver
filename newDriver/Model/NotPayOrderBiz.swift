@@ -66,8 +66,8 @@ class NotPayOrderBiz {
                                     let order: Order = Mapper<Order>().map(JSONString: json.description)!
                                     
                                     let oneLine = Tools.getHeightOfString(text: "fds", fontSize: 15, width: CGFloat(MAXFLOAT))
-                                    let mulLine = Tools.getHeightOfString(text: order.ORD_TO_ADDRESS, fontSize: 15, width: (SCREEN_WIDTH - (16 + 65.5 + 3)))
-                                    order.cellHeight = 160 + (mulLine - oneLine)
+                                    let mulLine = Tools.getHeightOfString(text: order.ORD_TO_ADDRESS, fontSize: 15, width: (SCREEN_WIDTH - (12 + 69.5 + 3)))
+                                    order.cellHeight = 179 + (mulLine - oneLine)
                                     
                                     wkSelf.orders.append(order)
                                 }
@@ -84,7 +84,7 @@ class NotPayOrderBiz {
                 }
                 }, failure: { (error) in
                     DispatchQueue.main.async {
-                        responseProtocol.responseError("获取未交付订单失败！")
+                        responseProtocol.responseError("请求未交付订单失败！")
                         print(error)
                     }
             })

@@ -62,9 +62,9 @@ class AllOrderBiz {
                                 for json in list {
                                     let order: Order = Mapper<Order>().map(JSONString: json.description)!
                                     
-                                    let oneLine = Tools.getHeightOfString(text: "fds", fontSize: 13, width: CGFloat(MAXFLOAT))
-                                    let mulLine = Tools.getHeightOfString(text: order.ORD_TO_ADDRESS, fontSize: 13, width: (SCREEN_WIDTH - (8 + 57 + 3 + 8)))
-                                    order.cellHeight = 150 + (mulLine - oneLine)
+                                    let oneLine = Tools.getHeightOfString(text: "fds", fontSize: 15, width: CGFloat(MAXFLOAT))
+                                    let mulLine = Tools.getHeightOfString(text: order.ORD_TO_ADDRESS, fontSize: 15, width: (SCREEN_WIDTH - (12 + 69.5 + 3)))
+                                    order.cellHeight = 179 + (mulLine - oneLine)
                                     
                                     wkSelf.orders.append(order)
                                 }
@@ -81,7 +81,7 @@ class AllOrderBiz {
                 }
                 }, failure: { (error) in
                     DispatchQueue.main.async {
-                        responseProtocol.responseError("获取已交付订单失败")
+                        responseProtocol.responseError("请求订单失败")
                         print(error)
                     }
             })
