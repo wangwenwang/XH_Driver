@@ -64,8 +64,8 @@ class PayedOrderBiz {
                                     let order: Order = Mapper<Order>().map(JSONString: json.description)!
                                     
                                     let oneLine = Tools.getHeightOfString(text: "fds", fontSize: 13, width: CGFloat(MAXFLOAT))
-                                    let mulLine = Tools.getHeightOfString(text: order.ORD_TO_ADDRESS, fontSize: 13, width: (SCREEN_WIDTH - (8 + 57 + 3 + 8)))
-                                    order.cellHeight = 150 + (mulLine - oneLine)
+                                    let mulLine = Tools.getHeightOfString(text: order.ORD_TO_ADDRESS, fontSize: 15, width: (SCREEN_WIDTH - (16 + 65.5 + 3)))
+                                    order.cellHeight = 160 + (mulLine - oneLine)
                                     
                                     wkSelf.orders.append(order)
                                 }

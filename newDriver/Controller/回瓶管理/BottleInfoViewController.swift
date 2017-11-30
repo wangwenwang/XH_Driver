@@ -39,7 +39,7 @@ class BottleInfoViewController: UIViewController, HttpResponseProtocol, UITableV
     func responseError_audit(_ error: String) {
         
         _ = MBProgressHUD.hideAllHUDsForView(self.view, animated: true)
-        Tools.showAlertDialog("确认失败", self)
+        Tools.showAlertDialog(error, self)
     }
     
     func responseSuccess() {
