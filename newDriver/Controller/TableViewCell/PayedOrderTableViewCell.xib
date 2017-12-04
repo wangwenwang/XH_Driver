@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13173"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13527"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -78,12 +78,6 @@
                                 <color key="textColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="交交交" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eDP-62-mtq">
-                                <rect key="frame" x="269" y="112" width="46" height="18"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                <color key="textColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zkk-ye-bPN" userLabel="垂直平分">
                                 <rect key="frame" x="179.5" y="0.0" width="0.0" height="178.5"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
@@ -119,12 +113,6 @@
                                 <rect key="frame" x="51" y="132" width="46" height="18"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                 <color key="textColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="交付状态: " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3DP-Gf-fCC">
-                                <rect key="frame" x="199.5" y="112" width="69.5" height="18"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="装运时间: " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7Qd-Vg-GIa">
@@ -184,7 +172,6 @@
                             <constraint firstItem="dhw-ds-abt" firstAttribute="top" secondItem="aif-eD-Rxp" secondAttribute="bottom" constant="2" id="5gR-Bn-1Iw"/>
                             <constraint firstItem="sKC-D8-aHM" firstAttribute="centerY" secondItem="pxM-C2-LEo" secondAttribute="centerY" id="Aaq-Kh-aMd"/>
                             <constraint firstItem="VaL-4C-LQh" firstAttribute="top" secondItem="pxM-C2-LEo" secondAttribute="bottom" constant="2" id="CzP-R7-29J"/>
-                            <constraint firstItem="3DP-Gf-fCC" firstAttribute="centerY" secondItem="aif-eD-Rxp" secondAttribute="centerY" id="CzY-lX-oL4"/>
                             <constraint firstAttribute="trailing" secondItem="qSJ-ec-1Hr" secondAttribute="trailing" constant="70" id="Ew2-dX-WnB"/>
                             <constraint firstItem="PXY-xh-9fB" firstAttribute="leading" secondItem="aif-eD-Rxp" secondAttribute="trailing" id="FQM-JX-e9A"/>
                             <constraint firstItem="Zlf-Wg-35h" firstAttribute="centerY" secondItem="7Qd-Vg-GIa" secondAttribute="centerY" id="Ija-0j-lQp"/>
@@ -199,9 +186,7 @@
                             <constraint firstItem="dhw-ds-abt" firstAttribute="leading" secondItem="pxM-C2-LEo" secondAttribute="leading" id="aNz-R2-XGI"/>
                             <constraint firstItem="VaL-4C-LQh" firstAttribute="leading" secondItem="pxM-C2-LEo" secondAttribute="leading" id="aqi-12-8K1"/>
                             <constraint firstItem="aif-eD-Rxp" firstAttribute="leading" secondItem="pxM-C2-LEo" secondAttribute="leading" id="bEg-EG-t6a"/>
-                            <constraint firstItem="3DP-Gf-fCC" firstAttribute="leading" secondItem="zkk-ye-bPN" secondAttribute="trailing" constant="20" id="bX2-3v-vjF"/>
                             <constraint firstItem="XW6-bz-qsf" firstAttribute="top" secondItem="7Qd-Vg-GIa" secondAttribute="bottom" constant="2" id="cXz-Lj-grI"/>
-                            <constraint firstItem="eDP-62-mtq" firstAttribute="centerY" secondItem="3DP-Gf-fCC" secondAttribute="centerY" id="cpX-Ln-lRa"/>
                             <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="MZC-Oo-73J" secondAttribute="trailing" constant="3" id="cqW-rK-Zsj"/>
                             <constraint firstItem="pxM-C2-LEo" firstAttribute="leading" secondItem="IUQ-4W-j20" secondAttribute="leading" constant="12" id="eSH-2b-koo"/>
                             <constraint firstItem="3y5-Ax-c2R" firstAttribute="leading" secondItem="qSJ-ec-1Hr" secondAttribute="trailing" id="ejv-U4-swp"/>
@@ -214,7 +199,6 @@
                             <constraint firstItem="Zlf-Wg-35h" firstAttribute="leading" secondItem="7Qd-Vg-GIa" secondAttribute="trailing" id="lud-AY-CYP"/>
                             <constraint firstItem="P7L-bz-xgi" firstAttribute="leading" secondItem="VaL-4C-LQh" secondAttribute="trailing" id="m1Z-8l-5sn"/>
                             <constraint firstItem="zkk-ye-bPN" firstAttribute="centerX" secondItem="IUQ-4W-j20" secondAttribute="centerX" id="m1f-jc-y4x"/>
-                            <constraint firstItem="eDP-62-mtq" firstAttribute="leading" secondItem="3DP-Gf-fCC" secondAttribute="trailing" id="ogJ-sR-qRg"/>
                             <constraint firstItem="MZC-Oo-73J" firstAttribute="top" secondItem="P6d-C0-AqC" secondAttribute="top" id="qPo-rp-eOP"/>
                             <constraint firstItem="vQf-Qw-1Gd" firstAttribute="centerY" secondItem="9dl-3X-Mlr" secondAttribute="centerY" id="rSO-Me-U9Z"/>
                             <constraint firstItem="9Hh-yl-Lt6" firstAttribute="leading" secondItem="9VB-eE-Ix0" secondAttribute="trailing" id="sxd-zo-Dg6"/>
@@ -249,7 +233,6 @@
                 <outlet property="orderIssueWeightField" destination="9Hh-yl-Lt6" id="ez9-C2-Qco"/>
                 <outlet property="orderLoadDateField" destination="Zlf-Wg-35h" id="LK8-eB-703"/>
                 <outlet property="orderNumberField" destination="aO4-kQ-Iu1" id="cnk-ig-F2L"/>
-                <outlet property="orderPayStateField" destination="eDP-62-mtq" id="Lps-qi-I25"/>
                 <outlet property="orderShipmentNumberField" destination="vQf-Qw-1Gd" id="P1m-Qx-ofd"/>
                 <outlet property="orderWorkFlowField" destination="PXY-xh-9fB" id="BE0-3t-Dwl"/>
             </connections>

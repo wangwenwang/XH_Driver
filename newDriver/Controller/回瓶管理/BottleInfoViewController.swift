@@ -49,46 +49,57 @@ class BottleInfoViewController: UIViewController, HttpResponseProtocol, UITableV
             
             _ = MBProgressHUD.hideHUDForView(self.view, animated: true)
             tableView.reloadData()
-            let overHeiht: CGFloat = 100 - CGFloat((biz.bottleDetail?.List.count)!) * kCellHeight - 30
-            bottleInfoViewHeight.constant = bottleInfoViewHeight.constant - overHeiht
-            scrollContentViewHeight.constant = scrollContentViewHeight.constant - overHeiht
             
-            customer_NAME.text = " "
+            // 客户信息
+            customer_NAME.text = biz.bottleDetail?.Info?.ORD_FROM_NAME
             customer_ADDRESS.text = biz.bottleDetail?.Info?.ORD_FROM_ADDRESS
             customer_PERSON.text = biz.bottleDetail?.Info?.ORD_FROM_CNAME
             customer_TEL.text = biz.bottleDetail?.Info?.ORD_FROM_CTEL
             let oneLine: CGFloat = Tools.getHeightOfString(text: "fds", fontSize: 15, width: CGFloat(MAXFLOAT))
-            let mulLine: CGFloat = Tools.getHeightOfString(text: (biz.bottleDetail!.Info?.ORD_FROM_ADDRESS)!, fontSize: 15, width: SCREEN_WIDTH - 8 - 46 + 2 - 3)
+            var mulLine: CGFloat = Tools.getHeightOfString(text: (biz.bottleDetail!.Info?.ORD_FROM_ADDRESS)!, fontSize: 15, width: SCREEN_WIDTH - 8 - 39 - 3)
             customerViewHeight.constant += (mulLine - oneLine)
             
-            PARTY_NAME.text = " "
+            // 厂家信息
+            PARTY_NAME.text = biz.bottleDetail?.Info?.ORD_TO_NAME
             PARTY_ADDRESS.text = biz.bottleDetail?.Info?.ORD_TO_ADDRESS
+            mulLine = Tools.getHeightOfString(text: PARTY_NAME.text!, fontSize: 15, width: SCREEN_WIDTH - 8 - 39 - 3)
+            factoryViewHeight.constant += (mulLine - oneLine)
             
+            // 物流信息
+            ORD_WORKFLOW.text = biz.bottleDetail?.Info?.ORD_WORKFLOW
+            ORD_DATE_ADD.text = biz.bottleDetail?.Info?.ORD_DATE_ADD
+            
+            // 货物信息
+            bottleInfoViewHeight.constant = 30 + CGFloat((biz.bottleDetail?.List.count)!) * kCellHeight
+            
+            // 承运信息
             TMS_PLATE_NUMBER.text = biz.bottleDetail?.Info?.TMS_PLATE_NUMBER
             TMS_VEHICLE_TYPE.text = biz.bottleDetail?.Info?.TMS_VEHICLE_TYPE
             TMS_DRIVER_NAME.text = biz.bottleDetail?.Info?.TMS_DRIVER_NAME
             TMS_DRIVER_TEL.text = biz.bottleDetail?.Info?.TMS_DRIVER_TEL
             TMS_FLEET_NAME.text = biz.bottleDetail?.Info?.TMS_FLEET_NAME
+            mulLine = Tools.getHeightOfString(text: TMS_FLEET_NAME.text!, fontSize: 15, width: SCREEN_WIDTH - 8 - 69.5 - 3)
+            carrierViewHeight.constant += (mulLine - oneLine)
             
-            
+            var bottomViewHeight: CGFloat = 10
             if(biz.bottleDetail?.Info?.ORD_WORKFLOW == "新建" || biz.bottleDetail?.Info?.ORD_WORKFLOW == "已审核" || biz.bottleDetail?.Info?.ORD_WORKFLOW == "已释放" || biz.bottleDetail?.Info?.ORD_WORKFLOW == "已装运" || biz.bottleDetail?.Info?.ORD_WORKFLOW == "已确认") {
                 confirmBtn.isHidden = false
+                bottomViewHeight = 90
             }
             requestBottleInfoOK = true
+            scrollContentViewHeight.constant = customerViewHeight.constant +
+                factoryViewHeight.constant +
+                logisticsViewHeight.constant +
+                bottleInfoViewHeight.constant +
+                carrierViewHeight.constant +
+            bottomViewHeight
         } else {
-            
             requestSuccessCount = requestSuccessCount + 1
             if(requestSuccessCount == biz.bottleDetail?.List.count) {
-                
-                //                Tools.showAlertDialog("数量修改完毕，执行正向流程", self)
-                
                 let biz_audit: OrderWorkflowBiz = OrderWorkflowBiz()
                 biz_audit.OrderWorkflow(stridx: (biz.bottleDetail?.Info?.IDX)!, ADUT_USER: (AppDelegate.user?.USER_NAME)!, httpresponseProtocol: self)
             }
         }
-        
-        ORD_WORKFLOW.text = biz.bottleDetail?.Info?.ORD_WORKFLOW
-        ORD_DATE_ADD.text = biz.bottleDetail?.Info?.ORD_DATE_ADD
     }
     
     func responseError(_ error: String) {
@@ -110,12 +121,12 @@ class BottleInfoViewController: UIViewController, HttpResponseProtocol, UITableV
     // 客户电话
     @IBOutlet weak var customer_TEL: UILabel!
     @IBOutlet weak var customerViewHeight: NSLayoutConstraint!
-    var customerViewHeight_static: CGFloat = 0
     
     // 供应商名称
     @IBOutlet weak var PARTY_NAME: UILabel!
     // 供应商地址
     @IBOutlet weak var PARTY_ADDRESS: UILabel!
+    @IBOutlet weak var factoryViewHeight: NSLayoutConstraint!
     
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var bottleInfoViewHeight: NSLayoutConstraint!
@@ -124,6 +135,7 @@ class BottleInfoViewController: UIViewController, HttpResponseProtocol, UITableV
     // 工作流程
     @IBOutlet weak var ORD_WORKFLOW: UILabel!
     @IBOutlet weak var ORD_DATE_ADD: UILabel!
+    @IBOutlet weak var logisticsViewHeight: NSLayoutConstraint!
     
     // 车牌号
     @IBOutlet weak var TMS_PLATE_NUMBER: UILabel!
@@ -135,7 +147,7 @@ class BottleInfoViewController: UIViewController, HttpResponseProtocol, UITableV
     @IBOutlet weak var TMS_DRIVER_TEL: UILabel!
     // 承运商
     @IBOutlet weak var TMS_FLEET_NAME: UILabel!
-    
+    @IBOutlet weak var carrierViewHeight: NSLayoutConstraint!
     
     @IBOutlet weak var confirmBtn: UIButton!
     @IBOutlet weak var scrollContentViewHeight: NSLayoutConstraint!
@@ -203,7 +215,7 @@ class BottleInfoViewController: UIViewController, HttpResponseProtocol, UITableV
                 Tools.showAlertDialog("请确认数量", self)
             } else {
                 _ = MBProgressHUD.showHUDAddedTo(self.view, animated: true)
-                requestSuccessCount = 0;
+                requestSuccessCount = 0
                 let service: SetBottleQTYBiz = SetBottleQTYBiz()
                 for b in (biz.bottleDetail?.List)! {
                     service.SetBottleQTY(strIdx: b.IDX, StrQty: b.ISSUE_QTY, httpresponseProtocol: self)

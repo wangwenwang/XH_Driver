@@ -49,7 +49,7 @@ extension UITableView {
         let array : Array = self.subviews
         for view : UIView in array {
             if(view.tag == 10086) {
-                view.isHidden = true
+                view.removeFromSuperview()
                 break
             }
         }

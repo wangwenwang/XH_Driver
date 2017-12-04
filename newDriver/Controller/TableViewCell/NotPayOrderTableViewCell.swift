@@ -37,7 +37,7 @@ class NotPayOrderTableViewCell: UITableViewCell {
     @IBOutlet weak var orderWorkFlowField: UILabel! 
     
     /// 交付状态
-    @IBOutlet weak var orderPayStateField: UILabel!
+//    @IBOutlet weak var orderPayStateField: UILabel!
     
     /// 订单数量
     @IBOutlet weak var orderIssueQtyField: UILabel!
@@ -67,7 +67,7 @@ class NotPayOrderTableViewCell: UITableViewCell {
             orderLoadDateField.text = order.TMS_DATE_LOAD
             orderIssueDateField.text = order.TMS_DATE_ISSUE
             orderWorkFlowField.text = StringUtils.getOrderStatus(order.ORD_WORKFLOW)
-            orderPayStateField.text = StringUtils.getOrderState(order.DRIVER_PAY)
+//            orderPayStateField.text = StringUtils.getOrderState(order.DRIVER_PAY)
             orderIssueQtyField.text = Tools.twoDecimal(text: order.ORD_ISSUE_QTY) + "件"
             orderIssueWeightField.text = Tools.twoDecimal(text: order.ORD_ISSUE_WEIGHT) + "吨"
             orderIssueVolumeField.text = Tools.twoDecimal(text: order.ORD_ISSUE_VOLUME) + "方"

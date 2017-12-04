@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13173"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13527"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -78,12 +78,6 @@
                                 <color key="textColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="交交交" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KIK-i8-bPL">
-                                <rect key="frame" x="268.5" y="112" width="46" height="18"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                <color key="textColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zjT-c1-ibk" userLabel="垂直平分">
                                 <rect key="frame" x="179" y="0.0" width="0.0" height="178.5"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
@@ -119,12 +113,6 @@
                                 <rect key="frame" x="51" y="132" width="46" height="18"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                 <color key="textColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="交付状态: " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3AL-6I-9nd">
-                                <rect key="frame" x="199" y="112" width="69.5" height="18"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="装运时间: " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0x6-Ch-LN3">
@@ -173,7 +161,6 @@
                             <constraint firstItem="LyE-SJ-2K1" firstAttribute="top" secondItem="1HQ-QN-7eA" secondAttribute="top" id="26G-26-Llm"/>
                             <constraint firstItem="1cW-6X-xAb" firstAttribute="centerY" secondItem="pi6-77-elk" secondAttribute="centerY" id="4Od-a2-zFT"/>
                             <constraint firstItem="LyE-SJ-2K1" firstAttribute="leading" secondItem="1HQ-QN-7eA" secondAttribute="trailing" id="7kv-gw-AtI"/>
-                            <constraint firstItem="3AL-6I-9nd" firstAttribute="centerY" secondItem="RrG-1A-ceM" secondAttribute="centerY" id="8JR-Gh-6KU"/>
                             <constraint firstItem="qde-M6-PjN" firstAttribute="centerY" secondItem="1c3-c4-487" secondAttribute="centerY" id="Bwj-EC-QtU"/>
                             <constraint firstItem="0x6-Ch-LN3" firstAttribute="leading" secondItem="Rc7-WD-w8i" secondAttribute="leading" id="Cnc-so-gp2"/>
                             <constraint firstItem="1HQ-QN-7eA" firstAttribute="leading" secondItem="Rc7-WD-w8i" secondAttribute="leading" id="E4x-17-2TQ"/>
@@ -190,13 +177,11 @@
                             <constraint firstItem="kbH-ZD-T5C" firstAttribute="centerY" secondItem="qde-M6-PjN" secondAttribute="centerY" id="PKG-Dq-7JW"/>
                             <constraint firstAttribute="trailing" secondItem="Hjf-5x-GC6" secondAttribute="trailing" constant="70" id="S78-aM-Jta"/>
                             <constraint firstItem="Zqv-5n-DHT" firstAttribute="leading" secondItem="V3z-UL-2KS" secondAttribute="trailing" id="STj-5S-hIM"/>
-                            <constraint firstItem="KIK-i8-bPL" firstAttribute="centerY" secondItem="3AL-6I-9nd" secondAttribute="centerY" id="TIv-eY-F7w"/>
                             <constraint firstItem="wQV-q3-sTH" firstAttribute="centerY" secondItem="Rc7-WD-w8i" secondAttribute="centerY" id="Tht-4D-SLz"/>
                             <constraint firstItem="1c3-c4-487" firstAttribute="top" secondItem="RrG-1A-ceM" secondAttribute="bottom" constant="2" id="WIJ-Qb-IHr"/>
                             <constraint firstItem="CFN-iu-aly" firstAttribute="leading" secondItem="1c3-c4-487" secondAttribute="trailing" id="Wgs-T4-AB1"/>
                             <constraint firstItem="1HQ-QN-7eA" firstAttribute="top" secondItem="1c3-c4-487" secondAttribute="bottom" constant="2" id="Y4Y-EG-cwe"/>
                             <constraint firstItem="zjT-c1-ibk" firstAttribute="centerX" secondItem="Fou-gp-IIj" secondAttribute="centerX" id="ZGX-Lr-wLu"/>
-                            <constraint firstItem="KIK-i8-bPL" firstAttribute="leading" secondItem="3AL-6I-9nd" secondAttribute="trailing" id="ahr-gg-1U8"/>
                             <constraint firstItem="nuq-zG-WuX" firstAttribute="centerY" secondItem="RrG-1A-ceM" secondAttribute="centerY" id="bWe-mt-One"/>
                             <constraint firstItem="Zqv-5n-DHT" firstAttribute="centerY" secondItem="V3z-UL-2KS" secondAttribute="centerY" id="bcG-qf-B2M"/>
                             <constraint firstItem="nuq-zG-WuX" firstAttribute="leading" secondItem="RrG-1A-ceM" secondAttribute="trailing" id="dZx-WM-aYq"/>
@@ -204,7 +189,6 @@
                             <constraint firstItem="wQV-q3-sTH" firstAttribute="leading" secondItem="Rc7-WD-w8i" secondAttribute="trailing" id="fgK-Lh-AND"/>
                             <constraint firstItem="HzV-Ld-yAx" firstAttribute="leading" secondItem="uiW-CI-axf" secondAttribute="trailing" id="gnV-wk-14B"/>
                             <constraint firstItem="uiW-CI-axf" firstAttribute="leading" secondItem="Rc7-WD-w8i" secondAttribute="leading" id="h0u-bB-cDI"/>
-                            <constraint firstItem="3AL-6I-9nd" firstAttribute="leading" secondItem="zjT-c1-ibk" secondAttribute="trailing" constant="20" id="hKA-zT-pL3"/>
                             <constraint firstItem="ePF-e2-nkX" firstAttribute="leading" secondItem="0x6-Ch-LN3" secondAttribute="trailing" id="hSy-MD-Zlr"/>
                             <constraint firstItem="RrG-1A-ceM" firstAttribute="top" secondItem="pi6-77-elk" secondAttribute="bottom" constant="2" id="hUC-1Y-AeD"/>
                             <constraint firstItem="V3z-UL-2KS" firstAttribute="top" secondItem="uiW-CI-axf" secondAttribute="bottom" constant="2" id="kP2-2d-WSR"/>
@@ -240,7 +224,6 @@
                 <outlet property="orderIssueWeightField" destination="kbH-ZD-T5C" id="AAd-B9-GsE"/>
                 <outlet property="orderLoadDateField" destination="ePF-e2-nkX" id="WlR-Tv-P0Y"/>
                 <outlet property="orderNumberField" destination="wQV-q3-sTH" id="ZMv-sG-9bF"/>
-                <outlet property="orderPayStateField" destination="KIK-i8-bPL" id="bYu-jS-FFC"/>
                 <outlet property="orderShipmentNumberField" destination="Zqv-5n-DHT" id="230-VQ-8qP"/>
                 <outlet property="orderWorkFlowField" destination="nuq-zG-WuX" id="3Ai-fb-8Sb"/>
             </connections>

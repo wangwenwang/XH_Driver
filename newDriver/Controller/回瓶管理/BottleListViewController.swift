@@ -48,11 +48,10 @@ class BottleListViewController: UIViewController, UITableViewDataSource, UITable
             eSRefreshFooterView.animator?.setloadingMoreDescription1("\(biz.orders.count)")
         }
         
+        tableView.removeNoOrderPrompt()
         if(biz.orders.count == 0) {
             self.tableView.es_stopLoadingMore()
-            tableView.noOrder(title: "您还没有未交付订单")
-        } else {
-            tableView.removeNoOrderPrompt()
+            tableView.noOrder(title: "您还没有\((lmTitleView?.titleText)!)订单")
         }
     }
     
@@ -118,6 +117,7 @@ class BottleListViewController: UIViewController, UITableViewDataSource, UITable
         addNotification()
         
         self.tableView.register(UINib.init(nibName: "BottleListTableViewCell", bundle: nil), forCellReuseIdentifier: "BottleListTableViewCell")
+        tableView.separatorStyle = .none
         
         initRefreshView()
         
@@ -128,21 +128,20 @@ class BottleListViewController: UIViewController, UITableViewDataSource, UITable
         self.lmTitleView?.menuCount = self.menuTexts.count
     }
     
-    override func viewWillAppear(_ animated: Bool) {
-//        super.viewWillAppear(animated)
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
         if(viewWillAppear_refresh) {
             self.tableView.es_startPullToRefresh()
         }
     }
     
-    override func viewDidDisappear(_ animated: Bool) {
-        super.viewDidDisappear(animated)
-        removeNotification()
-    }
-    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    deinit {
+        print("deinit")
     }
     
     // MARK: - 通知
