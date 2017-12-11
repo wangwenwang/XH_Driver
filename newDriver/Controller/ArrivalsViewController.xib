@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13527"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13173"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -59,7 +59,7 @@
                                         </mask>
                                     </variation>
                                     <connections>
-                                        <action selector="addOnePictureOnclick:" destination="-1" eventType="touchUpInside" id="DIF-OE-jlC"/>
+                                        <action selector="addOnePictureOnclick" destination="-1" eventType="touchUpInside" id="BVq-eV-rY6"/>
                                     </connections>
                                 </button>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rxt-AH-fgD" userLabel="+1">
@@ -67,7 +67,7 @@
                                     <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
                                     <state key="normal" image="ic_imageview_default_bg"/>
                                     <connections>
-                                        <action selector="addOnePictureOnclick:" destination="-1" eventType="touchUpInside" id="QQK-Eo-hwn"/>
+                                        <action selector="addOnePictureOnclick" destination="-1" eventType="touchUpInside" id="ULN-dU-zEl"/>
                                     </connections>
                                 </button>
                             </subviews>
@@ -84,8 +84,8 @@
                             </constraints>
                             <variation key="default">
                                 <mask key="constraints">
-                                    <exclude reference="AkV-61-pao"/>
                                     <exclude reference="4lw-zk-1J7"/>
+                                    <exclude reference="AkV-61-pao"/>
                                 </mask>
                             </variation>
                         </view>
@@ -141,7 +141,7 @@
                                         </mask>
                                     </variation>
                                     <connections>
-                                        <action selector="addTwoPictureOnclick:" destination="-1" eventType="touchUpInside" id="1Du-mr-CZa"/>
+                                        <action selector="addTwoPictureOnclick" destination="-1" eventType="touchUpInside" id="rZn-2i-GTR"/>
                                     </connections>
                                 </button>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nOP-ai-ZV8" userLabel="+2">
@@ -149,7 +149,7 @@
                                     <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
                                     <state key="normal" image="ic_imageview_default_bg"/>
                                     <connections>
-                                        <action selector="addTwoPictureOnclick:" destination="-1" eventType="touchUpInside" id="Ybh-S7-snP"/>
+                                        <action selector="addTwoPictureOnclick" destination="-1" eventType="touchUpInside" id="9kj-dP-62k"/>
                                     </connections>
                                 </button>
                             </subviews>
@@ -190,10 +190,10 @@
                     </constraints>
                     <variation key="default">
                         <mask key="constraints">
+                            <exclude reference="pN0-pB-6OM"/>
                             <exclude reference="1ze-6h-Gx0"/>
                             <exclude reference="RJJ-cx-WtM"/>
                             <exclude reference="Tcy-G0-sAh"/>
-                            <exclude reference="pN0-pB-6OM"/>
                         </mask>
                     </variation>
                 </view>
