@@ -187,6 +187,8 @@
 		30C489661F3C64D200EDB7CB /* DriverListPayBiz.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30C489651F3C64D200EDB7CB /* DriverListPayBiz.swift */; };
 		30C6E7001DE6E508008C3AF2 /* pch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30C6E6FF1DE6E508008C3AF2 /* pch.swift */; };
 		30D669D21E78D7AF00BE3181 /* UserNotifications.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 30D669D11E78D7AF00BE3181 /* UserNotifications.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
+		30D9EF461FDE956A00C832AA /* ArrivalsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30D9EF441FDE956A00C832AA /* ArrivalsViewController.swift */; };
+		30D9EF471FDE956A00C832AA /* ArrivalsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 30D9EF451FDE956A00C832AA /* ArrivalsViewController.xib */; };
 		30E348431DFF9CE8002FF374 /* PushOrder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30E348421DFF9CE8002FF374 /* PushOrder.swift */; };
 		30FA7D1F1E820E6A00BB002D /* BillingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30FA7D1D1E820E6A00BB002D /* BillingViewController.swift */; };
 		30FA7D201E820E6A00BB002D /* BillingViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 30FA7D1E1E820E6A00BB002D /* BillingViewController.xib */; };
@@ -401,6 +403,8 @@
 		30C489651F3C64D200EDB7CB /* DriverListPayBiz.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DriverListPayBiz.swift; sourceTree = "<group>"; };
 		30C6E6FF1DE6E508008C3AF2 /* pch.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = pch.swift; sourceTree = "<group>"; };
 		30D669D11E78D7AF00BE3181 /* UserNotifications.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UserNotifications.framework; path = System/Library/Frameworks/UserNotifications.framework; sourceTree = SDKROOT; };
+		30D9EF441FDE956A00C832AA /* ArrivalsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArrivalsViewController.swift; sourceTree = "<group>"; };
+		30D9EF451FDE956A00C832AA /* ArrivalsViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ArrivalsViewController.xib; sourceTree = "<group>"; };
 		30E348421DFF9CE8002FF374 /* PushOrder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PushOrder.swift; sourceTree = "<group>"; };
 		30FA7D1D1E820E6A00BB002D /* BillingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BillingViewController.swift; sourceTree = "<group>"; };
 		30FA7D1E1E820E6A00BB002D /* BillingViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BillingViewController.xib; sourceTree = "<group>"; };
@@ -621,6 +625,8 @@
 				3074A0C51DF7B3B6008DC76F /* AllTableViewController.xib */,
 				3074A0D51DF7B3B6008DC76F /* OrderDetailViewController.swift */,
 				3074A0D61DF7B3B6008DC76F /* OrderDetailViewController.xib */,
+				30D9EF441FDE956A00C832AA /* ArrivalsViewController.swift */,
+				30D9EF451FDE956A00C832AA /* ArrivalsViewController.xib */,
 				30C4895B1F3BF63900EDB7CB /* DriverListPayViewController.swift */,
 				30C4895C1F3BF63900EDB7CB /* DriverListPayViewController.xib */,
 				3074A0DA1DF7B3B6008DC76F /* PayOrderViewController.swift */,
@@ -983,6 +989,7 @@
 				3074A0EF1DF7B3B6008DC76F /* AboutViewController.xib in Resources */,
 				3074A0F71DF7B3B6008DC76F /* CheckAutographAndPictureViewController.xib in Resources */,
 				30C489641F3BFC3200EDB7CB /* DriverListPayTableViewCell.xib in Resources */,
+				30D9EF471FDE956A00C832AA /* ArrivalsViewController.xib in Resources */,
 				30036FA51FC3BBA800E59504 /* CarrierViewController.xib in Resources */,
 				3074A1051DF7B3B6008DC76F /* PayedTableViewController.xib in Resources */,
 				306206251FC652B30056650A /* BottleListViewController.xib in Resources */,
@@ -1084,6 +1091,7 @@
 				30FA7D1F1E820E6A00BB002D /* BillingViewController.swift in Sources */,
 				3074A19A1DF7B7FC008DC76F /* ESRefreshAnimator.swift in Sources */,
 				300472521DF7B955005A9ED5 /* Tools.swift in Sources */,
+				30D9EF461FDE956A00C832AA /* ArrivalsViewController.swift in Sources */,
 				3074A1081DF7B3B6008DC76F /* AllOrderTableViewCell.swift in Sources */,
 				3074A1061DF7B3B6008DC76F /* PayOrderViewController.swift in Sources */,
 				300FB2961E836248009E13F5 /* ShipmentAuditStatus.swift in Sources */,

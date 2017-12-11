@@ -95,8 +95,10 @@ class Order: BaseBean {
     var ORD_REMARK_CONSIGNEE: String = ""
     ///
     var MJ_REMARK: String = ""
-    ///司机交付标志， yb司机交付状态
+    /// 司机交付标志， yb司机交付状态
     var DRIVER_PAY: String = ""
+    /// 司机到达标志， Y为已到达，否则未到达
+    var REFERENCE05: String = ""
     ///
     var OrderDetails: [OrderDetail] = []
     ///
@@ -168,26 +170,6 @@ class Order: BaseBean {
         
         AUDIT_FLAG <- map["AUDIT_FLAG"]
         ERROR_FLAG <- map["ERROR_FLAG"]
+        REFERENCE05 <- map["REFERENCE05"]
     }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

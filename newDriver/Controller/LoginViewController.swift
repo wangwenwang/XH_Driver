@@ -275,7 +275,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate, HttpResponsePr
         
         isUpdataLocation = true
         
-        //记录最新的位置
+        // 记录最新的位置
         AppDelegate.location = userLocation.location.coordinate
         
         if biz.isNeedChangeUpdataLocationSpanTime {//上传位置点间隔时间需要进行调整

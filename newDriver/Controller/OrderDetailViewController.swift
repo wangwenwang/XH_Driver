@@ -506,13 +506,19 @@ class OrderDetailViewController: UIViewController, HttpResponseProtocol, UITable
             self.navigationController?.pushViewController(checkAutographAndPictureController, animated: true)
         } else if self.DRIVER_PAY() == kDRIVER_PAY_NO {
             
-            // 交付订单
-            self.title = ""
-            let payOrderController = PayOrderViewController(nibName:"PayOrderViewController", bundle: nil)
-            payOrderController.orderIDX = (biz.order?.IDX)!
-            payOrderController.orderNOs = [(biz.order?.ORD_NO)!]
-            print(biz.order)
-            self.navigationController?.pushViewController(payOrderController, animated: true)
+            
+            if(biz.order?.REFERENCE05 == "Y") {
+                // 交付订单
+                let vc = PayOrderViewController(nibName:"PayOrderViewController", bundle: nil)
+                vc.orderIDX = (biz.order?.IDX)!
+                vc.orderNOs = [(biz.order?.ORD_NO)!]
+                self.navigationController?.pushViewController(vc, animated: true)
+            } else {
+                // 司机到达
+                let vc = ArrivalsViewController(nibName:"ArrivalsViewController", bundle: nil)
+                vc.orderIDX = (biz.order?.IDX)!
+                self.navigationController?.pushViewController(vc, animated: true)
+            }
         } else {
             
             Tools.showAlertDialog("未知的订单交付状态\(self.DRIVER_PAY())", self)
@@ -615,6 +621,15 @@ class OrderDetailViewController: UIViewController, HttpResponseProtocol, UITable
                 checkBillingStatusLabel.text = kCheckBillingStatus_NO
             }
         }
+        
+        if(biz.order?.REFERENCE05 == "Y") {
+            // 交付订单
+            deliverOrCheckPictureBtn.setTitle("交付", for: .normal)
+        } else {
+            // 司机到达
+            deliverOrCheckPictureBtn.setTitle("到达", for: .normal)
+        }
+        
         print("=========responseSuccess3")
     }
     
