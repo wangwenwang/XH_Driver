@@ -42,6 +42,8 @@
 		300472511DF7B955005A9ED5 /* StringUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3004724C1DF7B955005A9ED5 /* StringUtils.swift */; };
 		300472521DF7B955005A9ED5 /* Tools.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3004724D1DF7B955005A9ED5 /* Tools.swift */; };
 		300472551DF7B976005A9ED5 /* HttpResponseProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 300472541DF7B976005A9ED5 /* HttpResponseProtocol.swift */; };
+		300776221FDFFD1C00D0FBB7 /* OrderQRCodeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 300776201FDFFD1C00D0FBB7 /* OrderQRCodeViewController.swift */; };
+		300776231FDFFD1C00D0FBB7 /* OrderQRCodeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 300776211FDFFD1C00D0FBB7 /* OrderQRCodeViewController.xib */; };
 		300FB28D1E825FF3009E13F5 /* OrderBillingTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 300FB28B1E825FF3009E13F5 /* OrderBillingTableViewCell.swift */; };
 		300FB28E1E825FF3009E13F5 /* OrderBillingTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 300FB28C1E825FF3009E13F5 /* OrderBillingTableViewCell.xib */; };
 		300FB2911E826008009E13F5 /* OtherBillingTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 300FB28F1E826008009E13F5 /* OtherBillingTableViewCell.swift */; };
@@ -186,6 +188,12 @@
 		30C489641F3BFC3200EDB7CB /* DriverListPayTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 30C489621F3BFC3200EDB7CB /* DriverListPayTableViewCell.xib */; };
 		30C489661F3C64D200EDB7CB /* DriverListPayBiz.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30C489651F3C64D200EDB7CB /* DriverListPayBiz.swift */; };
 		30C6E7001DE6E508008C3AF2 /* pch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30C6E6FF1DE6E508008C3AF2 /* pch.swift */; };
+		30C8B4061FDF630300C4BC6D /* ScanViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30C8B4041FDF630300C4BC6D /* ScanViewController.swift */; };
+		30C8B4071FDF630300C4BC6D /* ScanViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 30C8B4051FDF630300C4BC6D /* ScanViewController.xib */; };
+		30C8B4091FDF646700C4BC6D /* Tool.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30C8B4081FDF646700C4BC6D /* Tool.swift */; };
+		30C8B40B1FDF64E900C4BC6D /* UIImage+QRCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30C8B40A1FDF64E900C4BC6D /* UIImage+QRCode.swift */; };
+		30C8B40F1FDF667E00C4BC6D /* String+QRCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30C8B40E1FDF667D00C4BC6D /* String+QRCode.swift */; };
+		30C8B4121FDF71E700C4BC6D /* NewToFoctoryBiz.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30C8B4111FDF71E700C4BC6D /* NewToFoctoryBiz.swift */; };
 		30D669D21E78D7AF00BE3181 /* UserNotifications.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 30D669D11E78D7AF00BE3181 /* UserNotifications.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 		30D9EF461FDE956A00C832AA /* ArrivalsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30D9EF441FDE956A00C832AA /* ArrivalsViewController.swift */; };
 		30D9EF471FDE956A00C832AA /* ArrivalsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 30D9EF451FDE956A00C832AA /* ArrivalsViewController.xib */; };
@@ -249,6 +257,8 @@
 		3004724C1DF7B955005A9ED5 /* StringUtils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StringUtils.swift; sourceTree = "<group>"; };
 		3004724D1DF7B955005A9ED5 /* Tools.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Tools.swift; sourceTree = "<group>"; };
 		300472541DF7B976005A9ED5 /* HttpResponseProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HttpResponseProtocol.swift; sourceTree = "<group>"; };
+		300776201FDFFD1C00D0FBB7 /* OrderQRCodeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderQRCodeViewController.swift; sourceTree = "<group>"; };
+		300776211FDFFD1C00D0FBB7 /* OrderQRCodeViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = OrderQRCodeViewController.xib; sourceTree = "<group>"; };
 		300FB28B1E825FF3009E13F5 /* OrderBillingTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OrderBillingTableViewCell.swift; sourceTree = "<group>"; };
 		300FB28C1E825FF3009E13F5 /* OrderBillingTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = OrderBillingTableViewCell.xib; sourceTree = "<group>"; };
 		300FB28F1E826008009E13F5 /* OtherBillingTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OtherBillingTableViewCell.swift; sourceTree = "<group>"; };
@@ -402,6 +412,13 @@
 		30C489621F3BFC3200EDB7CB /* DriverListPayTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DriverListPayTableViewCell.xib; sourceTree = "<group>"; };
 		30C489651F3C64D200EDB7CB /* DriverListPayBiz.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DriverListPayBiz.swift; sourceTree = "<group>"; };
 		30C6E6FF1DE6E508008C3AF2 /* pch.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = pch.swift; sourceTree = "<group>"; };
+		30C8B4041FDF630300C4BC6D /* ScanViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScanViewController.swift; sourceTree = "<group>"; };
+		30C8B4051FDF630300C4BC6D /* ScanViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ScanViewController.xib; sourceTree = "<group>"; };
+		30C8B4081FDF646700C4BC6D /* Tool.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Tool.swift; sourceTree = "<group>"; };
+		30C8B40A1FDF64E900C4BC6D /* UIImage+QRCode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImage+QRCode.swift"; sourceTree = "<group>"; };
+		30C8B40E1FDF667D00C4BC6D /* String+QRCode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+QRCode.swift"; sourceTree = "<group>"; };
+		30C8B4101FDF698C00C4BC6D /* noticeMusic.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = noticeMusic.caf; sourceTree = "<group>"; };
+		30C8B4111FDF71E700C4BC6D /* NewToFoctoryBiz.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewToFoctoryBiz.swift; sourceTree = "<group>"; };
 		30D669D11E78D7AF00BE3181 /* UserNotifications.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UserNotifications.framework; path = System/Library/Frameworks/UserNotifications.framework; sourceTree = SDKROOT; };
 		30D9EF441FDE956A00C832AA /* ArrivalsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArrivalsViewController.swift; sourceTree = "<group>"; };
 		30D9EF451FDE956A00C832AA /* ArrivalsViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ArrivalsViewController.xib; sourceTree = "<group>"; };
@@ -625,12 +642,20 @@
 				3074A0C51DF7B3B6008DC76F /* AllTableViewController.xib */,
 				3074A0D51DF7B3B6008DC76F /* OrderDetailViewController.swift */,
 				3074A0D61DF7B3B6008DC76F /* OrderDetailViewController.xib */,
+				300776201FDFFD1C00D0FBB7 /* OrderQRCodeViewController.swift */,
+				300776211FDFFD1C00D0FBB7 /* OrderQRCodeViewController.xib */,
 				30D9EF441FDE956A00C832AA /* ArrivalsViewController.swift */,
 				30D9EF451FDE956A00C832AA /* ArrivalsViewController.xib */,
 				30C4895B1F3BF63900EDB7CB /* DriverListPayViewController.swift */,
 				30C4895C1F3BF63900EDB7CB /* DriverListPayViewController.xib */,
 				3074A0DA1DF7B3B6008DC76F /* PayOrderViewController.swift */,
 				3074A0DB1DF7B3B6008DC76F /* PayOrderViewController.xib */,
+				30C8B4041FDF630300C4BC6D /* ScanViewController.swift */,
+				30C8B4051FDF630300C4BC6D /* ScanViewController.xib */,
+				30C8B4081FDF646700C4BC6D /* Tool.swift */,
+				30C8B40A1FDF64E900C4BC6D /* UIImage+QRCode.swift */,
+				30C8B40E1FDF667D00C4BC6D /* String+QRCode.swift */,
+				30C8B4101FDF698C00C4BC6D /* noticeMusic.caf */,
 				3074A0DC1DF7B3B6008DC76F /* TableViewCell */,
 				3074A0EB1DF7B3B6008DC76F /* WelcomeViewController.swift */,
 				3074A0EC1DF7B3B6008DC76F /* ZoomImageViewViewController.swift */,
@@ -687,6 +712,7 @@
 				300FB2991E836C56009E13F5 /* ShipmentAuditBiz.swift */,
 				30C489591F3BE53800EDB7CB /* GetShipmentUnPayOrderListBiz.swift */,
 				30C489651F3C64D200EDB7CB /* DriverListPayBiz.swift */,
+				30C8B4111FDF71E700C4BC6D /* NewToFoctoryBiz.swift */,
 				308DE4D61FBFBD2E00F840E9 /* 回瓶管理 */,
 			);
 			path = Model;
@@ -968,6 +994,7 @@
 				3074A1001DF7B3B6008DC76F /* NotPayTableViewController.xib in Resources */,
 				3074A10B1DF7B3B6008DC76F /* NotificationDetailTableViewCell.xib in Resources */,
 				306206351FC6A4D60056650A /* BottleInfoViewController.xib in Resources */,
+				300776231FDFFD1C00D0FBB7 /* OrderQRCodeViewController.xib in Resources */,
 				3074A1091DF7B3B6008DC76F /* AllOrderTableViewCell.xib in Resources */,
 				3074A10F1DF7B3B6008DC76F /* NotificationSimpleTableViewCell.xib in Resources */,
 				3074A0F51DF7B3B6008DC76F /* CheckAndModifyOrderAddressViewController.xib in Resources */,
@@ -991,6 +1018,7 @@
 				30C489641F3BFC3200EDB7CB /* DriverListPayTableViewCell.xib in Resources */,
 				30D9EF471FDE956A00C832AA /* ArrivalsViewController.xib in Resources */,
 				30036FA51FC3BBA800E59504 /* CarrierViewController.xib in Resources */,
+				30C8B4071FDF630300C4BC6D /* ScanViewController.xib in Resources */,
 				3074A1051DF7B3B6008DC76F /* PayedTableViewController.xib in Resources */,
 				306206251FC652B30056650A /* BottleListViewController.xib in Resources */,
 				3062062B1FC65B640056650A /* BottleListTableViewCell.xib in Resources */,
@@ -1079,6 +1107,7 @@
 				30036F9C1FC2BA1700E59504 /* ConsigneeViewController.swift in Sources */,
 				3013F3461FC79C8A00CF69CA /* TPKeyboardAvoidingSwift.swift in Sources */,
 				302B0F071E02380E00AC2FEC /* PushOrderViewController.swift in Sources */,
+				30C8B4121FDF71E700C4BC6D /* NewToFoctoryBiz.swift in Sources */,
 				3062062A1FC65B640056650A /* BottleListTableViewCell.swift in Sources */,
 				30C6E7001DE6E508008C3AF2 /* pch.swift in Sources */,
 				3074A1271DF7B3EA008DC76F /* CheckAutographAndPictureBiz.swift in Sources */,
@@ -1103,6 +1132,7 @@
 				3074A12E1DF7B3EA008DC76F /* PayedOrderBiz.swift in Sources */,
 				3074A12A1DF7B3EA008DC76F /* LoginBiz.swift in Sources */,
 				3035D5101E07AB80008B073A /* UITableView+NoDataPrompt.m in Sources */,
+				30C8B40F1FDF667E00C4BC6D /* String+QRCode.swift in Sources */,
 				30036FB31FC412EE00E59504 /* Bottle.swift in Sources */,
 				3074A1161DF7B3B6008DC76F /* WelcomeViewController.swift in Sources */,
 				3074A10A1DF7B3B6008DC76F /* NotificationDetailTableViewCell.swift in Sources */,
@@ -1144,6 +1174,9 @@
 				300472511DF7B955005A9ED5 /* StringUtils.swift in Sources */,
 				3074A1251DF7B3EA008DC76F /* AllOrderBiz.swift in Sources */,
 				3074A1281DF7B3EA008DC76F /* CheckPthBiz.swift in Sources */,
+				30C8B4091FDF646700C4BC6D /* Tool.swift in Sources */,
+				30C8B4061FDF630300C4BC6D /* ScanViewController.swift in Sources */,
+				300776221FDFFD1C00D0FBB7 /* OrderQRCodeViewController.swift in Sources */,
 				3074A19C1DF7B7FC008DC76F /* ESRefreshProtocol.swift in Sources */,
 				30036F8E1FC25CEA00E59504 /* GetReturnPartyListBiz.swift in Sources */,
 				3004724F1DF7B955005A9ED5 /* DateUtils.swift in Sources */,
@@ -1175,6 +1208,7 @@
 				3074A19B1DF7B7FC008DC76F /* ESRefreshComponent.swift in Sources */,
 				3074A1921DF7B7FC008DC76F /* AuxiliaryModels.swift in Sources */,
 				3074A0F81DF7B3B6008DC76F /* CheckPathViewController.swift in Sources */,
+				30C8B40B1FDF64E900C4BC6D /* UIImage+QRCode.swift in Sources */,
 				3074A1401DF7B417008DC76F /* User.swift in Sources */,
 				3074A1451DF7B62D008DC76F /* URLConstants.swift in Sources */,
 				3074A0FE1DF7B3B6008DC76F /* NewsViewController.swift in Sources */,

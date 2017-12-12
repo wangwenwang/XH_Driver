@@ -34,7 +34,7 @@ struct URLConstants {
     /// 修改登录密码
     static let changePassword: String = URLConstants.baseUrl + "modifyPassword"
     
-    /// 获取物流信息详情   GetOrderTmsOrderNoInfo GetOrderTmsInfo
+    /// 获取订单信息详情   GetOrderTmsOrderNoInfo GetOrderTmsInfo
     static let getOrderTmsInfo = URLConstants.baseUrl + "GetOrderTmsOrderNoInfo"
     
     /// 获取最新版本 app 信息
@@ -109,6 +109,18 @@ struct URLConstants {
     
     /// 正向流程
     static let kAPI_OrderWorkflow = URLConstants.baseUrl + "OrderWorkflow"
+    
+    /// 到厂时间
+    static let kAPI_NewToFoctory = URLConstants.baseUrl + "NewToFoctory"
+    
+    /// 入月台时间
+    static let kAPI_INMonth = URLConstants.baseUrl + "INMonth"
+    
+    /// 出月台时间
+    static let kAPI_Month = URLConstants.baseUrl + "Month"
+    
+    /// 出厂时间
+    static let kAPI_NewFoctory = URLConstants.baseUrl + "NewFoctory"
     
     /// 通知刷新回瓶列表
     static let kNotification_BottleListViewController = "Notification_BottleListViewController"

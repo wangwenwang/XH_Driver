@@ -507,18 +507,18 @@ class OrderDetailViewController: UIViewController, HttpResponseProtocol, UITable
         } else if self.DRIVER_PAY() == kDRIVER_PAY_NO {
             
             
-            if(biz.order?.REFERENCE05 == "Y") {
+//            if(biz.order?.REFERENCE05 == "Y") {
                 // 交付订单
                 let vc = PayOrderViewController(nibName:"PayOrderViewController", bundle: nil)
                 vc.orderIDX = (biz.order?.IDX)!
                 vc.orderNOs = [(biz.order?.ORD_NO)!]
                 self.navigationController?.pushViewController(vc, animated: true)
-            } else {
-                // 司机到达
-                let vc = ArrivalsViewController(nibName:"ArrivalsViewController", bundle: nil)
-                vc.orderIDX = (biz.order?.IDX)!
-                self.navigationController?.pushViewController(vc, animated: true)
-            }
+//            } else {
+//                // 司机到达
+//                let vc = ArrivalsViewController(nibName:"ArrivalsViewController", bundle: nil)
+//                vc.orderIDX = (biz.order?.IDX)!
+//                self.navigationController?.pushViewController(vc, animated: true)
+//            }
         } else {
             
             Tools.showAlertDialog("未知的订单交付状态\(self.DRIVER_PAY())", self)
@@ -547,12 +547,25 @@ class OrderDetailViewController: UIViewController, HttpResponseProtocol, UITable
             }
         } else if DRIVER_PAY() == "未交付" {
             
-            let driverListPayViewController = DriverListPayViewController(nibName:"DriverListPayViewController", bundle: nil)
-            driverListPayViewController.TMS_SHIPMENT_NO = (biz.order?.TMS_SHIPMENT_NO)!
-            self.navigationController?.pushViewController(driverListPayViewController, animated: true)
+            let vc = ScanViewController(nibName:"ScanViewController", bundle: nil)
+            vc.qrCodeType = 3
+            vc.orderIdx = biz.order?.IDX
+            self.navigationController?.pushViewController(vc, animated: true)
+            
+//            let driverListPayViewController = DriverListPayViewController(nibName:"DriverListPayViewController", bundle: nil)
+//            driverListPayViewController.TMS_SHIPMENT_NO = (biz.order?.TMS_SHIPMENT_NO)!
+//            self.navigationController?.pushViewController(driverListPayViewController, animated: true)
         }
     }
     
+    
+    // 生成二维码
+    @IBAction func orderQRCodeOnclick(_ sender: UIButton) {
+        
+        let vc = OrderQRCodeViewController(nibName:"OrderQRCodeViewController", bundle: nil)
+        vc.TMS_SHIPMENT_NO = biz.order?.TMS_SHIPMENT_NO
+        self.navigationController?.pushViewController(vc, animated: true)
+    }
     
     // MARK: - HttpResponseProtocol
     /// 获取订单详情成功返回数据
@@ -629,7 +642,6 @@ class OrderDetailViewController: UIViewController, HttpResponseProtocol, UITable
             // 司机到达
             deliverOrCheckPictureBtn.setTitle("到达", for: .normal)
         }
-        
         print("=========responseSuccess3")
     }
     

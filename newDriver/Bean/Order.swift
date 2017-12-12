@@ -118,6 +118,10 @@ class Order: BaseBean {
     var cellSelected: Bool = false
     
     
+    ///
+    var ToFactory_date: String = ""
+    
+    
     override func mapping(map: Map) {
         TMS_DATE_LOAD <- map["TMS_DATE_LOAD"]
         TMS_DATE_ISSUE <- map["TMS_DATE_ISSUE"]
@@ -171,5 +175,7 @@ class Order: BaseBean {
         AUDIT_FLAG <- map["AUDIT_FLAG"]
         ERROR_FLAG <- map["ERROR_FLAG"]
         REFERENCE05 <- map["REFERENCE05"]
+    
+        ToFactory_date <- map["ToFactory_date"]
     }
 }

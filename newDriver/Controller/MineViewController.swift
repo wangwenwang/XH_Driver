@@ -50,7 +50,13 @@ class MineViewController: UIViewController {
     @IBAction func about(_ sender: UIButton) {
         self.navigationController?.pushViewController(AboutViewController(nibName: "AboutViewController", bundle: nil), animated: true)
     }
-
+    
+    // 扫一扫
+    @IBAction func scan(_ sender: UIButton) {
+        
+        self.navigationController?.pushViewController(ScanViewController(nibName: "ScanViewController", bundle: nil), animated: true)
+    }
+    
     // 切换账号
     @IBAction func changeAccount(_ sender: UIButton) {
         self.dismiss(animated: true, completion: nil)
