@@ -84,6 +84,7 @@
 		3062063C1FC6AB990056650A /* BottleItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3062063B1FC6AB990056650A /* BottleItem.swift */; };
 		3062063E1FC6ACF90056650A /* BottleInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3062063D1FC6ACF90056650A /* BottleInfo.swift */; };
 		3062E8EF1DF7BA0A00AFB660 /* mapapi.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 3062E8EE1DF7BA0A00AFB660 /* mapapi.bundle */; };
+		306D16CD1FE12177003C4863 /* DriverIssueImageBiz.swift in Sources */ = {isa = PBXBuildFile; fileRef = 306D16CC1FE12177003C4863 /* DriverIssueImageBiz.swift */; };
 		3074A0EE1DF7B3B6008DC76F /* AboutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3074A0C21DF7B3B6008DC76F /* AboutViewController.swift */; };
 		3074A0EF1DF7B3B6008DC76F /* AboutViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3074A0C31DF7B3B6008DC76F /* AboutViewController.xib */; };
 		3074A0F01DF7B3B6008DC76F /* AllTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3074A0C41DF7B3B6008DC76F /* AllTableViewController.swift */; };
@@ -305,6 +306,7 @@
 		3062063B1FC6AB990056650A /* BottleItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottleItem.swift; sourceTree = "<group>"; };
 		3062063D1FC6ACF90056650A /* BottleInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottleInfo.swift; sourceTree = "<group>"; };
 		3062E8EE1DF7BA0A00AFB660 /* mapapi.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = mapapi.bundle; path = libs/mapapi.bundle; sourceTree = "<group>"; };
+		306D16CC1FE12177003C4863 /* DriverIssueImageBiz.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DriverIssueImageBiz.swift; sourceTree = "<group>"; };
 		3074A0C21DF7B3B6008DC76F /* AboutViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AboutViewController.swift; sourceTree = "<group>"; };
 		3074A0C31DF7B3B6008DC76F /* AboutViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AboutViewController.xib; sourceTree = "<group>"; };
 		3074A0C41DF7B3B6008DC76F /* AllTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AllTableViewController.swift; sourceTree = "<group>"; };
@@ -644,10 +646,10 @@
 				3074A0D61DF7B3B6008DC76F /* OrderDetailViewController.xib */,
 				300776201FDFFD1C00D0FBB7 /* OrderQRCodeViewController.swift */,
 				300776211FDFFD1C00D0FBB7 /* OrderQRCodeViewController.xib */,
-				30D9EF441FDE956A00C832AA /* ArrivalsViewController.swift */,
-				30D9EF451FDE956A00C832AA /* ArrivalsViewController.xib */,
 				30C4895B1F3BF63900EDB7CB /* DriverListPayViewController.swift */,
 				30C4895C1F3BF63900EDB7CB /* DriverListPayViewController.xib */,
+				30D9EF441FDE956A00C832AA /* ArrivalsViewController.swift */,
+				30D9EF451FDE956A00C832AA /* ArrivalsViewController.xib */,
 				3074A0DA1DF7B3B6008DC76F /* PayOrderViewController.swift */,
 				3074A0DB1DF7B3B6008DC76F /* PayOrderViewController.xib */,
 				30C8B4041FDF630300C4BC6D /* ScanViewController.swift */,
@@ -711,6 +713,7 @@
 				3074A11A1DF7B3EA008DC76F /* AllOrderBiz.swift */,
 				300FB2991E836C56009E13F5 /* ShipmentAuditBiz.swift */,
 				30C489591F3BE53800EDB7CB /* GetShipmentUnPayOrderListBiz.swift */,
+				306D16CC1FE12177003C4863 /* DriverIssueImageBiz.swift */,
 				30C489651F3C64D200EDB7CB /* DriverListPayBiz.swift */,
 				30C8B4111FDF71E700C4BC6D /* NewToFoctoryBiz.swift */,
 				308DE4D61FBFBD2E00F840E9 /* 回瓶管理 */,
@@ -1171,6 +1174,7 @@
 				3074A1261DF7B3EA008DC76F /* ChangePasswordBiz.swift in Sources */,
 				30036FA01FC2BD0D00E59504 /* ConsigneeTableViewCell.swift in Sources */,
 				3074A1931DF7B7FC008DC76F /* CyclePictureCell.swift in Sources */,
+				306D16CD1FE12177003C4863 /* DriverIssueImageBiz.swift in Sources */,
 				300472511DF7B955005A9ED5 /* StringUtils.swift in Sources */,
 				3074A1251DF7B3EA008DC76F /* AllOrderBiz.swift in Sources */,
 				3074A1281DF7B3EA008DC76F /* CheckPthBiz.swift in Sources */,

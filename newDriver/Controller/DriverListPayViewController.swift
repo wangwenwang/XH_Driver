@@ -21,7 +21,7 @@ class DriverListPayViewController: UIViewController, HttpResponseProtocol, UITab
     // 订单简介Cell
     let cellIdentifier = "DriverListPayTableViewCell"
     
-    let cellHeight: CGFloat = 72
+    let cellHeight: CGFloat = 104
     
     
     override func viewDidLoad() {

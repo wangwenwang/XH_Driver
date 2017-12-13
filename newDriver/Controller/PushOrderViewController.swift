@@ -13,6 +13,7 @@ class PushOrderViewController: UIViewController, UITableViewDelegate, UITableVie
     @IBOutlet weak var myTableView: UITableView!
     
     var SHIPMENT_List: [SHIPMENT_List] = []
+    var shipmentIdx: String!
     
     // MARK: - 生命周期
     override func viewDidLoad() {
@@ -30,6 +31,14 @@ class PushOrderViewController: UIViewController, UITableViewDelegate, UITableVie
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    // MARK: - 事件   生成装运二维码
+    @IBAction func shipmentQRCodeOnclick() {
+        
+        let vc = OrderQRCodeViewController(nibName:"OrderQRCodeViewController", bundle: nil)
+        vc.TMS_SHIPMENT_NO = shipmentIdx
+        self.navigationController?.pushViewController(vc, animated: true)
     }
     
     // MARK: - UITableViewDelegate

@@ -14,6 +14,7 @@ class BottleInfoTableViewCell: UITableViewCell {
     @IBOutlet weak var ORDER_QTY: UILabel!
     @IBOutlet public weak var qtyF: UITextField!
     @IBOutlet weak var lineView: UIView!
+    @IBOutlet weak var QTY_DELIVERY: UILabel!
     var ORD_WORKFLOW: String = ""
     
     override func awakeFromNib() {
@@ -31,14 +32,19 @@ class BottleInfoTableViewCell: UITableViewCell {
         didSet {
             PRODUCT_NAME.text = bottle.PRODUCT_NAME
             ORDER_QTY.text = bottle.ORDER_QTY
+            QTY_DELIVERY.text = bottle.QTY_DELIVERY
             
             if(ORD_WORKFLOW == "新建" || ORD_WORKFLOW == "已审核" || ORD_WORKFLOW == "已释放" || ORD_WORKFLOW == "已装运" || ORD_WORKFLOW == "已确认") {
                 
+                qtyF.isEnabled = true
+                lineView.isHidden = false
+                bottle.ISSUE_QTY = bottle.ORDER_QTY
             } else {
-                lineView.isHidden = true
-                qtyF.text = bottle.ISSUE_QTY
+                
                 qtyF.isEnabled = false
+                lineView.isHidden = true
             }
+            qtyF.text = bottle.ISSUE_QTY
         }
     }
     

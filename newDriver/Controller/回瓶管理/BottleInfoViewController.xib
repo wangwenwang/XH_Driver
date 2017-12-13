@@ -507,7 +507,7 @@
                         <constraint firstItem="iQC-0o-pVS" firstAttribute="leading" secondItem="8n1-Nr-nfe" secondAttribute="leading" id="r7A-Oi-R4A"/>
                     </constraints>
                 </scrollView>
-                <button hidden="YES" opaque="NO" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="imv-mi-hZH">
+                <button opaque="NO" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="imv-mi-hZH">
                     <rect key="frame" x="72" y="614" width="230" height="37"/>
                     <color key="backgroundColor" red="0.27013062170000002" green="0.65527860449999997" blue="1" alpha="1" colorSpace="deviceRGB"/>
                     <constraints>
@@ -527,9 +527,9 @@
                 <constraint firstItem="8n1-Nr-nfe" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="B2G-tb-AW2"/>
                 <constraint firstAttribute="trailing" secondItem="8n1-Nr-nfe" secondAttribute="trailing" id="H1v-us-SfF"/>
                 <constraint firstItem="8n1-Nr-nfe" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="Q2o-gi-5cg"/>
+                <constraint firstItem="imv-mi-hZH" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="Rsl-44-qlz"/>
                 <constraint firstAttribute="bottom" secondItem="8n1-Nr-nfe" secondAttribute="bottom" id="Tmh-km-AJ8"/>
-                <constraint firstAttribute="bottom" secondItem="imv-mi-hZH" secondAttribute="bottom" constant="20" id="uYZ-HL-VtX"/>
-                <constraint firstItem="imv-mi-hZH" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="x4D-f5-wmb"/>
+                <constraint firstAttribute="bottom" secondItem="imv-mi-hZH" secondAttribute="bottom" constant="20" id="eo4-PR-lW9"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <point key="canvasLocation" x="104.5" y="124.5"/>

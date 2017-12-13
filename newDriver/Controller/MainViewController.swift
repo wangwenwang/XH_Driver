@@ -396,6 +396,7 @@ class MainViewController: UIViewController, HttpResponseProtocol, BMKMapViewDele
             let sb = UIStoryboard(name: "Main", bundle:nil)
             let vc = sb.instantiateViewController(withIdentifier: "PushOrderViewController") as! PushOrderViewController
             vc.SHIPMENT_List = pushOrder.SHIPMENT_List
+            vc.shipmentIdx = pushOrder.SHIPMENTNO
             self.navigationController?.pushViewController(vc, animated: true)
             
         } else if(pushOrder.TYPE == "1") {

@@ -38,8 +38,11 @@ class BottleItem: BaseBean {
     /// 订单数量
     var ORDER_QTY: String = ""
     
-    /// ISSUE_QTY
+    /// 发货数量(司机确认过)
     var ISSUE_QTY: String = ""
+    
+    /// 交付数量(工厂确认过)
+    var QTY_DELIVERY: String = ""
     
     override func mapping(map: Map) {
         IDX <- map["IDX"]
@@ -52,5 +55,6 @@ class BottleItem: BaseBean {
         PO_QTY <- map["PO_QTY"]
         ORDER_QTY <- map["ORDER_QTY"]
         ISSUE_QTY <- map["ISSUE_QTY"]
+        QTY_DELIVERY <- map["QTY_DELIVERY"]
     }
 }

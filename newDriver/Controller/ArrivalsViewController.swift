@@ -8,10 +8,45 @@
 
 import UIKit
 
-class ArrivalsViewController: UIViewController, UIAlertViewDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate, UIActionSheetDelegate {
+class ArrivalsViewController: UIViewController, UIAlertViewDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate, UIActionSheetDelegate, HttpResponseProtocol {
+    
+    
+    
+    func responseSuccess() {
+        
+        _ = MBProgressHUD.hideHUDForView(UIApplication.shared.keyWindow!, animated: true)
+        
+        let vcl = navigationController?.viewControllers[0]
+        NotPayTableViewController.shouldRefresh = true
+        
+        let hud: MBProgressHUD = MBProgressHUD.showHUDAddedTo(self.navigationController!.view, animated: true)
+        
+        // Configure for text only and offset down
+        hud.mode = .text
+        hud.labelText = "提交订单成功，即将返回..."
+        hud.margin = 10.0
+        hud.removeFromSuperViewOnHide = true
+        hud.hide(true, afterDelay: 2)
+        
+        DispatchQueue.global().async {
+            sleep(2)
+            DispatchQueue.main.async {
+                _ = self.navigationController?.popToViewController(vcl!, animated: true)
+            }
+        }
+    }
+    
+    func responseError(_ error: String) {
+        
+        _ = MBProgressHUD.hideHUDForView(UIApplication.shared.keyWindow!, animated: true)
+        Tools.showAlertDialog(error, self)
+    }
+    
 
     @IBOutlet weak var onePictureBtn: UIButton!
     @IBOutlet weak var twoPictureBtn: UIButton!
+    
+    let biz: DriverIssueImageBiz = DriverIssueImageBiz()
     
     // 选择现场图片的角标，1 现场图片1，2 现场图片2
     var currentUpdataPictureIndex: Int = 0
@@ -24,14 +59,14 @@ class ArrivalsViewController: UIViewController, UIAlertViewDelegate, UIImagePick
     // 现场图片1
     var image1: UIImage? {
         didSet {
-            onePictureBtn.imageView?.image = image1
+            onePictureBtn.setImage(image1, for: .normal)
         }
     }
     
     // 现场图片2
     var image2: UIImage? {
         didSet {
-            twoPictureBtn.imageView?.image = image2
+            twoPictureBtn.setImage(image2, for: .normal)
         }
     }
     
@@ -51,12 +86,18 @@ class ArrivalsViewController: UIViewController, UIAlertViewDelegate, UIImagePick
     
     
     // MARK: - 函数
-    func addOnePicture() {
+    func addPicture() {
         
-        let alert : UIAlertController = UIAlertController.init(title: "添加照片", message: "", preferredStyle: .alert)
-        alert.addAction(UIAlertAction.init(title: "确定", style: .default, handler: { (UIAlertAction) in
-            
-        }))
+        let actionSheet : UIActionSheet = UIActionSheet.init(title: "", delegate: self, cancelButtonTitle:"取消", destructiveButtonTitle: nil, otherButtonTitles:"拍照")
+        actionSheet.show(in: UIApplication.shared.keyWindow!)
+    }
+    
+    
+    // 跳转到imagePicker里
+    func makePhoto() {
+        
+        pickerController?.sourceType = .camera
+        self.present(pickerController!, animated: true, completion: nil)
     }
     
     
@@ -64,36 +105,42 @@ class ArrivalsViewController: UIViewController, UIAlertViewDelegate, UIImagePick
     @IBAction func addOnePictureOnclick() {
         
         currentUpdataPictureIndex = 1
-        addOnePicture()
+        addPicture()
     }
     
     @IBAction func addTwoPictureOnclick() {
         
         currentUpdataPictureIndex = 2
-        addOnePicture()
+        addPicture()
+    }
+    
+    @IBAction func cancelOnclick() {
+        
+        let vcl = navigationController?.viewControllers[0]
+        NotPayTableViewController.shouldRefresh = true
+        _ = self.navigationController?.popToViewController(vcl!, animated: true)
     }
     
     @IBAction func commitOnclick() {
         
         if image1 == nil {
-            Tools.showAlertDialog("请上上传现场图片1再提交！", self)
+            Tools.showAlertDialog("请上传现场图片1再提交！", self)
             return
         }
         if image2 == nil {
-            Tools.showAlertDialog("请上上传现场图片2再提交！", self)
+            Tools.showAlertDialog("请上传现场图片2再提交！", self)
             return
         }
-//        let image1Str = biz.changeImageToString(image1)
-//        let image2Str = biz.changeImageToString(image2)
-//        // 判断连接状态
-//        let reachability = Reachability.forInternetConnection()
-//        if reachability!.isReachable(){
-//            showProgress()
-//            biz.payOrderWithPicture(orderIdx: orderIDX, autographStr: autographStr, image1Str: image1Str, image2Str: image2Str, deliveNoStr: deliveStr, httpresponseProtocol: self)
-//            isPaySuccess = true
-//        }else{
-//            self.responseError("网络连接不可用!")
-//        }
+        let image1Str = biz.changeImageToString(image1)
+        let image2Str = biz.changeImageToString(image2)
+        // 判断连接状态
+        let reachability = Reachability.forInternetConnection()
+        if reachability!.isReachable() {
+            _ = MBProgressHUD.showHUDAddedTo(UIApplication.shared.keyWindow!, animated: true)
+            biz.DriverIssueImage(shipment_no: orderIDX, struseridx: (AppDelegate.user?.IDX)!, PictureFile1: image1Str, PictureFile2: image2Str, httpresponseProtocol: self)
+        } else {
+            self.responseError("网络连接不可用!")
+        }
     }
     
     
@@ -108,8 +155,31 @@ class ArrivalsViewController: UIViewController, UIAlertViewDelegate, UIImagePick
     }
     
     
+    // MARK: - UIActionSheetDelegate
+    func actionSheet(_ actionSheet: UIActionSheet, clickedButtonAt buttonIndex: Int) {
+        
+        if (buttonIndex == 1) {//相机
+            
+            if(UIImagePickerController.isSourceTypeAvailable(.camera)) {
+                
+                NSLog("支持相机")
+                makePhoto()
+            } else {
+                
+                let alert : UIAlertView = UIAlertView()
+                alert.title = "提示"
+                alert.message = "请在设置-->隐私-->相机，中开启本应用的相机访问权限！!"
+                alert.delegate = self
+                alert.addButton(withTitle: "取消")
+                alert.addButton(withTitle: "确定")
+                alert.show()
+            }
+        }
+    }
+    
+    
     // MARK: - 拍照回调
-    // 选择图片完成或拍照完成返回信息
+    // 完成拍照
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
         dismiss(animated: true, completion: nil)
         var image = info[UIImagePickerControllerEditedImage] as? UIImage
@@ -134,7 +204,7 @@ class ArrivalsViewController: UIViewController, UIAlertViewDelegate, UIImagePick
         }
     }
     
-    // 取消选择图片或拍照
+    // 取消拍照
     func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
         dismiss(animated: true, completion: nil)
     }

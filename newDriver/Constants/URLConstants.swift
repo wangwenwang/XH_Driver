@@ -81,6 +81,9 @@ struct URLConstants {
     /// 获取装运编号下属指定状态订单列表
     static let kAPI_GetShipmentUnPayOrderList = URLConstants.baseUrl + "GetShipmentUnPayOrderList"
     
+    /// 订单批量到达
+    static let kAPI_DriverIssueImage = URLConstants.baseUrl + "DriverIssueImage"
+    
     /// 订单批量交付
     static let kAPI_DriverListPay = URLConstants.baseUrl + "DriverListPay"
     

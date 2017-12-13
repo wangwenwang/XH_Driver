@@ -131,6 +131,9 @@ class BottleInfo: BaseBean {
     /// 承运商
     var TMS_FLEET_NAME: String = ""
     
+    /// 装运号
+    var TMS_SHIPMENT_NO: String = ""
+    
     override func mapping(map: Map) {
         IDX <- map["IDX"]
         ORD_GROUP_NO <- map["ORD_GROUP_NO"]
@@ -172,5 +175,6 @@ class BottleInfo: BaseBean {
         TMS_DRIVER_NAME <- map["TMS_DRIVER_NAME"]
         TMS_DRIVER_TEL <- map["TMS_DRIVER_TEL"]
         TMS_FLEET_NAME <- map["TMS_FLEET_NAME"]
+        TMS_SHIPMENT_NO <- map["TMS_SHIPMENT_NO"]
     }
 }

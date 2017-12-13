@@ -81,10 +81,13 @@ class BottleInfoViewController: UIViewController, HttpResponseProtocol, UITableV
             mulLine = Tools.getHeightOfString(text: TMS_FLEET_NAME.text!, fontSize: 15, width: SCREEN_WIDTH - 8 - 69.5 - 3)
             carrierViewHeight.constant += (mulLine - oneLine)
             
-            var bottomViewHeight: CGFloat = 10
+            var bottomViewHeight: CGFloat = 90
             if(biz.bottleDetail?.Info?.ORD_WORKFLOW == "新建" || biz.bottleDetail?.Info?.ORD_WORKFLOW == "已审核" || biz.bottleDetail?.Info?.ORD_WORKFLOW == "已释放" || biz.bottleDetail?.Info?.ORD_WORKFLOW == "已装运" || biz.bottleDetail?.Info?.ORD_WORKFLOW == "已确认") {
-                confirmBtn.isHidden = false
                 bottomViewHeight = 90
+                confirmBtn.setTitle("确认", for: .normal)
+            } else {
+                bottomViewHeight = 90
+                confirmBtn.setTitle("生成二维码", for: .normal)
             }
             requestBottleInfoOK = true
             scrollContentViewHeight.constant = customerViewHeight.constant +
@@ -130,7 +133,7 @@ class BottleInfoViewController: UIViewController, HttpResponseProtocol, UITableV
     
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var bottleInfoViewHeight: NSLayoutConstraint!
-    var kCellHeight: CGFloat = 44
+    var kCellHeight: CGFloat = 104
     
     // 工作流程
     @IBOutlet weak var ORD_WORKFLOW: UILabel!
@@ -195,32 +198,39 @@ class BottleInfoViewController: UIViewController, HttpResponseProtocol, UITableV
     // MARK: - 事件
     @IBAction func confirmOnclick() {
         
-        if(biz.bottleDetail?.Info?.ORD_WORKFLOW == "新建" || biz.bottleDetail?.Info?.ORD_WORKFLOW == "已审核" || biz.bottleDetail?.Info?.ORD_WORKFLOW == "已释放" || biz.bottleDetail?.Info?.ORD_WORKFLOW == "已装运") {
-            Tools.showAlertDialog("系统流程出错，请联系客服", self)
-        } else if(biz.bottleDetail?.Info?.ORD_WORKFLOW == "已确认") {
+        if(biz.bottleDetail?.Info?.ORD_WORKFLOW == "新建" || biz.bottleDetail?.Info?.ORD_WORKFLOW == "已审核" || biz.bottleDetail?.Info?.ORD_WORKFLOW == "已释放" || biz.bottleDetail?.Info?.ORD_WORKFLOW == "已装运" || biz.bottleDetail?.Info?.ORD_WORKFLOW == "已确认") {
             
-            var i: Int = 0
-            var isReturn = false
-            for _ in (biz.bottleDetail?.List)! {
-                let indexPath: NSIndexPath = NSIndexPath.init(item: i, section: 0)
-                let cell: BottleInfoTableViewCell = self.tableView.cellForRow(at: indexPath as IndexPath) as! BottleInfoTableViewCell
-                i = i + 1
-                if(cell.qtyF.text?.isEmpty)! {
-                    isReturn = true
-                    break
+            if(biz.bottleDetail?.Info?.ORD_WORKFLOW == "新建" || biz.bottleDetail?.Info?.ORD_WORKFLOW == "已审核" || biz.bottleDetail?.Info?.ORD_WORKFLOW == "已释放" || biz.bottleDetail?.Info?.ORD_WORKFLOW == "已装运") {
+                Tools.showAlertDialog("系统流程出错，请联系客服", self)
+            } else if(biz.bottleDetail?.Info?.ORD_WORKFLOW == "已确认") {
+                
+                var i: Int = 0
+                var isReturn = false
+                for _ in (biz.bottleDetail?.List)! {
+                    let indexPath: NSIndexPath = NSIndexPath.init(item: i, section: 0)
+                    let cell: BottleInfoTableViewCell = self.tableView.cellForRow(at: indexPath as IndexPath) as! BottleInfoTableViewCell
+                    i = i + 1
+                    if(cell.qtyF.text?.isEmpty)! {
+                        isReturn = true
+                        break
+                    }
+                }
+                
+                if(isReturn) {
+                    Tools.showAlertDialog("请确认数量", self)
+                } else {
+                    _ = MBProgressHUD.showHUDAddedTo(self.view, animated: true)
+                    requestSuccessCount = 0
+                    let service: SetBottleQTYBiz = SetBottleQTYBiz()
+                    for b in (biz.bottleDetail?.List)! {
+                        service.SetBottleQTY(strIdx: b.IDX, StrQty: b.ISSUE_QTY, httpresponseProtocol: self)
+                    }
                 }
             }
-            
-            if(isReturn) {
-                Tools.showAlertDialog("请确认数量", self)
-            } else {
-                _ = MBProgressHUD.showHUDAddedTo(self.view, animated: true)
-                requestSuccessCount = 0
-                let service: SetBottleQTYBiz = SetBottleQTYBiz()
-                for b in (biz.bottleDetail?.List)! {
-                    service.SetBottleQTY(strIdx: b.IDX, StrQty: b.ISSUE_QTY, httpresponseProtocol: self)
-                }
-            }
+        } else {
+            let vc = OrderQRCodeViewController(nibName:"OrderQRCodeViewController", bundle: nil)
+            vc.TMS_SHIPMENT_NO = biz.bottleDetail?.Info?.TMS_SHIPMENT_NO
+            self.navigationController?.pushViewController(vc, animated: true)
         }
     }
     
