@@ -453,7 +453,13 @@ class OrderDetailViewController: UIViewController, HttpResponseProtocol, UITable
         } else if self.DRIVER_PAY() == kDRIVER_PAY_NO {
             
             navigationOrCheckPathBtn.setTitle("实时导航", for: .normal)
-            deliverOrCheckPictureBtn.setTitle("交付", for: .normal)
+            if(biz.order?.REFERENCE05 == "Y") {
+                // 交付订单
+                deliverOrCheckPictureBtn.setTitle("交付", for: .normal)
+            } else {
+                // 司机到达
+                deliverOrCheckPictureBtn.setTitle("到达", for: .normal)
+            }
         } else {
             
             Tools.showAlertDialog("未知的订单交付状态\(self.DRIVER_PAY())", self)
@@ -624,14 +630,6 @@ class OrderDetailViewController: UIViewController, HttpResponseProtocol, UITable
                 
                 checkBillingStatusLabel.text = kCheckBillingStatus_NO
             }
-        }
-        
-        if(biz.order?.REFERENCE05 == "Y") {
-            // 交付订单
-            deliverOrCheckPictureBtn.setTitle("交付", for: .normal)
-        } else {
-            // 司机到达
-            deliverOrCheckPictureBtn.setTitle("到达", for: .normal)
         }
         print("=========responseSuccess3")
     }
