@@ -11,11 +11,9 @@ import UIKit
 import UserNotifications
 
 
-
-let kGtAppId:String = "RlESMA5Ett6NGG6d4zUd89"
-let kGtAppKey:String = "WooWKdiIMX6zDUNRmTPus8"
-let kGtAppSecret:String = "kzKvvT545pArwARCJqrfz3"
-
+let kGtAppId:String = "taIKzBvN4W8lV7w2EOa4w3"
+let kGtAppKey:String = "fsambVKLAG8Y1L44ewdUR7"
+let kGtAppSecret:String = "CoqTYyK66jAD0U9Vrmg9H7"
 
 
 @UIApplicationMain
