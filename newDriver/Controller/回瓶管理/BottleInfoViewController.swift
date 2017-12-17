@@ -70,7 +70,7 @@ class BottleInfoViewController: UIViewController, HttpResponseProtocol, UITableV
             ORD_DATE_ADD.text = biz.bottleDetail?.Info?.ORD_DATE_ADD
             
             // 货物信息
-            bottleInfoViewHeight.constant = 30 + CGFloat((biz.bottleDetail?.List.count)!) * kCellHeight
+            bottleInfoViewHeight.constant = 30 + (biz.bottleDetail?.Info?.tableViewHeight)!
             
             // 承运信息
             TMS_PLATE_NUMBER.text = biz.bottleDetail?.Info?.TMS_PLATE_NUMBER
@@ -133,7 +133,6 @@ class BottleInfoViewController: UIViewController, HttpResponseProtocol, UITableV
     
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var bottleInfoViewHeight: NSLayoutConstraint!
-    var kCellHeight: CGFloat = 104
     
     // 工作流程
     @IBOutlet weak var ORD_WORKFLOW: UILabel!
@@ -241,7 +240,9 @@ class BottleInfoViewController: UIViewController, HttpResponseProtocol, UITableV
     
     // 设置 cell 高度
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return kCellHeight
+        
+        let item = biz.bottleDetail?.List[(indexPath as NSIndexPath).row]
+        return (item?.cellHeight)!
     }
     
     // 设置自定义的 cell

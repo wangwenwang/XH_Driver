@@ -44,6 +44,9 @@ class BottleItem: BaseBean {
     /// 交付数量(工厂确认过)
     var QTY_DELIVERY: String = ""
     
+    /// Cell 行高
+    var cellHeight: CGFloat = 0
+    
     override func mapping(map: Map) {
         IDX <- map["IDX"]
         ENT_IDX <- map["ENT_IDX"]

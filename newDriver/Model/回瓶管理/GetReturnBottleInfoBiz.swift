@@ -35,24 +35,23 @@ class GetReturnBottleInfoBiz: NSObject {
                         let json = JSON(value)
                         print("JSON: \(json)")
                         
-//                        if let wkSelf = weakSelf {
+                        if let wkSelf = weakSelf {
                             let type = json["type"].description
                             if type == "1" {
                                 
                                 let detail: BottleDetail = Mapper<BottleDetail>().map(JSONString: json["result"].description)!
                                 
-//                                let orderDetailArray = json["result"]["List"].arrayValue
-//                                detail.List = []
-//                                for bottle in orderDetailArray {
-//                                    detail.List.append(Mapper<BottleItem>().map(JSONString: bottle.description)!)
-//                                }
-                                
-                                
-                                //                                    let oneLine = Tools.getHeightOfString(text: "fds", fontSize: 15, width: CGFloat(MAXFLOAT))
-                                //                                    let mulLine = Tools.getHeightOfString(text: address.PARTY_NAME, fontSize: 15, width: (SCREEN_WIDTH - (15 + 46 + 3)))
-                                //                                    address.cellHeight = 59 + (mulLine - oneLine)
-                                self.bottleDetail = detail
+                                wkSelf.bottleDetail = detail
+                             
+                                for item in detail.List {
+                                    
+                                    let oneLine = Tools.getHeightOfString(text: "fds", fontSize: 15, width: CGFloat(MAXFLOAT))
+                                    let mulLine = Tools.getHeightOfString(text: item.PRODUCT_NAME, fontSize: 15, width: (SCREEN_WIDTH - (8 + 69.5 + 3)))
+                                    item.cellHeight = 104 + (mulLine - oneLine)
+                                    wkSelf.bottleDetail?.Info?.tableViewHeight += item.cellHeight
+                                }
                                 responseProtocol.responseSuccess()
+                            }
 //                            } else {
 //                                let msg = json["msg"].description
 //                                responseProtocol.responseError(msg)

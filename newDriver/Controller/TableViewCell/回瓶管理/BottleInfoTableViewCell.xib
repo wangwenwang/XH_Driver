@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13527"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13173"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -21,7 +21,7 @@
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MuR-w3-4GU">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="102.5"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="小瓶" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DDl-n7-4nY">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="小瓶" textAlignment="natural" lineBreakMode="characterWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DDl-n7-4nY">
                                 <rect key="frame" x="77.5" y="8" width="31" height="18"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                 <color key="textColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -59,6 +59,9 @@
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="货物名称: " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LNg-rq-8mb">
                                 <rect key="frame" x="8" y="8" width="69.5" height="18"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="69.5" id="G73-Tx-mc5"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -87,6 +90,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="dCe-Lz-wIu" firstAttribute="trailing" secondItem="iH8-D7-aDT" secondAttribute="trailing" id="09M-Pt-iHV"/>
+                            <constraint firstItem="DDl-n7-4nY" firstAttribute="top" secondItem="LNg-rq-8mb" secondAttribute="top" id="5vV-MX-m6N"/>
                             <constraint firstItem="d4T-tt-Ncm" firstAttribute="top" secondItem="L5H-VR-3h9" secondAttribute="bottom" constant="6" id="E0r-Mv-rsP"/>
                             <constraint firstItem="dCe-Lz-wIu" firstAttribute="leading" secondItem="iH8-D7-aDT" secondAttribute="leading" id="EGz-GG-tKN"/>
                             <constraint firstItem="LNg-rq-8mb" firstAttribute="leading" secondItem="MuR-w3-4GU" secondAttribute="leading" constant="8" id="JOo-lw-gVH"/>
@@ -99,7 +103,6 @@
                             <constraint firstItem="2V5-mw-asa" firstAttribute="leading" secondItem="LNg-rq-8mb" secondAttribute="leading" id="Zd8-Cy-dsd"/>
                             <constraint firstItem="DDl-n7-4nY" firstAttribute="leading" secondItem="LNg-rq-8mb" secondAttribute="trailing" id="ZnD-qL-xcR"/>
                             <constraint firstItem="dCe-Lz-wIu" firstAttribute="bottom" secondItem="iH8-D7-aDT" secondAttribute="bottom" id="ch8-wc-ZLl"/>
-                            <constraint firstItem="DDl-n7-4nY" firstAttribute="centerY" secondItem="LNg-rq-8mb" secondAttribute="centerY" id="dgC-sG-VtG"/>
                             <constraint firstItem="LNg-rq-8mb" firstAttribute="top" secondItem="MuR-w3-4GU" secondAttribute="top" constant="8" id="jwa-sp-Cuj"/>
                             <constraint firstItem="eLt-Rl-DWZ" firstAttribute="leading" secondItem="d4T-tt-Ncm" secondAttribute="trailing" id="khY-4g-HJ9"/>
                             <constraint firstItem="iH8-D7-aDT" firstAttribute="leading" secondItem="L5H-VR-3h9" secondAttribute="trailing" id="kjp-Ny-5JV"/>

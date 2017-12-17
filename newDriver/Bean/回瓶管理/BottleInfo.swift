@@ -134,6 +134,9 @@ class BottleInfo: BaseBean {
     /// 装运号
     var TMS_SHIPMENT_NO: String = ""
     
+    /// tableView 高度
+    var tableViewHeight: CGFloat = 0
+    
     override func mapping(map: Map) {
         IDX <- map["IDX"]
         ORD_GROUP_NO <- map["ORD_GROUP_NO"]
