@@ -62,6 +62,8 @@ class BottleInfoViewController: UIViewController, HttpResponseProtocol, UITableV
             // 厂家信息
             PARTY_NAME.text = biz.bottleDetail?.Info?.ORD_TO_NAME
             PARTY_ADDRESS.text = biz.bottleDetail?.Info?.ORD_TO_ADDRESS
+            ORD_TO_CNAME.text = biz.bottleDetail?.Info?.ORD_TO_CNAME
+            ORD_TO_CTEL.text = biz.bottleDetail?.Info?.ORD_TO_CTEL
             mulLine = Tools.getHeightOfString(text: PARTY_NAME.text!, fontSize: 15, width: SCREEN_WIDTH - 8 - 39 - 3)
             factoryViewHeight.constant += (mulLine - oneLine)
             
@@ -129,6 +131,11 @@ class BottleInfoViewController: UIViewController, HttpResponseProtocol, UITableV
     @IBOutlet weak var PARTY_NAME: UILabel!
     // 供应商地址
     @IBOutlet weak var PARTY_ADDRESS: UILabel!
+    // 供应商联系人
+    @IBOutlet weak var ORD_TO_CNAME: UILabel!
+    // 供应商电话
+    @IBOutlet weak var ORD_TO_CTEL: UILabel!
+    
     @IBOutlet weak var factoryViewHeight: NSLayoutConstraint!
     
     @IBOutlet weak var tableView: UITableView!
@@ -183,6 +190,8 @@ class BottleInfoViewController: UIViewController, HttpResponseProtocol, UITableV
         
         PARTY_NAME.text = " "
         PARTY_ADDRESS.text = " "
+        ORD_TO_CNAME.text = " "
+        ORD_TO_CTEL.text = " "
         
         ORD_WORKFLOW.text = " "
         ORD_DATE_ADD.text = " "
