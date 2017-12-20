@@ -91,6 +91,9 @@ class OrderDetailViewController: UIViewController, HttpResponseProtocol, UITable
     /// 目的地点
     @IBOutlet weak var orderToAddress: UILabel!
     
+    /// 最新节点
+    @IBOutlet weak var newPointLabel: UILabel!
+    
     // 货物信息
     @IBOutlet weak var orderDetailsTableView: UITableView! {
         didSet {
@@ -564,6 +567,14 @@ class OrderDetailViewController: UIViewController, HttpResponseProtocol, UITable
         }
     }
     
+    // 生成装运二维码
+    @IBAction func shipmentQRCodeOnclick() {
+        
+        let vc = OrderQRCodeViewController(nibName:"OrderQRCodeViewController", bundle: nil)
+        vc.TMS_SHIPMENT_NO = biz.order?.TMS_SHIPMENT_NO
+        self.navigationController?.pushViewController(vc, animated: true)
+    }
+    
     // MARK: - HttpResponseProtocol
     /// 获取订单详情成功返回数据
     func responseSuccess() {
@@ -597,6 +608,19 @@ class OrderDetailViewController: UIViewController, HttpResponseProtocol, UITable
             orderToName.text = orderDetail.ORD_TO_NAME
             orderFromeName.text = orderDetail.ORD_FROM_NAME
             orderToAddress.text = orderDetail.ORD_TO_ADDRESS
+            
+            if(orderDetail.ToFactory_date != "") {
+                newPointLabel.text = "入厂时间 \(orderDetail.ToFactory_date)"
+            }
+            if(orderDetail.TOMONTH_DATE != "") {
+                newPointLabel.text = "入月台时间 \(orderDetail.TOMONTH_DATE)"
+            }
+            if(orderDetail.MONTH_DATE != "") {
+                newPointLabel.text = "出月台时间 \(orderDetail.MONTH_DATE)"
+            }
+            if(orderDetail.Factory_date != "") {
+                newPointLabel.text = "出厂时间 \(orderDetail.Factory_date)"
+            }
             
             self.setButtonTitle()
             

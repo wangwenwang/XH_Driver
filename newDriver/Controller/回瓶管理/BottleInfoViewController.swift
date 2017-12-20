@@ -110,6 +110,7 @@ class BottleInfoViewController: UIViewController, HttpResponseProtocol, UITableV
     func responseError(_ error: String) {
         
         _ = MBProgressHUD.hideHUDForView(self.view, animated: true)
+        Tools.showAlertDialog(error, self)
     }
     
     

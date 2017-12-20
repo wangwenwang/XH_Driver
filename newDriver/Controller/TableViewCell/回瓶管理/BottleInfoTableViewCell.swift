@@ -15,6 +15,8 @@ class BottleInfoTableViewCell: UITableViewCell {
     @IBOutlet public weak var qtyF: UITextField!
     @IBOutlet weak var lineView: UIView!
     @IBOutlet weak var QTY_DELIVERY: UILabel!
+    @IBOutlet weak var QTY_MISSING: UILabel!
+    @IBOutlet weak var QTY_REJECT: UILabel!
     var ORD_WORKFLOW: String = ""
     
     override func awakeFromNib() {
@@ -33,6 +35,8 @@ class BottleInfoTableViewCell: UITableViewCell {
             PRODUCT_NAME.text = bottle.PRODUCT_NAME
             ORDER_QTY.text = bottle.ORDER_QTY
             QTY_DELIVERY.text = bottle.QTY_DELIVERY
+            QTY_MISSING.text = bottle.QTY_MISSING
+            QTY_REJECT.text = bottle.QTY_REJECT
             
             if(ORD_WORKFLOW == "新建" || ORD_WORKFLOW == "已审核" || ORD_WORKFLOW == "已释放" || ORD_WORKFLOW == "已装运" || ORD_WORKFLOW == "已确认") {
                 

@@ -118,8 +118,14 @@ class Order: BaseBean {
     var cellSelected: Bool = false
     
     
-    ///
+    /// 入厂
     var ToFactory_date: String = ""
+    /// 入月
+    var TOMONTH_DATE: String = ""
+    /// 出月
+    var MONTH_DATE: String = ""
+    /// 出厂
+    var Factory_date: String = ""
     
     
     override func mapping(map: Map) {
@@ -177,5 +183,8 @@ class Order: BaseBean {
         REFERENCE05 <- map["REFERENCE05"]
     
         ToFactory_date <- map["ToFactory_date"]
+        TOMONTH_DATE <- map["TOMONTH_DATE"]
+        MONTH_DATE <- map["MONTH_DATE"]
+        Factory_date <- map["Factory_date"]
     }
 }

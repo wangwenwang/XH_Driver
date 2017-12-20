@@ -25,7 +25,7 @@ class PushOrderViewController: UIViewController, UITableViewDelegate, UITableVie
         
         self.automaticallyAdjustsScrollViewInsets = false
         self.myTableView.register(UINib.init(nibName: "PushOrderTableViewCell", bundle: nil), forCellReuseIdentifier: "PushOrderTableViewCell")
-        self.myTableView.rowHeight = 60
+        self.myTableView.rowHeight = 108
     }
     
     override func didReceiveMemoryWarning() {
@@ -49,11 +49,13 @@ class PushOrderViewController: UIViewController, UITableViewDelegate, UITableVie
     
     public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        let pushOrderSimple: SHIPMENT_List = SHIPMENT_List[(indexPath as NSIndexPath).row]
+        let order: SHIPMENT_List = SHIPMENT_List[(indexPath as NSIndexPath).row]
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "PushOrderTableViewCell", for: indexPath) as! PushOrderTableViewCell
-        cell.titleLabel.text = pushOrderSimple.ORD_NO
-        cell.ORD_NO_CLIENT.text = pushOrderSimple.ORD_NO_CLIENT
+        cell.titleLabel.text = order.ORD_NO
+        cell.ORD_NO_CLIENT.text = order.ORD_NO_CLIENT
+        cell.ORD_TYPE.text = order.ORD_TYPE
+        cell.ORD_TO_NAME.text = order.ORD_TO_NAME
         
         return cell
     }
@@ -65,11 +67,21 @@ class PushOrderViewController: UIViewController, UITableViewDelegate, UITableVie
         
         let pushOrderSimple: SHIPMENT_List = SHIPMENT_List[(indexPath as NSIndexPath).row]
         
-        if let ODVC = orderDetailController {
-            ODVC.orderIDX = pushOrderSimple.ORD_IDX
-            self.navigationController?.pushViewController(ODVC, animated: true)
+        let order: SHIPMENT_List = SHIPMENT_List[indexPath.row]
+        if(order.ORD_TYPE == "回瓶运输" && order.ORD_TYPE_HANDLING == "RECEIPT") {
+            
+            let vc: BottleInfoViewController = BottleInfoViewController(nibName: "BottleInfoViewController", bundle: nil)
+            vc.ORDER_IDX = pushOrderSimple.ORD_IDX
+            
+            self.navigationController?.pushViewController(vc, animated: true)
         } else {
-            Tools.showAlertDialog("orderDetailController = nil", self)
+            
+            if let ODVC = orderDetailController {
+                ODVC.orderIDX = pushOrderSimple.ORD_IDX
+                self.navigationController?.pushViewController(ODVC, animated: true)
+            } else {
+                Tools.showAlertDialog("orderDetailController = nil", self)
+            }
         }
     }
 }

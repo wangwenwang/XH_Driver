@@ -38,11 +38,17 @@ class BottleItem: BaseBean {
     /// 订单数量
     var ORDER_QTY: String = ""
     
-    /// 发货数量(司机确认过)
+    /// 实运数量(司机确认过)
     var ISSUE_QTY: String = ""
     
-    /// 交付数量(工厂确认过)
+    /// 实收数量(工厂确认过)
     var QTY_DELIVERY: String = ""
+    
+    /// 不合格数量(工厂确认过)
+    var QTY_REJECT: String = ""
+    
+    /// 短少数量(实运 - 实收 - 不合格)
+    var QTY_MISSING: String = ""
     
     /// Cell 行高
     var cellHeight: CGFloat = 0
@@ -59,5 +65,7 @@ class BottleItem: BaseBean {
         ORDER_QTY <- map["ORDER_QTY"]
         ISSUE_QTY <- map["ISSUE_QTY"]
         QTY_DELIVERY <- map["QTY_DELIVERY"]
+        QTY_REJECT <- map["QTY_REJECT"]
+        QTY_MISSING <- map["QTY_MISSING"]
     }
 }
