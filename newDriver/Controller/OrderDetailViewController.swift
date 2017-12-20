@@ -94,6 +94,24 @@ class OrderDetailViewController: UIViewController, HttpResponseProtocol, UITable
     /// 最新节点
     @IBOutlet weak var newPointLabel: UILabel!
     
+    /// 入厂时间
+    @IBOutlet weak var ToFactory_date: UILabel!
+    
+    /// 进月台时间
+    @IBOutlet weak var TOMONTH_DATE: UILabel!
+    
+    /// 出月台时间
+    @IBOutlet weak var MONTH_DATE: UILabel!
+    
+    /// 出厂时间
+    @IBOutlet weak var Factory_date: UILabel!
+    
+    // 时间节点
+    @IBOutlet weak var timePointView: UIView!
+    
+    // 时间节点 背景
+    var timePointView_bg: UIView!
+    
     // 货物信息
     @IBOutlet weak var orderDetailsTableView: UITableView! {
         didSet {
@@ -169,6 +187,14 @@ class OrderDetailViewController: UIViewController, HttpResponseProtocol, UITable
                 self.responseError("网络连接不可用!")
             }
         }
+        
+        self.timePointView.alpha = 0
+        timePointView_bg = UIView.init(frame: CGRect.init(x: 0, y: 0, width: SCREEN_WIDTH, height: SCREEN_HEIGH))
+        timePointView_bg.backgroundColor = UIColor.black
+        timePointView_bg.isHidden = true
+        timePointView_bg.alpha = 0
+//        let window: UIWindow = UIApplication.shared.keyWindow!
+        self.view.insertSubview(timePointView_bg, belowSubview: timePointView)
     }
     
     func LM() {
@@ -575,6 +601,45 @@ class OrderDetailViewController: UIViewController, HttpResponseProtocol, UITable
         self.navigationController?.pushViewController(vc, animated: true)
     }
     
+    // 查看时间节点
+    @IBAction func showTimePointOnclick() {
+        
+        self.timePointView.isHidden = false
+        UIView.animate(withDuration: 0.2, animations: {
+            
+            self.timePointView.alpha = 1
+        }) { (_) in
+            
+        }
+        
+        
+        self.timePointView_bg.isHidden = false
+        UIView.animate(withDuration: 0.6, animations: {
+            
+            self.timePointView_bg.alpha = 0.3
+        }) { (_) in
+            
+        }
+    }
+    
+    // 关闭时间节点
+    @IBAction func closeTimePointOnclick() {
+        
+        UIView.animate(withDuration: 0.2, animations: {
+            
+            self.timePointView.alpha = 0
+        }) { (_) in
+            self.timePointView.isHidden = true
+        }
+        
+        UIView.animate(withDuration: 0.6, animations: {
+            
+            self.timePointView_bg.alpha = 0
+        }) { (_) in
+            self.timePointView_bg.isHidden = true
+        }
+    }
+    
     // MARK: - HttpResponseProtocol
     /// 获取订单详情成功返回数据
     func responseSuccess() {
@@ -621,6 +686,11 @@ class OrderDetailViewController: UIViewController, HttpResponseProtocol, UITable
             if(orderDetail.Factory_date != "") {
                 newPointLabel.text = "出厂时间 \(orderDetail.Factory_date)"
             }
+            
+            ToFactory_date.text = orderDetail.ToFactory_date
+            TOMONTH_DATE.text = orderDetail.TOMONTH_DATE
+            MONTH_DATE.text = orderDetail.MONTH_DATE
+            Factory_date.text = orderDetail.Factory_date
             
             self.setButtonTitle()
             
