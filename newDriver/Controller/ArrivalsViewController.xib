@@ -122,7 +122,7 @@
                             <constraints>
                                 <constraint firstAttribute="height" constant="35" id="aHf-Yo-1Ow"/>
                             </constraints>
-                            <state key="normal" title="取消交付">
+                            <state key="normal" title="取消到达">
                                 <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </state>
                             <userDefinedRuntimeAttributes>
@@ -137,7 +137,7 @@
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dsu-H5-zgh">
                             <rect key="frame" x="195" y="624" width="172" height="35"/>
                             <color key="backgroundColor" red="1" green="0.55515242909999996" blue="0.15981585300000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                            <state key="normal" title="确认交付">
+                            <state key="normal" title="确认到达">
                                 <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </state>
                             <userDefinedRuntimeAttributes>

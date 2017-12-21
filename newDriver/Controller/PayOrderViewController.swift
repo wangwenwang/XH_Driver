@@ -463,7 +463,7 @@ class PayOrderViewController: UIViewController, UIAlertViewDelegate, UIImagePick
         let actionSheet : UIActionSheet
         
         // 只弹出拍照
-        var alertCamera: Bool = false
+        var alertCamera: Bool = true
         
         // 订单号有误
         var errorOrderNO: Bool = false
